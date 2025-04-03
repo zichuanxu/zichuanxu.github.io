@@ -1,0 +1,311 @@
+/* Default CSS file for Zichuan Xu's homepage */
+
+body {
+    background: #f9fafb;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    padding-bottom: 16px;
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    background: #1f2937;
+    color: #d1d5db;
+}
+
+table#tlayout {
+    border: none;
+    border-collapse: separate;
+    background: white;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+body.dark-mode table#tlayout {
+    background: #374151;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#layout-menu {
+    background: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    padding: 1.5em;
+    font-size: 1em;
+    width: 200px;
+    white-space: nowrap;
+    text-align: left;
+    vertical-align: top;
+}
+
+body.dark-mode #layout-menu {
+    background: #374151;
+    border-right: 1px solid #4b5563;
+}
+
+#layout-content {
+    padding: 2em;
+    background: white;
+    text-align: justify;
+    vertical-align: top;
+    width: 800px;
+    max-width: 100%;
+}
+
+body.dark-mode #layout-content {
+    background: #374151;
+}
+
+#layout-menu a {
+    display: block;
+    line-height: 2em;
+    margin-left: 0.5em;
+    color: #4b5e40;
+    transition: color 0.2s ease;
+}
+
+body.dark-mode #layout-menu a {
+    color: #9ca3af;
+}
+
+#layout-menu a:hover {
+    color: #1e3a8a;
+    border-bottom: none;
+}
+
+body.dark-mode #layout-menu a:hover {
+    color: #60a5fa;
+}
+
+#layout-menu a.current:link, #layout-menu a.current:visited {
+    color: #1e3a8a;
+    font-weight: bold;
+}
+
+body.dark-mode #layout-menu a.current:link, body.dark-mode #layout-menu a.current:visited {
+    color: #60a5fa;
+}
+
+div.menu-category {
+    border-bottom: 1px solid #d1d5db;
+    margin-top: 1.2em;
+    padding-bottom: 0.3em;
+    font-weight: 600;
+    color: #1f2937;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+body.dark-mode div.menu-category {
+    border-bottom: 1px solid #4b5563;
+    color: #d1d5db;
+}
+
+div.menu-item {
+    padding-left: 16px;
+    text-indent: -16px;
+}
+
+div#toptitle {
+    padding-bottom: 0.5em;
+    margin-bottom: 2em;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+body.dark-mode div#toptitle {
+    border-bottom: 2px solid #4b5563;
+}
+
+div#subtitle {
+    font-size: 1.1em;
+    color: #6b7280;
+    margin-top: 0.3em;
+}
+
+body.dark-mode div#subtitle {
+    color: #9ca3af;
+}
+
+h1, h2, h3 {
+    color: #1e3a8a;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.2em;
+    line-height: 1.2;
+}
+
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+    color: #60a5fa;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+body.dark-mode h2 {
+    border-bottom: 1px solid #4b5563;
+}
+
+h3 {
+    font-size: 1.25em;
+    font-weight: 500;
+}
+
+p {
+    margin: 0.8em 0;
+    color: #4b5563;
+}
+
+body.dark-mode p {
+    color: #d1d5db;
+}
+
+ul, ol {
+    margin: 0.5em 0 1em 1.5em;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+table.imgtable {
+    margin-bottom: 1.5em;
+}
+
+table.imgtable td {
+    vertical-align: middle;
+}
+
+table.imgtable img {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 120px;
+    height: auto;
+}
+
+body.dark-mode table.imgtable img {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 0;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+body.dark-mode a {
+    color: #60a5fa;
+}
+
+a:hover {
+    color: #1e3a8a;
+    text-decoration: underline;
+}
+
+body.dark-mode a:hover {
+    color: #93c5fd;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-btn {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    padding: 0.5em 1em;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.dark-mode-btn:hover {
+    background: #1e3a8a;
+}
+
+body.dark-mode .dark-mode-btn {
+    background: #60a5fa;
+}
+
+body.dark-mode .dark-mode-btn:hover {
+    background: #93c5fd;
+}
+
+/* Icon Styling */
+h2 i, .menu-category i, .menu-item i {
+    margin-right: 0.5em;
+    color: #4b5e40;
+}
+
+body.dark-mode h2 i, body.dark-mode .menu-category i, body.dark-mode .menu-item i {
+    color: #9ca3af;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    table#tlayout {
+        display: block;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    #layout-menu {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+        padding: 1em;
+    }
+
+    body.dark-mode #layout-menu {
+        border-bottom: 1px solid #4b5563;
+    }
+
+    #layout-content {
+        width: 100%;
+        padding: 1.5em;
+    }
+
+    .flex-container {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    table.imgtable img {
+        width: 100px;
+    }
+
+    .dark-mode-btn {
+        position: static;
+        margin: 1em 0;
+    }
+}
+
+@media print {
+    #layout-menu, .dark-mode-btn {
+        display: none;
+    }
+
+    table#tlayout {
+        box-shadow: none;
+    }
+}
