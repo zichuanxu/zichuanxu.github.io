@@ -1,8 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css" type="text/css" />
   <!-- Add Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -15,8 +16,9 @@
   <table summary="Table for page layout." id="tlayout">
     <tr valign="top">
       <td id="layout-menu">
-        <div class="menu-category"><i class="fas fa-user"></i> Zichuan Xu</div>
-        <div class="menu-item"><a href="index.html" class="current"><i class="fas fa-home"></i> About</a></div>
+        <div class="menu-category"><i class="fas fa-user-circle"></i> Zichuan Xu</div>
+        <div class="menu-item"><a href="index.html" class="current"><i class="fas fa-info-circle"></i> About</a>
+      </td>div>
       </td>
       <td id="layout-content">
         <div id="toptitle">
@@ -24,31 +26,38 @@
           <div id="subtitle">Master's Student at The University of Osaka</div>
         </div>
         <!-- Dark Mode Toggle -->
-        <button id="dark-mode-toggle" class="dark-mode-btn"><i class="fas fa-moon"></i> Toggle Dark Mode</button>
-        <table class="imgtable">
-          <tr>
-            <td>
-              <img src="photo.jpg" alt="Zichuan Xu" width="auto" height="auto" />&nbsp;
-            </td>
-            <td align="left">
-              <p>M1 Student<br />
+        <button id="dark-mode-toggle" class="dark-mode-btn" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+          <span class="toggle-text">Dark</span>
+        </button>
+        <div class="profile-section">
+          <div class="profile-image">
+            <img src="photo.jpg" alt="Zichuan Xu" />
+          </div>
+          <div class="profile-info">
+            <div class="profile-details">
+              <p class="role">M1 Student</p>
+              <p class="affiliation">
                 <a href="https://www-bigdata.ist.osaka-u.ac.jp/en/" target="_blank">Big Data Engineering Lab</a><br />
                 <a href="https://www.ist.osaka-u.ac.jp/english/" target="_blank">Graduate School of Information Science
                   and Technology</a><br />
                 <a href="https://www.osaka-u.ac.jp/en" target="_blank">The University of Osaka</a>
               </p>
-              <p><b>E-mail</b>: xu.zichuan[at]ist.osaka-u.ac.jp</p>
-            </td>
-          </tr>
-        </table>
+              <div class="contact-info">
+                <i class="fas fa-at"></i>
+                <span><strong>E-mail</strong>: xu.zichuan[at]ist.osaka-u.ac.jp</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <h2><i class="fas fa-user-tie"></i> Biography</h2>
+        <h2><i class="fas fa-user-graduate"></i> Biography</h2>
         <p>I am a master's student in the Graduate School of Information Science and Technology at <b>The University of
             Osaka</b>, advised by <a href="https://sites.google.com/site/chuanxiao1983" target="_blank">Prof. Chuan
             Xiao</a>. I received my bachelor's degree from <b>Huazhong University of Science and Technology</b>.</p>
         <p>My research interest lies in Reinforcement Learning (RL) and Large Language Models (LLMs).</p>
 
-        <h2><i class="fas fa-graduation-cap"></i> Education Background</h2>
+        <h2><i class="fas fa-university"></i> Education Background</h2>
         <ul>
           <li>
             <div class="flex-container"><span>M.I.S. in Multimedia Engineering at The University of
@@ -60,7 +69,7 @@
           </li>
         </ul>
 
-        <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+        <h2><i class="fas fa-laptop-code"></i> Work Experience</h2>
         <ul>
           <li>
             <div class="flex-container"><span>Development Engineer at <a href="https://dameng.com/"
@@ -72,7 +81,7 @@
           </li>
         </ul>
 
-        <h2><i class="fas fa-flask"></i> Research Experience</h2>
+        <h2><i class="fas fa-microscope"></i> Research Experience</h2>
         <ul>
           <li>
             <div class="flex-container"><span>Research Intern at Virginia Tech advised by <a
@@ -91,8 +100,30 @@
     toggleButton.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
       const isDark = body.classList.contains('dark-mode');
-      toggleButton.innerHTML = isDark ? '<i class="fas fa-sun"></i> Toggle Light Mode' : '<i class="fas fa-moon"></i> Toggle Dark Mode';
+      const icon = toggleButton.querySelector('i');
+      const text = toggleButton.querySelector('.toggle-text');
+
+      if (isDark) {
+        icon.className = 'fas fa-sun';
+        text.textContent = 'Light';
+      } else {
+        icon.className = 'fas fa-moon';
+        text.textContent = 'Dark';
+      }
+
+      // Save preference
+      localStorage.setItem('darkMode', isDark);
     });
+
+    // Load saved preference
+    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+    if (savedDarkMode) {
+      body.classList.add('dark-mode');
+      const icon = toggleButton.querySelector('i');
+      const text = toggleButton.querySelector('.toggle-text');
+      icon.className = 'fas fa-sun';
+      text.textContent = 'Light';
+    }
   </script>
 </body>
 
