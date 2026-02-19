@@ -23,7 +23,7 @@ repository               : "zichuanxu/zichuanxu.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "/assets/images/avatar.jpg"
+  avatar           : "/images/avatar.jpg"
   name             : "Zichuan Xu"
   pronouns         : # example: "she/her"
   bio              : "Master Student"
