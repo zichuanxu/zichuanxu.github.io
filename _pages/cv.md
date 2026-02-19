@@ -11,9 +11,8 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* M.I.S. in Multimedia Engineering, Osaka University, 2027 (expected)
+* B.E. in Cyberspace Security, Huazhong University of Science and Technology, 2023
 
 Work experience
 ======
@@ -31,34 +30,25 @@ Work experience
   * GitHub University
   * Duties included: Tagging issues
   * Supervisor: Professor Git
-  
+
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+* Languages
+  * Chinese: Native
+  * English: IELTS 7.5, TOEIC 920
+  * Japanese: JLPT N1
+* Programming Languages
+  * Java
+  * Go
+  * Python
+  * JavaScript
+* Frameworks
+  * Springboot
+  * Vue
+  * Mybatis
+  * Gin
+  * Gorm
+* Tools
+  * Git
+  * Docker
+  * Kubernetes
