@@ -7,8 +7,10 @@ author_profile: true
 
 <br>
 
-## <img src="/images/RAKUTEN.svg" alt="Rakuten Logo" style="height: 50px; vertical-align: middle;">   Application Engineer Intern
+## Application Engineer Intern
 **[Rakuten Group, Inc.](https://corp.rakuten.co.jp/)** *Sept. 2025 - Oct. 2025*
+
+<img src="/images/RAKUTEN.svg" alt="Rakuten Logo" style="height: 50px; vertical-align: middle;">
 
 * Developed two internal web applications using PHP/Laravel and Bootstrap 5, successfully transitioning manual ticket-based workflows into real-time, self-service platforms.
 * Architected a scalable data automation pipeline utilizing Python and Apache Airflow to streamline monthly validation processes for Rakuten Card.
@@ -16,8 +18,10 @@ author_profile: true
 
 ---
 
-## <img src="/images/DM.png" alt="Dameng Logo" style="height: 35px; vertical-align: middle;">   Development Engineer
+##  Development Engineer
 **[Shanghai Dameng Database Co. Ltd.](https://dameng.com/)** *Jul. 2023 - Feb. 2025*
+
+<img src="/images/DM.png" alt="Dameng Logo" style="height: 50px; vertical-align: middle;">
 
 * Architected a massive-dataset rendering engine for a next-generation database management tool, optimizing processing logic via the NatTable framework.
 * Reduced query display time for 100,000-row datasets from 10 minutes to 3 seconds (a 200x speedup) by replacing pure SWT Tables with optimized frameworks.
@@ -27,8 +31,10 @@ author_profile: true
 
 ---
 
-## <img src="/images/NSFOCUS.jpg" alt="NSFOCUS Logo" style="height: 50px; vertical-align: middle;">   Research & Development Intern
+## Research & Development Intern
 **[NSFOCUS Technologies Group Co. Ltd.](https://www.nsfocus.com.cn/)** *Feb. 2023 - Apr. 2023*
+
+<img src="/images/NSFOCUS.jpg" alt="NSFOCUS Logo" style="height: 50px; vertical-align: middle;">
 
 * Collaborated on security solution development, leveraging Python Scrapy to gather intelligence on fraudulent applications and utilizing Django for the backend of a network probing system.
 * Provided technical support and devised encryption algorithms to anonymize customer data for use in machine learning training models.
@@ -36,8 +42,10 @@ author_profile: true
 
 ---
 
-## <img src="/images/VT.svg" alt="Virginia Tech Logo" style="height: 50px; vertical-align: middle;">   Research Intern
+## Research Intern
 **[Virginia Tech](https://www.vt.edu/)** *Apr. 2022 - Sept. 2022*
+
+<img src="/images/VT.svg" alt="Virginia Tech Logo" style="height: 50px; vertical-align: middle;">
 
 * **Supervisor:** [Prof. Peng Gao](https://people.cs.vt.edu/penggao/)
 * **Theme:** Graph Learning Framework for System Provenance-Based Security Analysis

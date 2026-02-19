@@ -7,8 +7,10 @@ author_profile: true
 
 <br>
 
-## <img src="/images/UO.png" alt="Osaka University Logo" style="height: 50px; vertical-align: middle;">   Master of Information Science
+##  Master of Information Science
 **[The University of Osaka](https://www.osaka-u.ac.jp/en)** *Apr. 2025 - Mar. 2027*
+
+ <img src="/images/UO.png" alt="Osaka University Logo" style="height: 50px; vertical-align: middle;">
 
 * **Major:** Multimedia Engineering
 * **Research Field:** Multi-agent Reinforcement Learning & Emergent Language
@@ -31,8 +33,10 @@ author_profile: true
 
 ---
 
-## <img src="/images/HUST.png" alt="HUST Logo" style="height: 50px; vertical-align: middle;">   Bachelor of Engineering
+## Bachelor of Engineering
 **[Huazhong University of Science and Technology](https://www.hust.edu.cn/)** *Sept. 2019 - Jun. 2023*
+
+ <img src="/images/HUST.png" alt="HUST Logo" style="height: 50px; vertical-align: middle;">
 
 * **Major:** Cyberspace Security
 * **Grade:** 3.94 / 4.0
