@@ -5,8 +5,6 @@ permalink: /education/
 author_profile: true
 ---
 
-<br>
-
 ##  Master of Information Science
 **[The University of Osaka](https://www.osaka-u.ac.jp/en)** *Apr. 2025 - Mar. 2027*
 

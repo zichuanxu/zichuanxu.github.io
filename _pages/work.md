@@ -5,8 +5,6 @@ permalink: /work/
 author_profile: true
 ---
 
-<br>
-
 ## Application Engineer Intern
 **[Rakuten Group, Inc.](https://corp.rakuten.co.jp/)** *Sept. 2025 - Oct. 2025*
 
