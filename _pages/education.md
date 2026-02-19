@@ -7,7 +7,7 @@ author_profile: true
 
 <br>
 
-## <img src="/assets/images/UO.png" alt="Osaka University Logo" style="height: 50px; vertical-align: middle;"> Master of Information Science
+## <img src="/assets/images/UO.png" alt="Osaka University Logo" style="height: 50px; vertical-align: middle;">   Master of Information Science
 **[The University of Osaka](https://www.osaka-u.ac.jp/en)** *Apr. 2025 - Mar. 2027*
 
 * **Major:** Multimedia Engineering
@@ -31,7 +31,7 @@ author_profile: true
 
 ---
 
-## <img src="/assets/images/HUST.png" alt="HUST Logo" style="height: 50px; vertical-align: middle;"> Bachelor of Engineering
+## <img src="/assets/images/HUST.png" alt="HUST Logo" style="height: 50px; vertical-align: middle;">   Bachelor of Engineering
 **[Huazhong University of Science and Technology](https://www.hust.edu.cn/)** *Sept. 2019 - Jun. 2023*
 
 * **Major:** Cyberspace Security

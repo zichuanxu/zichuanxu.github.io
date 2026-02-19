@@ -7,7 +7,7 @@ author_profile: true
 
 <br>
 
-## <img src="/assets/images/RAKUTEN.svg" alt="Rakuten Logo" style="height: 50px; vertical-align: middle;"> Application Engineer Intern
+## <img src="/assets/images/RAKUTEN.svg" alt="Rakuten Logo" style="height: 50px; vertical-align: middle;">   Application Engineer Intern
 **[Rakuten Group, Inc.](https://corp.rakuten.co.jp/)** *Sept. 2025 - Oct. 2025*
 
 * Developed two internal web applications using PHP/Laravel and Bootstrap 5, successfully transitioning manual ticket-based workflows into real-time, self-service platforms.
@@ -16,7 +16,7 @@ author_profile: true
 
 ---
 
-## <img src="/assets/images/DM.png" alt="Dameng Logo" style="height: 50px; vertical-align: middle;"> Development Engineer
+## <img src="/assets/images/DM.png" alt="Dameng Logo" style="height: 35px; vertical-align: middle;">   Development Engineer
 **[Shanghai Dameng Database Co. Ltd.](https://dameng.com/)** *Jul. 2023 - Feb. 2025*
 
 * Architected a massive-dataset rendering engine for a next-generation database management tool, optimizing processing logic via the NatTable framework.
@@ -27,7 +27,7 @@ author_profile: true
 
 ---
 
-## <img src="/assets/images/NSFOCUS.jpg" alt="NSFOCUS Logo" style="height: 50px; vertical-align: middle;"> Research & Development Intern
+## <img src="/assets/images/NSFOCUS.jpg" alt="NSFOCUS Logo" style="height: 50px; vertical-align: middle;">   Research & Development Intern
 **[NSFOCUS Technologies Group Co. Ltd.](https://www.nsfocus.com.cn/)** *Feb. 2023 - Apr. 2023*
 
 * Collaborated on security solution development, leveraging Python Scrapy to gather intelligence on fraudulent applications and utilizing Django for the backend of a network probing system.
@@ -36,7 +36,7 @@ author_profile: true
 
 ---
 
-## <img src="/assets/images/VT.svg" alt="Virginia Tech Logo" style="height: 50px; vertical-align: middle;"> Research Intern
+## <img src="/assets/images/VT.svg" alt="Virginia Tech Logo" style="height: 50px; vertical-align: middle;">   Research Intern
 **[Virginia Tech](https://www.vt.edu/)** *Apr. 2022 - Sept. 2022*
 
 * **Supervisor:** [Prof. Peng Gao](https://people.cs.vt.edu/penggao/)
