@@ -5,14 +5,14 @@ permalink: /education/
 author_profile: true
 ---
 
-##  Master of Information Science
+##  Master of Information Science and Technology
 **[The University of Osaka](https://www.osaka-u.ac.jp/en)** *Apr. 2025 - Mar. 2027*
 
  <img src="/images/UO.png" alt="Osaka University Logo" style="height: 50px; vertical-align: middle;">
 
 * **Major:** Multimedia Engineering
 * **Research Field:** Multi-agent Reinforcement Learning & Emergent Language
-* **Grade:** 3.8 / 4.0
+* **Grade:** 3.7 / 4.0
 
 **Main Coursework**
 

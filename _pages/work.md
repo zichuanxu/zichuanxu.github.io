@@ -32,7 +32,7 @@ author_profile: true
 ## Research & Development Intern
 **[NSFOCUS Technologies Group Co. Ltd.](https://www.nsfocus.com.cn/)** *Feb. 2023 - Apr. 2023*
 
-<img src="/images/NSFOCUS.jpg" alt="NSFOCUS Logo" style="height: 50px; vertical-align: middle;">
+<img src="/images/NSFOCUS.png" alt="NSFOCUS Logo" style="height: 50px; vertical-align: middle;">
 
 * Collaborated on security solution development, leveraging Python Scrapy to gather intelligence on fraudulent applications and utilizing Django for the backend of a network probing system.
 * Provided technical support and devised encryption algorithms to anonymize customer data for use in machine learning training models.

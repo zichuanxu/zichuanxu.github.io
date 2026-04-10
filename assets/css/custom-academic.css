@@ -1,0 +1,157 @@
+/* ==========================================================================
+   MINIMAL ACADEMIC ENHANCEMENTS - Zichuan Xu
+   Only colors, fonts, and subtle visual enhancements - no layout changes
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Google Fonts Import
+   -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+/* --------------------------------------------------------------------------
+   CSS Variables Override - Warm Academic Palette
+   -------------------------------------------------------------------------- */
+:root {
+    --accent-primary: #c45d35;
+    --accent-secondary: #e8a87c;
+    --accent-gradient: linear-gradient(135deg, #c45d35 0%, #e8a87c 100%);
+}
+
+/* --------------------------------------------------------------------------
+   Typography Enhancement
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    position: relative;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--global-border-color);
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 50px;
+    height: 2px;
+    background: var(--accent-primary);
+}
+
+/* --------------------------------------------------------------------------
+   Masthead Enhancement
+   -------------------------------------------------------------------------- */
+.masthead {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.masthead__site-title {
+    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em;
+}
+
+.masthead__menu-item a:hover {
+    color: var(--accent-primary) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Author Card Enhancement
+   -------------------------------------------------------------------------- */
+.author__avatar img {
+    border: 3px solid var(--accent-primary);
+    box-shadow: 0 4px 20px rgba(196, 93, 53, 0.2);
+}
+
+.author__name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.author__urls li a:hover {
+    color: var(--accent-primary) !important;
+}
+
+.author__urls li a i,
+.author__urls li a .ai {
+    color: var(--accent-primary);
+}
+
+/* Hide Follow button - not needed for personal site */
+.btn.btn--inverse {
+    display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Archive Item Enhancement
+   -------------------------------------------------------------------------- */
+.archive__item {
+    border-radius: 8px;
+    border: 1px solid var(--global-border-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.archive__item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    border-color: var(--accent-secondary);
+}
+
+.archive__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--accent-gradient);
+    border-radius: 8px 0 0 8px;
+}
+
+/* --------------------------------------------------------------------------
+   Links Enhancement
+   -------------------------------------------------------------------------- */
+a {
+    color: var(--accent-primary);
+    transition: color 0.15s ease;
+}
+
+a:hover {
+    color: var(--accent-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   Selection
+   -------------------------------------------------------------------------- */
+::selection {
+    background: var(--accent-primary);
+    color: white;
+}
+
+/* --------------------------------------------------------------------------
+   Custom Scrollbar
+   -------------------------------------------------------------------------- */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-primary);
+}
+
+/* --------------------------------------------------------------------------
+   Focus States
+   -------------------------------------------------------------------------- */
+:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+.page__footer a:hover {
+    color: var(--accent-primary) !important;
+}
