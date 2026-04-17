@@ -16,9 +16,9 @@ Education
 
 Work experience
 ======
-* Apr. 2026 - Present: Initial S. Co., Ltd.
+* Apr. 2026 - Present: Initial S Co., Ltd.
   * AI Agent Development Engineer Intern
-  * Duties include: Developing and optimizing "Kuraclaw," a high-performance AI Agent for the mecloud platform. Architecting lightweight agentic frameworks based on PicoClaw to enable efficient LLM deployment on NAS hardware.
+  * Duties include: Developing and optimizing "Kuraclaw," a high-performance AI Agent for the mecloud platform. Architecting a lightweight agentic framework based to enable efficient LLM deployment on NAS hardware.
 
 * Sept. 2025 - Oct. 2025: Rakuten Group, Inc.
   * Application Engineer Intern
