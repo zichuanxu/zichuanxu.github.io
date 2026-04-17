@@ -8,6 +8,7 @@ author_profile: true
 ## AI Agent Development Engineer Intern
 
 **[Initial S Co., Ltd.](https://www.mnemelab.ai/index.html)** *Apr. 2026 - Present*
+
 <img src="/images/mykura.png" alt="Mykura Logo" style="height: 50px; vertical-align: middle;">
 
 * Collaborated on the development of Kuraclaw, a high-performance AI Agent integrated into the mecloud ecosystem, optimizing LLM inference and execution for NAS hardware environments.
