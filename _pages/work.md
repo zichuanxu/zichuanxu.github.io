@@ -5,6 +5,16 @@ permalink: /work/
 author_profile: true
 ---
 
+## AI Agent Development Engineer Intern
+
+**[Initial S. Co., Ltd.](https://www.mnemelab.ai/index.html)** *Apr. 2026 - Present*
+<img src="/images/mykura.png" alt="Mykura Logo" style="height: 50px; vertical-align: middle;">
+
+* Collaborated on the development of Kuraclaw, a high-performance AI Agent integrated into the mecloud ecosystem, optimizing LLM inference and execution for NAS hardware environments.
+* Leveraged the PicoClaw framework to implement efficient agentic workflows, reducing latency and resource overhead to ensure seamless operation on constrained edge devices.
+* Engineered scalable backend components and tool-calling mechanisms to extend the agent's capabilities, focusing on high throughput and minimal memory footprint.
+* Conducted performance profiling and system tuning to balance model intelligence with the hardware limitations of consumer-grade NAS devices.
+
 ## Application Engineer Intern
 **[Rakuten Group, Inc.](https://corp.rakuten.co.jp/)** *Sept. 2025 - Oct. 2025*
 
