@@ -1,0 +1,201 @@
+---
+layout: null
+permalink: /experience/
+title: "Experience · Zichuan Xu"
+description: "Work experience timeline — AI agents at Initial S, full-stack at Rakuten, database tooling at Dameng, security research at NSFOCUS and Virginia Tech."
+redirect_from:
+  - /work/
+sitemap: true
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experience · Zichuan Xu</title>
+  <meta name="description" content="Work experience timeline — AI agents at Initial S, full-stack at Rakuten, database tooling at Dameng, security research at NSFOCUS and Virginia Tech." />
+  <link rel="stylesheet" href="/assets/css/site-2026.css" />
+</head>
+<body>
+
+  <header class="topnav" data-od-id="topnav">
+    <div class="container topnav-inner">
+      <a href="/" class="logo">Zichuan Xu<span class="dot">.</span></a>
+      <nav>
+        <a href="/">About</a>
+        <a href="/education/">Education</a>
+        <a href="/experience/" class="is-active">Experience</a>
+        <a href="https://github.com/zichuanxu" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <a class="btn btn-primary btn-download nav-cta" href="/files/cv.pdf" download>Download CV</a>
+    </div>
+  </header>
+
+  <main id="content">
+
+    <!-- Page header -->
+    <section class="section page-header" data-od-id="page-header">
+      <div class="container">
+        <p class="eyebrow">02 / Experience</p>
+        <h1>Five roles across research and production.</h1>
+        <p class="lead">AI agents on edge hardware, full-stack web with Laravel + Airflow, database rendering engines, security R&amp;D, and graph learning for system provenance — selected highlights below.</p>
+        <div class="meta-strip">
+          <span>2022 → Present</span>
+          <span class="dot">·</span>
+          <span>3 countries</span>
+          <span class="dot">·</span>
+          <span>5 organisations</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience timeline -->
+    <section class="section" data-od-id="experience-timeline" style="padding-block-start:0;">
+      <div class="container">
+        <div class="timeline">
+
+          <article class="tl-row" data-od-id="initial-s">
+            <div class="tl-side">
+              <div class="tl-logo"><img src="/images/mykura.png" alt="Initial S / Kuraclaw logo" /></div>
+              <div class="tl-date">Apr 2026 — Present</div>
+            </div>
+            <div class="tl-body">
+              <h3>AI Agent Development Engineer Intern</h3>
+              <p class="tl-org"><strong>Initial S Co., Ltd.</strong><span class="sep">·</span>Tokyo, Japan</p>
+              <p>Building Kuraclaw — an AI agent designed to run efficiently on NAS-class hardware rather than data-centre GPUs. The work spans the edge between model serving and orchestration: how do you keep an agent useful when every token has a measurable cost in watts and latency?</p>
+              <ul>
+                <li>Optimised LLM inference and tool execution for NAS-class hardware, trading off context window, batching strategy, and tool-call granularity</li>
+                <li>Designed efficient agentic workflows that reduce end-to-end latency and resource overhead under typical user prompts</li>
+                <li>Engineered backend components and tool-calling mechanisms; profiled hotspots and rewrote the worst offenders</li>
+              </ul>
+              <div class="tl-tags">
+                <span class="tag tag-mono">LLM Inference</span>
+                <span class="tag tag-mono">AI Agents</span>
+                <span class="tag tag-mono">Tool Calling</span>
+                <span class="tag tag-mono">Edge Hardware</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tl-row" data-od-id="rakuten">
+            <div class="tl-side">
+              <div class="tl-logo"><img src="/images/RAKUTEN.svg" alt="Rakuten logo" /></div>
+              <div class="tl-date">Sept 2025 — Oct 2025</div>
+            </div>
+            <div class="tl-body">
+              <h3>Application Engineer Intern</h3>
+              <p class="tl-org"><strong>Rakuten Group, Inc.</strong><span class="sep">·</span>Japan</p>
+              <p>A short, intense full-stack rotation. Shipped two internal web applications end-to-end and stood up a Python data pipeline that replaced a brittle hand-run script.</p>
+              <ul>
+                <li>Built two internal web applications in PHP / Laravel + Bootstrap 5, owning schema, controllers, views, and deployment</li>
+                <li>Designed and implemented a data automation pipeline in Python and Apache Airflow, scheduled and monitored from a single DAG</li>
+                <li>Held the test bar at over 85% unit-test line coverage on the application code</li>
+              </ul>
+              <div class="tl-tags">
+                <span class="tag tag-mono">PHP · Laravel</span>
+                <span class="tag tag-mono">Airflow</span>
+                <span class="tag tag-mono">Python</span>
+                <span class="tag tag-mono">Testing</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tl-row" data-od-id="dameng">
+            <div class="tl-side">
+              <div class="tl-logo"><img src="/images/DM.png" alt="Dameng Database logo" /></div>
+              <div class="tl-date">Jul 2023 — Feb 2025</div>
+            </div>
+            <div class="tl-body">
+              <h3>Development Engineer</h3>
+              <p class="tl-org"><strong>Shanghai Dameng Database Co., Ltd.</strong><span class="sep">·</span>Shanghai, China</p>
+              <p>Worked on the developer-facing surface of a commercial RDBMS — the parts users actually see when they open the client. A lot of the gain here came from one rewrite of the query-result rendering engine.</p>
+              <ul>
+                <li>Architected a new rendering engine for query result display, reducing time-to-first-row from <span class="num">~10 min</span> down to <span class="num">3 s</span> on large result sets</li>
+                <li>Engineered a Universal Installer framework — a single declarative spec drives installer behaviour across product lines</li>
+                <li>Led the SQL terminal and SQL formatter implementation, including syntax-aware indentation, multi-statement parsing, and inline diagnostics</li>
+              </ul>
+              <div class="tl-tags">
+                <span class="tag tag-mono">Java</span>
+                <span class="tag tag-mono">SWT · NatTable</span>
+                <span class="tag tag-mono">SQL</span>
+                <span class="tag tag-mono">Performance</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tl-row" data-od-id="nsfocus">
+            <div class="tl-side">
+              <div class="tl-logo"><img src="/images/NSFOCUS.png" alt="NSFOCUS logo" /></div>
+              <div class="tl-date">Feb 2023 — Apr 2023</div>
+            </div>
+            <div class="tl-body">
+              <h3>Research &amp; Development Intern</h3>
+              <p class="tl-org"><strong>NSFOCUS Technologies Group Co., Ltd.</strong><span class="sep">·</span>China</p>
+              <p>A short R&amp;D placement on the security side. Wrote crawlers and the backend that ingested their output, plus a small encryption layer used to anonymise sensitive samples before sharing them across teams.</p>
+              <ul>
+                <li>Developed security-oriented data acquisition tools in Python / Scrapy</li>
+                <li>Built a Django backend to serve and query the collected dataset</li>
+                <li>Devised encryption / anonymisation routines for sharing data across internal teams</li>
+              </ul>
+              <div class="tl-tags">
+                <span class="tag tag-mono">Python · Scrapy</span>
+                <span class="tag tag-mono">Django</span>
+                <span class="tag tag-mono">Security</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="tl-row" data-od-id="vt">
+            <div class="tl-side">
+              <div class="tl-logo"><img src="/images/VT.svg" alt="Virginia Tech logo" /></div>
+              <div class="tl-date">Apr 2022 — Sept 2022</div>
+            </div>
+            <div class="tl-body">
+              <h3>Research Intern</h3>
+              <p class="tl-org"><strong>Virginia Tech</strong><span class="sep">·</span>Prof. Peng Gao's group<span class="sep">·</span>Blacksburg, VA</p>
+              <p>My first deep dive into research. Worked on a graph learning framework for system-provenance-based security — modelling system call traces as graphs and using GNNs to flag malicious entities inside them.</p>
+              <ul>
+                <li>Researched graph neural network architectures for advanced persistent threat (APT) detection on provenance graphs</li>
+                <li>Reached <span class="num">97%</span> accuracy on the malicious-entity prediction benchmark used by the group — state of the art at the time</li>
+                <li>Contributed to dataset preprocessing, baseline reimplementations, and ablation experiments</li>
+              </ul>
+              <div class="tl-tags">
+                <span class="tag tag-mono">PyTorch</span>
+                <span class="tag tag-mono">GNN</span>
+                <span class="tag tag-mono">APT Detection</span>
+                <span class="tag tag-mono">Provenance</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Next strip -->
+    <section class="section" data-od-id="next">
+      <div class="container">
+        <div class="next-strip">
+          <a class="left" href="/education/">
+            <span class="label">Back · 01</span>
+            <h3>Education</h3>
+          </a>
+          <a class="right" href="/">
+            <span class="label">Home</span>
+            <h3>About</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pagefoot" data-od-id="footer">
+    <div class="container row-between">
+      <span>© 2026 Zichuan Xu</span>
+      <span class="meta">Osaka · ist.osaka-u.ac.jp · github.com/zichuanxu</span>
+    </div>
+  </footer>
+
+</body>
+</html>
