@@ -303,7 +303,7 @@ h1, h2, h3, h4 { text-wrap: balance; }
 /* ─── HERO with portrait monogram ────────────────────────────────────── */
 .hero-portrait {
   display: grid;
-  grid-template-columns: 1.45fr 1fr;
+  grid-template-columns: 1fr;
   gap: clamp(40px, 7vw, 96px);
   align-items: center;
   padding-block: clamp(64px, 11vw, 140px);
