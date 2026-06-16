@@ -27,3 +27,9 @@ package-lock.json
 .claude/
 .omc/
 CLAUDE.md
+
+# Superpowers brainstorming visual-companion scratch files
+.superpowers/
+
+# Local design docs / specs (not tracked)
+docs/
