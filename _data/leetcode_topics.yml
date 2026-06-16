@@ -4,10 +4,10 @@
 - { slug: substring,      name: "子串",         total: 3 }
 - { slug: array,          name: "普通数组",     total: 5 }
 - { slug: matrix,         name: "矩阵",         total: 4 }
-- { slug: linked-list,    name: "链表",         total: 13 }
+- { slug: linked-list,    name: "链表",         total: 14 }
 - { slug: binary-tree,    name: "二叉树",       total: 14 }
-- { slug: graph,          name: "图论",         total: 6 }
-- { slug: backtracking,   name: "回溯",         total: 9 }
+- { slug: graph,          name: "图论",         total: 4 }
+- { slug: backtracking,   name: "回溯",         total: 8 }
 - { slug: binary-search,  name: "二分查找",     total: 6 }
 - { slug: stack,          name: "栈",           total: 5 }
 - { slug: heap,           name: "堆",           total: 3 }
