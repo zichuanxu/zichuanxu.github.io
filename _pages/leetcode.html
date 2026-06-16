@@ -1,0 +1,53 @@
+---
+layout: null
+permalink: /leetcode/
+title: "LeetCode 专题 · Zichuan Xu"
+sitemap: true
+---
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LeetCode 专题 · Zichuan Xu</title>
+  <meta name="description" content="LeetCode 热题 100 题解 — Go 与 Python 双语实现，按知识点分组，含思路与复杂度。" />
+  <link rel="stylesheet" href="/assets/css/site-2026.css" />
+</head>
+<body>
+  {% include site-2026/topnav.html active="blog" %}
+  <main id="content">
+    {% assign lc = site.posts | where: "category", "algorithms" %}
+    <section class="section page-header" data-od-id="page-header">
+      <div class="container">
+        <p class="eyebrow"><a href="/blog/" style="color:inherit;">← Blog</a></p>
+        <h1>LeetCode 专题</h1>
+        <p class="lead">热题 100 · 每题 Go 与 Python 双解，附思路与复杂度分析。</p>
+        <p class="lc-progress">已完成 {{ lc.size }} / 100</p>
+      </div>
+    </section>
+    <section class="section" style="padding-block-start:0;">
+      <div class="container">
+        {% for topic in site.data.leetcode_topics %}
+          {% assign group = lc | where: "topic", topic.slug | sort: "number" %}
+          {% if group.size > 0 %}
+            <div class="lc-topic-head">
+              <h2>{{ topic.name }}</h2>
+              <span class="count">{{ group.size }} / {{ topic.total }}</span>
+            </div>
+            {% for post in group %}
+              {% case post.difficulty %}{% when '简单' %}{% assign dc = 'easy' %}{% when '中等' %}{% assign dc = 'medium' %}{% else %}{% assign dc = 'hard' %}{% endcase %}
+              <a class="lc-row" href="{{ post.url }}">
+                <span class="lc-num">{{ post.number }}</span>
+                <span class="lc-name">{{ post.title | split: ". " | last }}</span>
+                <span class="lc-diff {{ dc }}">{{ post.difficulty }}</span>
+                <span class="lc-tags">{% for tag in post.tags %}<span class="lc-tag">{{ tag }}</span>{% endfor %}</span>
+              </a>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+  {% include site-2026/footer.html %}
+</body>
+</html>
