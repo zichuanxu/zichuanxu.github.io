@@ -318,7 +318,7 @@ h1, h2, h3, h4 { text-wrap: balance; }
   font-size: clamp(20px, 1.9vw, 26px);
   line-height: 1.5;
   color: var(--fg-2);
-  max-width: 28ch;
+  max-width: 52ch;
   margin: 0 0 36px;
 }
 .hero-portrait .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }

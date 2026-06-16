@@ -3,13 +3,16 @@ layout: null
 ---
 <!doctype html>
 <html lang="zh">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ page.title }} · Zichuan Xu</title>
-  <meta name="description" content="{{ page.excerpt | default: page.title | strip_html | strip_newlines | escape_once }}" />
+  <title>{{ page.title }}</title>
+  <meta name="description"
+    content="{{ page.excerpt | default: page.title | strip_html | strip_newlines | escape_once }}" />
   <link rel="stylesheet" href="/assets/css/site-2026.css" />
 </head>
+
 <body>
   {% include site-2026/topnav.html active="blog" %}
   <main id="content">
@@ -18,10 +21,12 @@ layout: null
         <p class="eyebrow"><a href="/leetcode/" style="color:inherit;">← LeetCode 专题</a></p>
         <h1>{{ page.title }}</h1>
         <div class="meta-strip">
-          {% case page.difficulty %}{% when '简单' %}{% assign dc = 'easy' %}{% when '中等' %}{% assign dc = 'medium' %}{% else %}{% assign dc = 'hard' %}{% endcase %}
+          {% case page.difficulty %}{% when '简单' %}{% assign dc = 'easy' %}{% when '中等' %}{% assign dc = 'medium' %}{%
+          else %}{% assign dc = 'hard' %}{% endcase %}
           <span class="lc-diff {{ dc }}">{{ page.difficulty }}</span>
           {% for tag in page.tags %}<span class="lc-tag">{{ tag }}</span>{% endfor %}
-          {% if page.leetcode_url %}<a href="{{ page.leetcode_url }}" target="_blank" rel="noopener" style="color:var(--accent);">LeetCode 原题 →</a>{% endif %}
+          {% if page.leetcode_url %}<a href="{{ page.leetcode_url }}" target="_blank" rel="noopener"
+            style="color:var(--accent);">LeetCode 原题 →</a>{% endif %}
         </div>
       </div>
     </section>
@@ -35,7 +40,7 @@ layout: null
     </section>
     <section class="section" data-od-id="next">
       <div class="container">
-        <a class="btn btn-secondary btn-arrow" href="/leetcode/">← 返回所有题目</a>
+        <a class="btn btn-secondary" href="/leetcode/">← 返回所有题目</a>
       </div>
     </section>
   </main>
@@ -43,30 +48,33 @@ layout: null
 
   <!-- Go/Python tab 切换（localStorage 记忆） -->
   <script>
-  (function(){
-    var saved = localStorage.getItem('leetcode-tab-lang') || 'go';
-    document.querySelectorAll('.code-tabs').forEach(function(c){
-      c.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.lang===saved); });
-      c.querySelectorAll('.tab-content').forEach(function(t){ t.classList.toggle('active', t.dataset.lang===saved); });
-    });
-    window.switchCodeTab = function(btn){
-      var lang = btn.dataset.lang, c = btn.closest('.code-tabs');
-      c.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.toggle('active', b===btn); });
-      c.querySelectorAll('.tab-content').forEach(function(t){ t.classList.toggle('active', t.dataset.lang===lang); });
-      localStorage.setItem('leetcode-tab-lang', lang);
-    };
-  })();
+    (function () {
+      var saved = localStorage.getItem('leetcode-tab-lang') || 'go';
+      document.querySelectorAll('.code-tabs').forEach(function (c) {
+        c.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.toggle('active', b.dataset.lang === saved); });
+        c.querySelectorAll('.tab-content').forEach(function (t) { t.classList.toggle('active', t.dataset.lang === saved); });
+      });
+      window.switchCodeTab = function (btn) {
+        var lang = btn.dataset.lang, c = btn.closest('.code-tabs');
+        c.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.toggle('active', b === btn); });
+        c.querySelectorAll('.tab-content').forEach(function (t) { t.classList.toggle('active', t.dataset.lang === lang); });
+        localStorage.setItem('leetcode-tab-lang', lang);
+      };
+    })();
   </script>
   <!-- 浮动目录：扫描正文 h2 自动生成 -->
   <script>
-  (function(){
-    var prose = document.getElementById('lc-prose'), toc = document.getElementById('lc-toc');
-    if(!prose||!toc) return;
-    var hs = prose.querySelectorAll('h2');
-    if(hs.length < 2){ toc.style.display='none'; return; }
-    hs.forEach(function(h,i){ h.id = 'sec-'+i;
-      var a = document.createElement('a'); a.href='#sec-'+i; a.textContent=h.textContent; toc.appendChild(a); });
-  })();
+    (function () {
+      var prose = document.getElementById('lc-prose'), toc = document.getElementById('lc-toc');
+      if (!prose || !toc) return;
+      var hs = prose.querySelectorAll('h2');
+      if (hs.length < 2) { toc.style.display = 'none'; return; }
+      hs.forEach(function (h, i) {
+        h.id = 'sec-' + i;
+        var a = document.createElement('a'); a.href = '#sec-' + i; a.textContent = h.textContent; toc.appendChild(a);
+      });
+    })();
   </script>
 </body>
+
 </html>
