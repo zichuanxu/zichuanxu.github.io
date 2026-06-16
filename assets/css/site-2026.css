@@ -712,3 +712,63 @@ h1, h2, h3, h4 { text-wrap: balance; }
   .portrait { display: none; }
   .hero-portrait { grid-template-columns: 1fr; padding-block: 24px; }
 }
+
+/* ─── blog + leetcode (2026-06) ─────────────────────────────────────── */
+/* difficulty pill */
+.lc-diff { display:inline-block; font-size:11px; font-weight:700; padding:2px 8px;
+  border-radius:var(--radius-pill); line-height:1.6; white-space:nowrap; }
+.lc-diff.easy   { background:color-mix(in oklab,var(--success),white 80%); color:var(--success); }
+.lc-diff.medium { background:color-mix(in oklab,var(--warn),white 76%);    color:#9a6b00; }
+.lc-diff.hard   { background:color-mix(in oklab,var(--danger),white 80%);  color:var(--danger); }
+
+/* leetcode 专题页：主题分区 + 紧凑行 */
+.lc-progress { color:var(--meta); font-size:var(--fs-meta); }
+.lc-topic-head { display:flex; align-items:baseline; justify-content:space-between;
+  margin:32px 0 8px; padding-bottom:6px; border-bottom:1px solid var(--border-soft); }
+.lc-topic-head h2 { font-size:var(--fs-h3); }
+.lc-topic-head .count { color:var(--meta); font-size:var(--fs-meta); font-weight:600; }
+.lc-row { display:flex; align-items:center; gap:14px; padding:10px 4px;
+  border-bottom:1px solid var(--border); color:inherit; transition:background var(--motion-fast); }
+.lc-row:hover { background:var(--surface); }
+.lc-row .lc-num { font-family:var(--font-mono); color:var(--meta); font-size:var(--fs-meta);
+  min-width:42px; }
+.lc-row .lc-name { flex:1; font-family:var(--font-display); font-weight:500; }
+.lc-row .lc-tags { display:flex; gap:6px; flex-wrap:wrap; }
+.lc-tag { font-size:11px; color:var(--muted); background:var(--surface);
+  border:1px solid var(--border-soft); border-radius:var(--radius-pill); padding:1px 8px; }
+@media (max-width:640px){ .lc-row .lc-tags { display:none; } }
+
+/* leetcode 详情：代码 tab 切换 */
+.leetcode-prose { max-width:760px; }
+.code-tabs { margin:16px 0; border:1px solid var(--border-soft); border-radius:var(--radius-md);
+  overflow:hidden; }
+.code-tabs .tab-buttons { display:flex; gap:2px; background:#1f1e1c; padding:6px 6px 0; }
+.code-tabs .tab-btn { font-family:var(--font-mono); font-size:13px; color:#b7b3a8;
+  background:transparent; border:0; padding:6px 14px; border-radius:6px 6px 0 0; }
+.code-tabs .tab-btn.active { background:#2b2a27; color:#fff; }
+.code-tabs .tab-content { display:none; }
+.code-tabs .tab-content.active { display:block; }
+.code-tabs .tab-content pre { margin:0; border-radius:0; }
+
+/* 详情浮动目录 */
+.lc-toc { position:fixed; top:140px; right:24px; width:160px; font-size:var(--fs-meta);
+  line-height:1.9; color:var(--meta); }
+.lc-toc a { display:block; color:var(--meta); }
+.lc-toc a:hover { color:var(--accent); }
+@media (max-width:1100px){ .lc-toc { display:none; } }
+
+/* blog 中心页：分区落地页 */
+.blog-section { margin-top:48px; }
+.blog-section-head { display:flex; align-items:baseline; justify-content:space-between;
+  margin-bottom:16px; }
+.blog-section-head h2 { font-size:var(--fs-h3); }
+.blog-section-head a { color:var(--accent); font-size:var(--fs-meta); }
+.blog-cards { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+@media (max-width:640px){ .blog-cards { grid-template-columns:1fr; } }
+.blog-card { display:block; background:var(--surface); border:1px solid var(--border-soft);
+  border-radius:var(--radius-md); padding:16px; color:inherit; transition:border-color var(--motion-fast); }
+.blog-card:hover { border-color:var(--accent); }
+.blog-card .num { font-family:var(--font-mono); color:var(--meta); font-size:var(--fs-meta); }
+.blog-card h3 { font-size:var(--fs-h3); margin:6px 0; }
+.blog-placeholder { background:var(--surface); border:1px dashed var(--border-soft);
+  border-radius:var(--radius-md); padding:24px; color:var(--meta); text-align:center; }
