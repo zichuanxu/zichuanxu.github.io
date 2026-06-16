@@ -1,18 +1,20 @@
 ---
 layout: null
 permalink: /blog/
-title: "Blog · Zichuan Xu"
+title: "Blog"
 sitemap: true
 ---
 <!doctype html>
 <html lang="zh">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blog · Zichuan Xu</title>
-  <meta name="description" content="Zichuan Xu 的技术博客 — 算法题解、研究笔记、工程笔记。" />
+  <title>Blog</title>
+  <meta name="description" content="技术博客" />
   <link rel="stylesheet" href="/assets/css/site-2026.css" />
 </head>
+
 <body>
   {% include site-2026/topnav.html active="blog" %}
   <main id="content">
@@ -34,23 +36,28 @@ sitemap: true
           </div>
           <div class="blog-cards">
             {% for post in lc limit: 4 %}
-              {% case post.difficulty %}{% when '简单' %}{% assign dc = 'easy' %}{% when '中等' %}{% assign dc = 'medium' %}{% else %}{% assign dc = 'hard' %}{% endcase %}
-              <a class="blog-card" href="{{ post.url }}">
-                <span class="num">#{{ post.number }}</span>
-                <h3>{{ post.title | split: ". " | last }}</h3>
-                <span class="lc-diff {{ dc }}">{{ post.difficulty }}</span>
-              </a>
+            {% case post.difficulty %}{% when '简单' %}{% assign dc = 'easy' %}{% when '中等' %}{% assign dc = 'medium' %}{%
+            else %}{% assign dc = 'hard' %}{% endcase %}
+            <a class="blog-card" href="{{ post.url }}">
+              <span class="num">#{{ post.number }}</span>
+              <h3>{{ post.title | split: ". " | last }}</h3>
+              <span class="lc-diff {{ dc }}">{{ post.difficulty }}</span>
+            </a>
             {% endfor %}
           </div>
         </div>
 
         <div class="blog-section">
-          <div class="blog-section-head"><h2>研究笔记</h2></div>
+          <div class="blog-section-head">
+            <h2>研究笔记</h2>
+          </div>
           <div class="blog-placeholder">即将更新 —— 论文精读与科研笔记</div>
         </div>
 
         <div class="blog-section">
-          <div class="blog-section-head"><h2>工程笔记</h2></div>
+          <div class="blog-section-head">
+            <h2>工程笔记</h2>
+          </div>
           <div class="blog-placeholder">即将更新 —— 工程实践与开发踩坑</div>
         </div>
 
@@ -59,4 +66,5 @@ sitemap: true
   </main>
   {% include site-2026/footer.html %}
 </body>
+
 </html>
