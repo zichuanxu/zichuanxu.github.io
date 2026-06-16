@@ -23,18 +23,7 @@ sitemap: true
 
 <body>
 
-  <header class="topnav" data-od-id="topnav">
-    <div class="container topnav-inner">
-      <a href="/" class="logo">Zichuan Xu<span class="dot">.</span></a>
-      <nav>
-        <a href="/" class="is-active">About</a>
-        <a href="/education/">Education</a>
-        <a href="/experience/">Experience</a>
-        <a href="https://github.com/zichuanxu" target="_blank" rel="noopener">GitHub</a>
-      </nav>
-      <a class="btn btn-primary btn-download nav-cta" href="/files/cv.pdf" download>Download CV</a>
-    </div>
-  </header>
+  {% include site-2026/topnav.html active="about" %}
 
   <main id="content">
 
@@ -201,12 +190,7 @@ sitemap: true
 
   </main>
 
-  <footer class="pagefoot" data-od-id="footer">
-    <div class="container row-between">
-      <span>© 2026 Zichuan Xu</span>
-      <span class="meta">Osaka · ist.osaka-u.ac.jp · github.com/zichuanxu</span>
-    </div>
-  </footer>
+  {% include site-2026/footer.html %}
 
 </body>
 

@@ -1,0 +1,13 @@
+<header class="topnav" data-od-id="topnav">
+  <div class="container topnav-inner">
+    <a href="/" class="logo">Zichuan Xu<span class="dot">.</span></a>
+    <nav>
+      <a href="/"{% if include.active == 'about' %} class="is-active"{% endif %}>About</a>
+      <a href="/education/"{% if include.active == 'education' %} class="is-active"{% endif %}>Education</a>
+      <a href="/experience/"{% if include.active == 'experience' %} class="is-active"{% endif %}>Experience</a>
+      <a href="/blog/"{% if include.active == 'blog' %} class="is-active"{% endif %}>Blog</a>
+      <a href="https://github.com/zichuanxu" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <a class="btn btn-primary btn-download nav-cta" href="/files/cv.pdf" download>Download CV</a>
+  </div>
+</header>
