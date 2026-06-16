@@ -1,0 +1,62 @@
+---
+layout: null
+permalink: /blog/
+title: "Blog · Zichuan Xu"
+sitemap: true
+---
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog · Zichuan Xu</title>
+  <meta name="description" content="Zichuan Xu 的技术博客 — 算法题解、研究笔记、工程笔记。" />
+  <link rel="stylesheet" href="/assets/css/site-2026.css" />
+</head>
+<body>
+  {% include site-2026/topnav.html active="blog" %}
+  <main id="content">
+    <section class="section page-header" data-od-id="page-header">
+      <div class="container">
+        <p class="eyebrow">Blog</p>
+        <h1>Blog</h1>
+        <p class="lead">算法题解 · 研究笔记 · 工程笔记。</p>
+      </div>
+    </section>
+    <section class="section" style="padding-block-start:0;">
+      <div class="container">
+
+        {% assign lc = site.posts | where: "category", "algorithms" | sort: "number" %}
+        <div class="blog-section">
+          <div class="blog-section-head">
+            <h2>算法题解</h2>
+            <a href="/leetcode/">查看 LeetCode 专题 →</a>
+          </div>
+          <div class="blog-cards">
+            {% for post in lc limit: 4 %}
+              {% case post.difficulty %}{% when '简单' %}{% assign dc = 'easy' %}{% when '中等' %}{% assign dc = 'medium' %}{% else %}{% assign dc = 'hard' %}{% endcase %}
+              <a class="blog-card" href="{{ post.url }}">
+                <span class="num">#{{ post.number }}</span>
+                <h3>{{ post.title | split: ". " | last }}</h3>
+                <span class="lc-diff {{ dc }}">{{ post.difficulty }}</span>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="blog-section">
+          <div class="blog-section-head"><h2>研究笔记</h2></div>
+          <div class="blog-placeholder">即将更新 —— 论文精读与科研笔记</div>
+        </div>
+
+        <div class="blog-section">
+          <div class="blog-section-head"><h2>工程笔记</h2></div>
+          <div class="blog-placeholder">即将更新 —— 工程实践与开发踩坑</div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  {% include site-2026/footer.html %}
+</body>
+</html>
