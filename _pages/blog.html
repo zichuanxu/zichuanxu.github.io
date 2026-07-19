@@ -2,6 +2,7 @@
 layout: null
 permalink: /blog/
 title: "Blog"
+description: "LeetCode 热题 100：Go 与 Python 实现、解题思路和复杂度分析。"
 sitemap: true
 ---
 <!doctype html>
@@ -11,60 +12,75 @@ sitemap: true
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   {% include site-2026/theme-init.html %}
-  <title>Blog</title>
-  <meta name="description" content="技术博客" />
+  <title>Blog | Zichuan Xu</title>
+  <meta name="description" content="{{ page.description }}" />
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
   <link rel="stylesheet" href="/assets/css/site-2026.css" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/images/apple-touch-icon-180x180.png" />
 </head>
 
-<body>
+<body class="blog-page">
   {% include site-2026/topnav.html active="blog" %}
   <main id="content">
-    <section class="section page-header" data-od-id="page-header">
-      <div class="container">
-        <p class="eyebrow">Blog</p>
-        <h1>Blog</h1>
-        <p class="lead">算法题解 · 研究笔记 · 工程笔记。</p>
+    {% assign lc = site.posts | where: "category", "algorithms" | sort: "number" %}
+
+    <section class="blog-hero" aria-labelledby="blog-title">
+      <div class="container blog-hero-grid">
+        <h1 id="blog-title">算法题解，<br />为复用而写。</h1>
+        <div class="blog-hero-copy">
+          <p>LeetCode 热题 100，包含 Go 与 Python 实现、解题思路和复杂度分析。</p>
+          <a class="btn btn-primary" href="/leetcode/">查看全部题解</a>
+        </div>
       </div>
     </section>
-    <section class="section" style="padding-block-start:0;">
-      <div class="container">
 
-        {% assign lc = site.posts | where: "category", "algorithms" | sort: "number" %}
-        <div class="blog-section">
-          <div class="blog-section-head">
-            <h2>算法题解</h2>
-            <a href="/leetcode/">查看 LeetCode 专题 →</a>
-          </div>
-          <div class="blog-cards">
-            {% for post in lc limit: 4 %}
-            {% case post.difficulty %}{% when '简单' %}{% assign dc = 'easy' %}{% when '中等' %}{% assign dc = 'medium' %}{%
-            else %}{% assign dc = 'hard' %}{% endcase %}
-            <a class="blog-card" href="{{ post.url }}">
-              <span class="num">#{{ post.number }}</span>
-              <h3>{{ post.title | split: ". " | last }}</h3>
-              <span class="lc-diff {{ dc }}">{{ post.difficulty }}</span>
-            </a>
-            {% endfor %}
-          </div>
+    <section class="blog-overview" aria-label="题解概览">
+      <div class="container blog-overview-grid">
+        <div class="blog-overview-lead">
+          <strong>{{ lc.size }}</strong>
+          <span>道完整题解</span>
         </div>
-
-        <div class="blog-section">
-          <div class="blog-section-head">
-            <h2>研究笔记</h2>
-          </div>
-          <div class="blog-placeholder">即将更新 —— 论文精读与科研笔记</div>
+        <div class="blog-overview-stat">
+          <strong>{{ site.data.leetcode_topics.size }}</strong>
+          <span>个算法主题</span>
         </div>
-
-        <div class="blog-section">
-          <div class="blog-section-head">
-            <h2>工程笔记</h2>
-          </div>
-          <div class="blog-placeholder">即将更新 —— 工程实践与开发踩坑</div>
+        <div class="blog-overview-stat">
+          <strong>Go + Python</strong>
+          <span>双语言实现</span>
         </div>
+      </div>
+    </section>
 
+    <section class="blog-topic-rail" aria-label="算法主题">
+      <div class="blog-topic-track">
+        <div class="blog-topic-group">
+          {% for topic in site.data.leetcode_topics %}<span>{{ topic.name }}</span>{% endfor %}
+        </div>
+        <div class="blog-topic-group" aria-hidden="true">
+          {% for topic in site.data.leetcode_topics %}<span>{{ topic.name }}</span>{% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-index" aria-labelledby="blog-index-title">
+      <div class="container blog-index-grid">
+        <div class="blog-index-heading">
+          <h2 id="blog-index-title">题解示例</h2>
+          <p>从题意拆解到可运行实现，保留足够的推理过程，也方便快速回看。</p>
+          <a class="text-link" href="/leetcode/">浏览全部 {{ lc.size }} 道题</a>
+        </div>
+        <div class="blog-solution-list">
+          {% for post in lc limit: 4 %}
+          {% case post.difficulty %}{% when '简单' %}{% assign dc = 'easy' %}{% when '中等' %}{% assign dc = 'medium' %}{% else %}{% assign dc = 'hard' %}{% endcase %}
+          <a class="blog-solution" href="{{ post.url }}">
+            <span class="blog-solution-number">#{{ post.number }}</span>
+            <h3>{{ post.title | split: ". " | last }}</h3>
+            <span class="lc-diff {{ dc }}">{{ post.difficulty }}</span>
+          </a>
+          {% endfor %}
+        </div>
       </div>
     </section>
   </main>
