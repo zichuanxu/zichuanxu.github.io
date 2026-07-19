@@ -2,8 +2,7 @@
 layout: null
 permalink: /
 title: "Zichuan Xu"
-description: "Master's student at The University of Osaka. Reinforcement learning, emergent language, and
-applied AI agent systems."
+description: "Master's student at The University of Osaka researching multi-agent learning, emergent communication, and practical AI systems."
 redirect_from:
 - /about/
 - /about.html
@@ -15,143 +14,144 @@ sitemap: true
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zichuan Xu</title>
-  <meta name="description"
-    content="Master's student at The University of Osaka. Reinforcement learning, emergent language, and applied AI agent systems." />
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}" />
+  <meta name="theme-color" content="#f2f5f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0c1118" media="(prefers-color-scheme: dark)" />
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Zichuan Xu" />
+  <meta property="og:description" content="{{ page.description }}" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:image" content="{{ site.url }}/images/home-emergent-systems.webp" />
+  <meta property="og:image:width" content="1536" />
+  <meta property="og:image:height" content="1024" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zichuan Xu" />
+  <meta name="twitter:description" content="{{ page.description }}" />
+  <meta name="twitter:image" content="{{ site.url }}/images/home-emergent-systems.webp" />
+  <link rel="preload" as="image" href="/images/home-emergent-systems.webp" type="image/webp" fetchpriority="high" />
   <link rel="stylesheet" href="/assets/css/site-2026.css" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/images/apple-touch-icon-180x180.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Zichuan Xu",
+    "url": "{{ site.url }}",
+    "email": "mailto:xu.zichuan@ist.osaka-u.ac.jp",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "The University of Osaka"
+    },
+    "sameAs": ["https://github.com/zichuanxu"]
+  }
+  </script>
 </head>
 
-<body>
+<body class="home-page">
 
   {% include site-2026/topnav.html active="about" %}
 
   <main id="content">
 
-    <!-- Hero: portrait + intro -->
-    <section class="section" data-od-id="hero">
-      <div class="container hero-portrait">
-        <div>
-          <p class="eyebrow">Master Student · The University of Osaka</p>
-          <h1>Zichuan&nbsp;Xu.</h1>
-          <p class="hero-bio">Building systems at the edges of reinforcement learning, emergent language, and applied AI
-            agents.</p>
-          <div class="hero-cta">
-            <a class="btn btn-primary btn-download" href="/files/cv.pdf" download>Download CV</a>
-            <a class="btn btn-secondary btn-arrow" href="/experience/">View experience</a>
+    <section class="home-hero" aria-labelledby="hero-title">
+      <div class="container home-hero-grid">
+        <div class="home-hero-copy">
+          <p class="home-kicker">Researcher and engineer</p>
+          <h1 id="hero-title">Zichuan Xu.</h1>
+          <p class="home-hero-summary">Studying how agents invent language and building practical AI systems at The University of Osaka.</p>
+          <div class="home-actions">
+            <a class="btn btn-primary" href="/experience/">Experience</a>
+            <a class="btn btn-secondary" href="/files/cv.pdf" download>Download CV</a>
           </div>
-          <div class="hero-strap">
-            <span>Osaka, Japan</span>
-            <span class="dot">·</span>
-            <a href="mailto:xu.zichuan@ist.osaka-u.ac.jp">xu.zichuan@ist.osaka-u.ac.jp</a>
-            <span class="dot">·</span>
-            <a href="https://github.com/zichuanxu" target="_blank" rel="noopener">github.com/zichuanxu</a>
+        </div>
+        <figure class="home-hero-visual">
+          <img src="/images/home-emergent-systems.webp" width="1536" height="1024"
+            alt="Abstract visualization of communication paths forming between autonomous agents" fetchpriority="high"
+            decoding="async" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="home-section" aria-labelledby="about-title">
+      <div class="container home-about">
+        <div class="home-section-copy">
+          <h2 id="about-title">Research grounded in collaboration.</h2>
+          <p class="home-intro">I am a master's student in the Graduate School of Information Science and Technology, advised by Prof. Chuan Xiao.</p>
+          <p>My work asks how independent agents can develop, share, and adapt communication protocols when tasks and partners change. I also build the infrastructure that makes AI agents useful outside the lab.</p>
+        </div>
+        <dl class="home-facts" aria-label="Profile">
+          <div>
+            <dt>Research group</dt>
+            <dd>Big Data Engineering</dd>
           </div>
+          <div>
+            <dt>Current focus</dt>
+            <dd>Multi-agent reinforcement learning</dd>
+          </div>
+          <div>
+            <dt>Background</dt>
+            <dd>Cyberspace security and software systems</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="home-section" aria-labelledby="research-title">
+      <div class="container home-research">
+        <div class="home-research-lead">
+          <h2 id="research-title">Language is a coordination problem.</h2>
+          <p>Communication matters when agents can use it with new partners, under new pressures, without relying on a hidden shared script.</p>
+        </div>
+        <div class="home-research-list">
+          <article>
+            <h3>Emergent communication</h3>
+            <p>How task-driven agents create discrete signals that become useful, stable, and interpretable.</p>
+          </article>
+          <article>
+            <h3>Cross-play robustness</h3>
+            <p>Whether independently trained partners can coordinate when their learned protocols start out misaligned.</p>
+          </article>
+          <article>
+            <h3>Practical evaluation</h3>
+            <p>Measurements that reveal what a protocol encodes and whether it survives distribution shift.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- About: prose + fact card -->
-    <section class="section" data-od-id="about">
-      <div class="container grid-2-1">
-        <div class="about-prose">
-          <p class="eyebrow" style="margin-bottom:24px;">About</p>
-          <p>I am a master's student in the Graduate School of Information Science and Technology at The University of
-            Osaka, advised by Prof. Chuan Xiao.</p>
-          <p>My research sits at the intersection of reinforcement learning and emergent language — how agents can
-            develop, share, and adapt their own communication protocols under task pressure. On the engineering side I
-            build and ship AI-agent systems for production: backends, tool-calling layers, and inference plumbing on
-            constrained hardware.</p>
-          <p>Before Osaka I completed my bachelor's at Huazhong University of Science and Technology, and spent
-            stretches working on graph learning for system-provenance security and database.</p>
-        </div>
-        <aside class="fact-card" aria-label="Profile facts">
-          <div class="fact-title">
-            <span>Profile</span>
+    <section class="home-section" aria-labelledby="engineering-title">
+      <div class="container home-engineering">
+        <figure class="home-engineering-visual">
+          <img src="/images/home-efficient-agents.webp" width="1122" height="1402"
+            alt="Abstract compact hardware modules connected by a single blue data path" loading="lazy" decoding="async" />
+        </figure>
+        <div class="home-engineering-copy">
+          <h2 id="engineering-title">From experiments to working systems.</h2>
+          <p class="home-intro">I work across model inference, tool calling, backend services, data pipelines, and performance-sensitive software.</p>
+          <div class="home-engineering-points">
+            <div>
+              <h3>Agent systems</h3>
+              <p>Inference and tool execution designed for useful behavior on constrained hardware.</p>
+            </div>
+            <div>
+              <h3>Production engineering</h3>
+              <p>Backend services, web applications, automation, databases, deployment, and observability.</p>
+            </div>
           </div>
-          <div class="fact-row">
-            <span class="label">Role</span>
-            <span class="value">Master Student</span>
-          </div>
-          <div class="fact-row">
-            <span class="label">Lab</span>
-            <span class="value">Big Data Engineering</span>
-          </div>
-          <div class="fact-row">
-            <span class="label">Advisor</span>
-            <span class="value">Prof.&nbsp;Chuan Xiao</span>
-          </div>
-          <div class="fact-row">
-            <span class="label">B.S.</span>
-            <span class="value">Huazhong University of Science and Technology</span>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- Research interests + tech -->
-    <section class="section" data-od-id="research">
-      <div class="container grid-2" style="gap:var(--gap-2xl);">
-        <div>
-          <p class="eyebrow">Research interests</p>
-          <h2 style="margin-bottom:24px; max-width:14ch;">What I'm thinking about.</h2>
-          <p class="lead" style="margin-bottom:24px;">Currently: how agents under task pressure invent and share their
-            own communication, and how those signals stay stable under distribution shift.</p>
-          <div class="tag-list">
-            <span class="tag is-accent">Reinforcement Learning</span>
-            <span class="tag is-accent">Emergent Language</span>
-            <span class="tag">Multi-Agent Systems</span>
-            <span class="tag">LLM Inference</span>
-            <span class="tag">Graph Neural Networks</span>
-            <span class="tag">System Provenance Security</span>
-            <span class="tag">AI Agents</span>
-          </div>
-        </div>
-        <div>
-          <p class="eyebrow">Tech stack</p>
-          <h2 style="margin-bottom:24px; max-width:14ch;">What I build with.</h2>
-          <p class="lead" style="margin-bottom:24px;">Comfortable across the research → production gap — from PyTorch
-            experiments to Laravel apps to Airflow pipelines and tool-calling backends.</p>
-          <div class="tag-list">
-            <span class="tag tag-mono">Python</span>
-            <span class="tag tag-mono">Java</span>
-            <span class="tag tag-mono">Go</span>
-            <span class="tag tag-mono">JavaScript</span>
-            <span class="tag tag-mono">PyTorch</span>
-            <span class="tag tag-mono">Spring Boot</span>
-            <span class="tag tag-mono">Vue</span>
-            <span class="tag tag-mono">MySQL</span>
-            <span class="tag tag-mono">Redis</span>
-            <span class="tag tag-mono">Docker</span>
-            <span class="tag tag-mono">Kubernetes</span>
-            <span class="tag tag-mono">Git</span>
-            <span class="tag tag-mono">Linux</span>
-          </div>
+          <a class="text-link" href="/experience/">Experience</a>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section class="section" data-od-id="contact">
-      <div class="container" style="max-width:880px;">
-        <div class="contact-strip">
-          <p class="eyebrow">Get in touch</p>
-          <h2>Open to research collaborations and AI / agent-systems internships.</h2>
-          <p class="lead">If you're working on emergent communication, multi-agent RL, or shipping agentic systems into
-            production — I'd like to hear about it.</p>
-          <a class="email-link" href="mailto:xu.zichuan@ist.osaka-u.ac.jp">xu.zichuan@ist.osaka-u.ac.jp</a>
-          <div class="links">
-            <a href="https://github.com/zichuanxu" target="_blank" rel="noopener">GitHub</a>
-            <span class="sep">·</span>
-            <a href="/education/">Education</a>
-            <span class="sep">·</span>
-            <a href="/experience/">Experience</a>
-            <span class="sep">·</span>
-            <a href="/files/cv.pdf" download>CV</a>
-          </div>
-        </div>
+    <section class="home-contact" aria-labelledby="contact-title">
+      <div class="container home-contact-inner">
+        <h2 id="contact-title">Interested in collaboration?</h2>
+        <p>I am open to research collaborations and internships in multi-agent learning or production AI systems.</p>
+        <a class="btn btn-primary" href="mailto:xu.zichuan@ist.osaka-u.ac.jp">Email me</a>
       </div>
     </section>
 

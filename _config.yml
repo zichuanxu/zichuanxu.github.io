@@ -2,8 +2,8 @@
 locale                   : "en-US"
 title                    : "Zichuan Xu"
 name                     : "Zichuan Xu"
-description              : "Zichuan Xu's homepage — research notes, engineering notes, and LeetCode solutions."
-url                      : https://zichuanxu.github.io
+description              : "Zichuan Xu's homepage for multi-agent learning, emergent communication, and practical AI systems."
+url                      : https://zichuanxu.me
 baseurl                  : ""
 repository               : "zichuanxu/zichuanxu.github.io"
 
