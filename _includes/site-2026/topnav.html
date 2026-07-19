@@ -9,6 +9,43 @@
       <a href="/blog/" {% if include.active=='blog' %} class="is-active" aria-current="page" {% endif %}>Blog</a>
       <a href="https://github.com/zichuanxu" target="_blank" rel="noopener">GitHub</a>
     </nav>
-    <a class="btn btn-primary nav-cta" href="/files/cv.pdf" download>Download CV</a>
+    <div class="nav-actions">
+      <button class="theme-toggle" type="button" aria-label="Switch theme">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+        <span class="theme-toggle-text">Theme</span>
+      </button>
+      <a class="btn btn-primary nav-cta" href="/files/cv.pdf" download>Download CV</a>
+    </div>
   </div>
 </header>
+<script>
+  (() => {
+    const root = document.documentElement;
+    const button = document.querySelector('.theme-toggle');
+    if (!button) return;
+
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+    const preferredTheme = () => root.dataset.theme || (systemTheme.matches ? 'dark' : 'light');
+    const syncTheme = () => {
+      const theme = preferredTheme();
+      document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
+        meta.content = theme === 'dark' ? '#0c100e' : '#f4f1ea';
+      });
+      const nextTheme = preferredTheme() === 'dark' ? 'light' : 'dark';
+      button.querySelector('.theme-toggle-text').textContent = nextTheme === 'dark' ? 'Dark' : 'Light';
+      button.setAttribute('aria-label', `Switch to ${nextTheme} theme`);
+    };
+
+    button.addEventListener('click', () => {
+      const nextTheme = preferredTheme() === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = nextTheme;
+      try { localStorage.setItem('site-theme', nextTheme); } catch (_) {}
+      syncTheme();
+    });
+
+    systemTheme.addEventListener?.('change', () => {
+      if (!root.dataset.theme) syncTheme();
+    });
+    syncTheme();
+  })();
+</script>

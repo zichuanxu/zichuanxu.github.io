@@ -1,0 +1,15 @@
+<meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0c100e" media="(prefers-color-scheme: dark)" />
+<script>
+  (() => {
+    try {
+      const theme = localStorage.getItem('site-theme');
+      if (theme === 'light' || theme === 'dark') {
+        document.documentElement.dataset.theme = theme;
+        document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
+          meta.content = theme === 'dark' ? '#0c100e' : '#f4f1ea';
+        });
+      }
+    } catch (_) {}
+  })();
+</script>
