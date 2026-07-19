@@ -12,10 +12,10 @@ sitemap: true
   {% include site-2026/theme-init.html %}
   <title>LeetCode 专题</title>
   <meta name="description" content="LeetCode 热题 100 题解 — Go 与 Python 双语实现，按知识点分组，含思路与复杂度。" />
-  <link rel="stylesheet" href="/assets/css/site-2026.css" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon-180x180.png" />
+  <link rel="stylesheet" href="/assets/css/site-2026.css?v={{ site.time | date: '%s' }}" />
+  <link rel="icon" href="/favicon.ico?v={{ site.time | date: '%s' }}" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v={{ site.time | date: '%s' }}" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon-180x180.png?v={{ site.time | date: '%s' }}" />
 </head>
 <body>
   {% include site-2026/topnav.html active="blog" %}
