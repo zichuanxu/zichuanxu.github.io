@@ -22,7 +22,7 @@ sitemap: true
 </head>
 
 <body class="blog-page">
-  {% include site-2026/topnav.html active="blog" %}
+  {% include site-2026/chrome.html home=true %}
   <main id="content">
     {% assign writing = site.posts | where: "category", "writing" | sort: "date" | reverse %}
     {% assign lc = site.posts | where: "category", "algorithms" | sort: "number" %}

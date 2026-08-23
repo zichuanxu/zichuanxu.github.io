@@ -1,0 +1,130 @@
+<div class="sf-chrome">
+  {% if include.home %}
+  <a class="sf-chrome-home" href="/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round" width="16" height="16" aria-hidden="true">
+      <path d="m12 19-7-7 7-7" />
+      <path d="M19 12H5" />
+    </svg>
+    Home
+  </a>
+  {% endif %}
+  <button class="sf-chrome-btn" type="button" aria-label="Switch theme">
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+    </svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+    </svg>
+  </button>
+</div>
+
+<script>
+  (() => {
+    /* ---- theme toggle -------------------------------------------------- */
+    const root = document.documentElement;
+    const button = document.querySelector('.sf-chrome-btn');
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const current = () => root.dataset.theme || (media.matches ? 'dark' : 'light');
+    const sync = () => {
+      const theme = current();
+      document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
+        meta.content = theme === 'dark' ? '#18181b' : '#f4f4f5';
+      });
+      if (button) {
+        button.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`);
+      }
+    };
+    if (button) {
+      button.addEventListener('click', () => {
+        root.dataset.theme = current() === 'dark' ? 'light' : 'dark';
+        try { localStorage.setItem('site-theme', root.dataset.theme); } catch (_) {}
+        sync();
+      });
+    }
+    media.addEventListener?.('change', () => { if (!root.dataset.theme) sync(); });
+    sync();
+
+    /* This include sits above <main>, so the rest of the document does not
+       exist yet when this script runs. Everything below queries page content
+       and must wait for parsing to finish. */
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initContent, { once: true });
+    } else {
+      initContent();
+    }
+
+    function initContent() {
+    /* ---- reveal on view ------------------------------------------------ */
+    const reveals = document.querySelectorAll('.reveal');
+    if (reveals.length) {
+      let fired = false;
+      const io = new IntersectionObserver((entries, obs) => {
+        fired = true;
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-in');
+          obs.unobserve(entry.target);
+        });
+      }, { threshold: 0.1 });
+      reveals.forEach((el) => io.observe(el));
+      // Failsafe: a backgrounded tab never delivers observer callbacks, so show
+      // everything rather than leave the page blank if nothing has fired.
+      setTimeout(() => {
+        if (!fired) reveals.forEach((el) => el.classList.add('is-in'));
+      }, 1500);
+    }
+
+    /* ---- scrollspy table of contents ----------------------------------- */
+    const toc = document.querySelector('.sf-toc');
+    if (!toc) return;
+    const items = [...toc.querySelectorAll('.sf-toc-list li')];
+    const ids = items.map((li) => li.dataset.target);
+    const progress = toc.querySelector('.sf-toc-progress');
+    const anchor = document.getElementById(ids[0]);
+    const last = ids[ids.length - 1];
+
+    const update = () => {
+      if (anchor) {
+        toc.classList.toggle('is-visible', anchor.getBoundingClientRect().top <= 100);
+      }
+      let active = '';
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50) {
+        active = last;
+      } else {
+        const threshold = window.innerHeight * 0.4;
+        ids.forEach((id) => {
+          const el = document.getElementById(id);
+          if (el && el.getBoundingClientRect().top <= threshold) active = id;
+        });
+      }
+      const index = ids.indexOf(active);
+      items.forEach((li, i) => {
+        li.classList.toggle('is-active', i === index);
+        li.classList.toggle('is-passed', index >= 0 && i <= index);
+      });
+      if (progress) {
+        progress.style.setProperty('--toc-progress', index >= 0 ? index / (ids.length - 1) : 0);
+      }
+    };
+
+    items.forEach((li) => {
+      li.querySelector('button').addEventListener('click', () => {
+        const el = document.getElementById(li.dataset.target);
+        if (!el) return;
+        const top = li.dataset.target === last
+          ? document.documentElement.scrollHeight - window.innerHeight
+          : el.getBoundingClientRect().top + window.scrollY - 96;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    }
+  })();
+</script>

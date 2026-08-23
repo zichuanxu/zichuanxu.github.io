@@ -2,10 +2,12 @@
 layout: null
 permalink: /
 title: "Zichuan Xu"
-description: "Zichuan Xu researches multi-agent learning and emergent communication at The University of Osaka, and builds practical AI systems."
+description: "Zichuan Xu — AI agent development engineer at Initial. S in Tokyo and MEng student at The University of Osaka. Go backends, multi-provider LLM inference, on-device ML."
 redirect_from:
 - /about/
 - /about.html
+- /experience/
+- /education/
 sitemap: true
 ---
 <!doctype html>
@@ -22,6 +24,7 @@ sitemap: true
   <meta property="og:title" content="Zichuan Xu" />
   <meta property="og:description" content="{{ page.description }}" />
   <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:image" content="{{ site.url }}/images/profile.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Zichuan Xu" />
   <meta name="twitter:description" content="{{ page.description }}" />
@@ -35,59 +38,784 @@ sitemap: true
     "@type": "Person",
     "name": "Zichuan Xu",
     "url": "{{ site.url }}",
+    "image": "{{ site.url }}/images/profile.png",
     "email": "mailto:xu.zichuan@ist.osaka-u.ac.jp",
-    "affiliation": {
-      "@type": "CollegeOrUniversity",
-      "name": "The University of Osaka"
-    },
-    "sameAs": ["https://github.com/zichuanxu"]
+    "jobTitle": "AI Agent Development Engineer",
+    "worksFor": { "@type": "Organization", "name": "Initial. S Co. Ltd." },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Huazhong University of Science and Technology" }
+    ],
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "The University of Osaka" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Suita", "addressRegion": "Osaka", "addressCountry": "JP" },
+    "sameAs": [
+      "https://github.com/zichuanxu",
+      "https://www.linkedin.com/in/zichuanxu/"
+    ]
   }
   </script>
 </head>
 
 <body class="home-page">
 
-  {% include site-2026/topnav.html active="about" %}
+  {% include site-2026/chrome.html %}
 
-  <main id="content">
+  <main class="sf-main">
+    <a href="#main-content" class="skip-link">Skip to content</a>
 
-    <section class="home-hero" aria-labelledby="hero-title">
-      <div class="container home-hero-inner">
-        <p class="home-name">Zichuan Xu</p>
-        <h1 id="hero-title">How do agents learn to coordinate?</h1>
-        <p class="home-hero-summary">Master's student at The University of Osaka researching multi-agent learning and emergent communication, while building practical AI systems.</p>
-        <div class="home-actions">
-          <a class="btn btn-primary" href="/experience/">View experience</a>
-          <a class="btn btn-secondary" href="/files/cv.pdf" download>Download CV</a>
+    <!-- ============================ table of contents ============================ -->
+    <nav class="sf-toc" aria-label="Table of contents">
+      <div class="sf-toc-rail">
+        <span class="sf-toc-line" aria-hidden="true"></span>
+        <span class="sf-toc-progress" aria-hidden="true"></span>
+        <ul class="sf-toc-list">
+          <li data-target="experience"><span class="sf-toc-dot" aria-hidden="true"></span><button type="button">Experience</button></li>
+          <li data-target="projects"><span class="sf-toc-dot" aria-hidden="true"></span><button type="button">Projects</button></li>
+          <li data-target="writing"><span class="sf-toc-dot" aria-hidden="true"></span><button type="button">Writing</button></li>
+          <li data-target="education"><span class="sf-toc-dot" aria-hidden="true"></span><button type="button">Education</button></li>
+          <li data-target="tech"><span class="sf-toc-dot" aria-hidden="true"></span><button type="button">Skills &amp; Stack</button></li>
+          <li data-target="contact"><span class="sf-toc-dot" aria-hidden="true"></span><button type="button">Contact</button></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ================================== hero ================================== -->
+    <header id="main-content" class="sf-hero">
+      <div class="sf-hero-veil" aria-hidden="true"></div>
+      <div class="sf-orb sf-orb-a" aria-hidden="true"></div>
+      <div class="sf-orb sf-orb-b" aria-hidden="true"></div>
+
+      <div class="sf-hero-inner">
+        <div class="sf-hero-grid">
+          <div class="sf-avatar">
+            <div class="sf-avatar-ring">
+              <div class="sf-avatar-frame">
+                <img src="/images/profile.png" alt="Zichuan Xu" width="192" height="192" fetchpriority="high" />
+              </div>
+            </div>
+            <span class="sf-avatar-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M9 12l2 2 4-4" />
+                <path d="M12 3l1.9 1.4 2.3-.3 1 2.1 2.1 1-.3 2.3L20.4 12l-1.4 1.9.3 2.3-2.1 1-1 2.1-2.3-.3L12 20.4l-1.9-1.4-2.3.3-1-2.1-2.1-1 .3-2.3L3.6 12l1.4-1.9-.3-2.3 2.1-1 1-2.1 2.3.3z" />
+              </svg>
+            </span>
+          </div>
+
+          <div>
+            <p class="sf-hi">Hi, I&rsquo;m <a class="text-grad" href="https://github.com/zichuanxu" target="_blank"
+                rel="me noopener">@zichuanxu</a>,</p>
+            <h1 class="sf-hero-title">
+              <span class="text-grad" data-typewriter
+                data-roles="an AI agent engineer|a Go backend developer|an on-device ML builder">an
+                AI agent engineer</span><span class="sf-caret" aria-hidden="true"></span>
+              <br />who ships agents that run
+              <br />on hardware people already own.
+            </h1>
+            <div class="sf-pills" data-pills>
+              <span class="sf-pill">AI Agents</span>
+              <span class="sf-pill">Go &amp; Cloud</span>
+              <span class="sf-pill">On-device ML</span>
+              <span class="sf-pill">Research</span>
+              <a class="sf-pill is-repo" href="https://github.com/zichuanxu/HUST-CSE-Experiments" target="_blank"
+                rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" />
+                </svg>
+                HUST-CSE-Experiments
+                <svg class="sf-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z" />
+                </svg>
+                387
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sf-hero-meta">
+          <span class="sf-hero-caption">Suita, Osaka &middot; Japan</span>
+          <div class="sf-hero-links">
+            <a href="https://github.com/zichuanxu" target="_blank" rel="me noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" />
+              </svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/zichuanxu/" target="_blank" rel="me noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14Zm1.78 13.02H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z" />
+              </svg>
+              LinkedIn
+            </a>
+            <a href="mailto:xu.zichuan@ist.osaka-u.ac.jp">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-10 6L2 7" />
+              </svg>
+              Email
+            </a>
+          </div>
+        </div>
+
+        <div class="sf-featured">
+          <span class="sf-featured-label">Currently at</span>
+          <div class="sf-featured-row">
+            <span class="sf-featured-item">Initial. S</span>
+            <span class="sf-featured-item">The University of Osaka</span>
+            <span class="sf-featured-item">WorldQuant University</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================================= story ================================== -->
+    <section class="sf-story" aria-label="About">
+      <div class="sf-story-inner">
+        <div class="reveal">
+          <p class="sf-story-lead">
+            <span class="text-grad">Four years of security</span> at HUST.
+            <br />Then two years shaving a database client from ten minutes to three seconds.
+          </p>
+        </div>
+        <div class="reveal" style="--reveal-delay: 0.1s">
+          <p class="sf-story-mid">
+            What keeps pulling me back isn&rsquo;t the model.
+            <br />It&rsquo;s <span class="text-grad">the plumbing around it</span>.
+          </p>
+        </div>
+        <div class="reveal" style="--reveal-delay: 0.2s">
+          <p class="sf-story-body">
+            At Initial. S I build Kura-chan &mdash; an agent platform that lives on a NAS in someone&rsquo;s
+            living room. 96k lines of Go, eight LLM backends behind one interface, and a vision
+            pipeline that has to fit in the memory a consumer box actually has.
+          </p>
+        </div>
+        <div class="reveal" style="--reveal-delay: 0.3s">
+          <p class="sf-story-close">
+            <strong>Constraints make the engineering honest.</strong>
+            <br />Cheap hardware. Real users. No room to hand-wave.
+            <br /><span class="text-grad">That&rsquo;s the interesting part.</span>
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="home-section" aria-labelledby="profile-title">
-      <div class="container home-profile">
-        <h2 id="profile-title">Research and engineering, in the same loop.</h2>
-        <div class="home-profile-copy">
-          <p>Advised by <a href="https://sites.google.com/site/chuanxiao1983/" target="_blank" rel="noopener">Prof. Chuan Xiao</a> in the Graduate School of Information Science and Technology, I study how independently trained agents create and adapt communication protocols across changing partners and environments.</p>
-          <p>My engineering work spans agent systems, efficient inference, and backend services.</p>
-          <nav class="home-profile-links" aria-label="More about Zichuan Xu">
-            <a href="/education/">Education</a>
-            <a href="/experience/">Experience</a>
-          </nav>
+    <!-- =============================== experience =============================== -->
+    <section id="experience" class="sf-section is-muted">
+      <div class="sf-wrap">
+        <div class="reveal">
+          <h2 class="sf-h2">
+            <span class="sf-h2-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="7" width="20" height="14" rx="2" />
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+              </svg>
+            </span>
+            Experience
+          </h2>
+        </div>
+
+        <div class="reveal sf-summary" style="--reveal-delay: 0.1s">
+          <p>
+            I build the plumbing that makes language models useful in production &mdash;
+            <strong>agent runtimes, inference layers, and the backends underneath them</strong> &mdash;
+            and I study the research question behind it: how independently trained agents
+            negotiate a shared protocol when their partners and environment keep changing.
+          </p>
+          <div class="sf-comp-grid">
+            {%- comment -%}
+              Separator is "@" rather than ";" — "&amp;" ends in a semicolon, so a ";" split
+              tears entity-bearing titles like "Cloud &amp; IoT infrastructure" in half.
+            {%- endcomment -%}
+            {% assign competencies = "AI agent runtimes|Tool calling, subagent spawning, and hot-pluggable skill loading.@Multi-provider inference|One interface over 8 LLM backends with standardized tool calls.@Go backend engineering|~96k LOC across 33 packages, from MQTT transport to REST.@Cloud &amp; IoT infrastructure|AWS IoT Core, Lambda, DynamoDB, API Gateway, Terraform.@On-device machine learning|ONNX Runtime pipelines inside NAS hardware constraints.@Data &amp; delivery pipelines|Airflow orchestration, multi-arch CI, 8-tool security scanning." | split: "@" %}
+            {% for item in competencies %}
+            {% assign parts = item | split: "|" %}
+            <div class="sf-comp">
+              <div class="sf-comp-head">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M13 2 3 14h8l-1 8 10-12h-8l1-8Z" />
+                </svg>
+                <span>{{ parts[0] }}</span>
+              </div>
+              <p>{{ parts[1] }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Initial. S -->
+        <div class="reveal sf-role" style="--reveal-delay: 0.1s">
+          <div class="sf-role-head">
+            <div class="sf-role-brand">
+              <img src="/images/mykura.png" alt="" loading="lazy" decoding="async" />
+              <h3>Initial. S Co. Ltd.</h3>
+            </div>
+            <span class="sf-role-place">Tokyo, Japan</span>
+            <span class="sf-badge is-live"><span class="sf-dot-live" aria-hidden="true"></span>Current</span>
+          </div>
+          <p class="sf-role-title">AI Agent Development Engineer</p>
+          <p class="sf-role-period">April 2026 &ndash; Present</p>
+          <p class="sf-role-desc">
+            Building <strong>Kura-chan</strong>, an AI agent platform that runs on consumer NAS
+            hardware &mdash; a Go backend, a React dashboard, and a serverless AWS backbone.
+          </p>
+          <ul class="sf-role-list">
+            <li>Go backend of roughly 96k LOC across 33 packages, with a React dashboard and an AWS
+              cloud backbone (IoT Core, 7 Lambdas, DynamoDB, API Gateway).</li>
+            <li>Architected a unified multi-provider LLM inference layer over 8 backends
+              (Claude, OpenAI, Bedrock, Copilot and others) with standardized tool calling.</li>
+            <li>Multi-channel chat across LINE, Slack, Telegram and WeChat over bidirectional MQTT.</li>
+            <li>On-device photo intelligence pipeline (11k LOC) on ONNX Runtime: face
+              detection and recognition, CLIP semantic search, perceptual-hash dedup &mdash; all
+              inside NAS hardware limits.</li>
+            <li>25+ agent tools (web search, shell, wiki, subagent spawning, scheduled tasks) plus a
+              dynamic skill-loading system with OpenAPI codegen.</li>
+            <li>CI/CD with 8-tool security scanning (govulncheck, gosec, semgrep, trivy), multi-arch
+              builds for amd64/arm64/riscv64, and Terraform across 2 AWS stacks with fleet provisioning.</li>
+          </ul>
+          <div class="sf-role-tech">
+            <span class="sf-chip">Go</span><span class="sf-chip">React</span><span class="sf-chip">AWS IoT Core</span>
+            <span class="sf-chip">Lambda</span><span class="sf-chip">DynamoDB</span><span class="sf-chip">MQTT</span>
+            <span class="sf-chip">ONNX Runtime</span><span class="sf-chip">CLIP</span><span class="sf-chip">Terraform</span>
+          </div>
+        </div>
+
+        <!-- Rakuten -->
+        <div class="reveal sf-role" style="--reveal-delay: 0.1s">
+          <div class="sf-role-head">
+            <div class="sf-role-brand">
+              <img src="/images/rakuten-logo.png" alt="" loading="lazy" decoding="async" />
+              <h3>Rakuten</h3>
+            </div>
+            <span class="sf-role-place">Tokyo, Japan</span>
+          </div>
+          <p class="sf-role-title">Application Engineer</p>
+          <p class="sf-role-period">September 2025 &ndash; October 2025</p>
+          <p class="sf-role-desc">
+            Turned two manual, ticket-driven internal workflows into real-time self-service platforms.
+          </p>
+          <ul class="sf-role-list">
+            <li>Two internal web applications in PHP/Laravel and Bootstrap 5, replacing ticket-based
+              request handling with self-service.</li>
+            <li>A data automation pipeline in Python and Apache Airflow for Rakuten Card&rsquo;s monthly
+              validation process.</li>
+            <li>Held above 85% unit-test line coverage with zero SonarQube code smells across all
+              deliverables.</li>
+          </ul>
+          <div class="sf-role-tech">
+            <span class="sf-chip">PHP</span><span class="sf-chip">Laravel</span><span class="sf-chip">Python</span>
+            <span class="sf-chip">Apache Airflow</span><span class="sf-chip">SonarQube</span>
+          </div>
+        </div>
+
+        <!-- Dameng -->
+        <div class="reveal sf-role" style="--reveal-delay: 0.1s">
+          <div class="sf-role-head">
+            <div class="sf-role-brand">
+              <img src="/images/DM.png" alt="" loading="lazy" decoding="async" />
+              <h3>Wuhan Dameng Data Co. Ltd.</h3>
+            </div>
+            <span class="sf-role-place">Shanghai, China</span>
+          </div>
+          <p class="sf-role-title">Development Engineer</p>
+          <p class="sf-role-period">July 2023 &ndash; February 2025 &middot; 1 yr 8 mos</p>
+          <p class="sf-role-desc">
+            Rendering and tooling for a next-generation database management client.
+          </p>
+          <ul class="sf-role-list">
+            <li>Built a massive-dataset rendering engine on the NatTable framework, replacing pure SWT
+              tables.</li>
+            <li>Cut query display time for 100,000-row result sets from 10 minutes to 3 seconds &mdash;
+              a 200&times; speedup.</li>
+            <li>Engineered a Universal Installer framework that decoupled environment-specific
+              dependencies for cross-platform deployment of the whole database suite.</li>
+            <li>Led an embedded interactive terminal for direct SQL execution and a SQL formatter.</li>
+            <li>Owned the end-to-end SDLC for core modules, from requirement analysis to technical
+              documentation.</li>
+          </ul>
+          <div class="sf-role-tech">
+            <span class="sf-chip">Java</span><span class="sf-chip">SWT</span><span class="sf-chip">NatTable</span>
+            <span class="sf-chip">Eclipse RCP</span><span class="sf-chip">SQL</span>
+          </div>
+        </div>
+
+        <!-- NSFOCUS -->
+        <div class="reveal sf-role" style="--reveal-delay: 0.1s">
+          <div class="sf-role-head">
+            <div class="sf-role-brand">
+              <img src="/images/NSFOCUS.png" alt="" loading="lazy" decoding="async" />
+              <h3>NSFOCUS</h3>
+            </div>
+            <span class="sf-role-place">Wuhan, China</span>
+          </div>
+          <p class="sf-role-title">Research and Development Engineer</p>
+          <p class="sf-role-period">February 2023 &ndash; April 2023</p>
+          <ul class="sf-role-list">
+            <li>Gathered intelligence on fraudulent applications with Python Scrapy, and built the
+              Django backend of a network probing system.</li>
+            <li>Devised encryption schemes to anonymize customer data for machine-learning training.</li>
+            <li>Ran technology assessments and routine maintenance for customer-facing issues.</li>
+          </ul>
+          <div class="sf-role-tech">
+            <span class="sf-chip">Python</span><span class="sf-chip">Scrapy</span><span class="sf-chip">Django</span>
+            <span class="sf-chip">Cryptography</span>
+          </div>
+        </div>
+
+        <!-- Virginia Tech -->
+        <div class="reveal sf-role" style="--reveal-delay: 0.1s">
+          <div class="sf-role-head">
+            <div class="sf-role-brand">
+              <img src="/images/VT.svg" alt="" loading="lazy" decoding="async" />
+              <h3>Virginia Tech</h3>
+            </div>
+            <span class="sf-role-place">Blacksburg, Virginia, USA</span>
+          </div>
+          <p class="sf-role-title">Undergraduate Research Assistant</p>
+          <p class="sf-role-period">April 2022 &ndash; September 2022</p>
+          <p class="sf-role-desc">
+            Theme: a graph learning framework for system provenance-based security analysis.
+          </p>
+          <ul class="sf-role-list">
+            <li>Researched graph neural networks over system provenance graphs to identify
+              Advanced Persistent Threat behaviour.</li>
+            <li>Designed a graph representation learning framework in PyTorch that extracts
+              topological features from massive, sparse system audit logs.</li>
+            <li>Reached 97% accuracy predicting malicious system entities while holding a low
+              false-positive rate on large-scale security datasets.</li>
+          </ul>
+          <div class="sf-role-tech">
+            <span class="sf-chip">PyTorch</span><span class="sf-chip">GNN</span>
+            <span class="sf-chip">Provenance graphs</span><span class="sf-chip">APT detection</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="home-contact" aria-labelledby="contact-title">
-      <div class="container home-contact-inner">
-        <h2 id="contact-title">Interested in working together?</h2>
-        <p>Research collaboration or practical AI systems work.</p>
-        <a class="btn btn-primary" href="mailto:xu.zichuan@ist.osaka-u.ac.jp">Email me</a>
+    <!-- ================================ projects ================================ -->
+    <section id="projects" class="sf-section">
+      <div class="sf-wrap">
+        <div class="reveal">
+          <div class="sf-h2-row">
+            <h2 class="sf-h2">
+              <span class="sf-h2-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 20V6a2 2 0 0 1 2-2h3l2 2h7a2 2 0 0 1 2 2v2" />
+                  <path d="M2 12h20l-2 8H4l-2-8Z" />
+                </svg>
+              </span>
+              Projects
+            </h2>
+            <a class="sf-h2-aside" href="https://github.com/zichuanxu" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" />
+              </svg>
+              zichuanxu
+            </a>
+          </div>
+        </div>
+
+        <div class="sf-grid-2">
+          <div class="reveal" style="--reveal-delay: 0.1s">
+            <article class="sf-card is-highlight">
+              <div class="sf-card-head">
+                <h3>HUST-CSE-Experiments</h3>
+                <span class="sf-badge is-violet">Open source</span>
+              </div>
+              <p>
+                A four-year archive of coursework from HUST&rsquo;s School of Cyber Science and
+                Engineering &mdash; <strong>33+ courses</strong> spanning cryptography, software and
+                network security, reverse engineering, compilers, operating systems, blockchain and
+                trusted computing. The most-used thing I have published.
+              </p>
+              <div class="sf-chips">
+                <span class="sf-chip">C</span><span class="sf-chip">Assembly</span>
+                <span class="sf-chip">Security</span><span class="sf-chip">Systems</span>
+              </div>
+              <div class="sf-card-foot">
+                <a class="sf-card-link" href="https://github.com/zichuanxu/HUST-CSE-Experiments" target="_blank"
+                  rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" />
+                  </svg>
+                  View code
+                </a>
+                <span class="sf-card-stat">
+                  <svg class="sf-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z" />
+                  </svg>
+                  387
+                </span>
+              </div>
+            </article>
+          </div>
+          <div class="reveal" style="--reveal-delay: 0.2s">
+            <article class="sf-card is-tool">
+              <div class="sf-card-head">
+                <h3>cs336</h3>
+                <span class="sf-badge is-tool">Learning</span>
+              </div>
+              <p>
+                Stanford <strong>CS336 &mdash; Language Modeling From Scratch</strong>, assignments 1 and 5:
+                byte-level BPE, a decoder-only Transformer, and the training and sampling loop around it.
+                Written up in the notes below.
+              </p>
+              <div class="sf-chips">
+                <span class="sf-chip">Python</span><span class="sf-chip">PyTorch</span>
+                <span class="sf-chip">Transformers</span><span class="sf-chip">BPE</span>
+              </div>
+              <div class="sf-card-foot">
+                <a class="sf-card-link" href="https://github.com/zichuanxu/cs336" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" />
+                  </svg>
+                  View code
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- ================================ writing ================================= -->
+    {% assign writing = site.posts | where: "category", "writing" | sort: "date" | reverse %}
+    {% assign lc = site.posts | where: "category", "algorithms" %}
+    <section id="writing" class="sf-section is-muted">
+      <div class="sf-wrap">
+        <div class="reveal">
+          <div class="sf-h2-row">
+            <h2 class="sf-h2">
+              <span class="sf-h2-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" />
+                </svg>
+              </span>
+              Writing
+            </h2>
+            <a class="sf-h2-aside" href="/blog/">
+              All notes
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="sf-note-stack">
+          {% for post in writing %}
+          <div class="reveal" style="--reveal-delay: {{ forloop.index0 | times: 0.1 | plus: 0.1 }}s">
+            <a class="sf-note" href="{{ post.url }}">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+              <div class="sf-note-body">
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.description }}</p>
+                <div class="sf-chips" style="margin-bottom: 0">
+                  {% for tag in post.tags %}<span class="sf-chip">{{ tag }}</span>{% endfor %}
+                </div>
+              </div>
+              <svg class="sf-note-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
+                <path d="M7 17 17 7" />
+                <path d="M7 7h10v10" />
+              </svg>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="reveal" style="--reveal-delay: 0.3s">
+          <article class="sf-card is-tool">
+            <div class="sf-card-head">
+              <h3>LeetCode Hot 100</h3>
+              <span class="sf-badge is-tool">Series</span>
+            </div>
+            <p>
+              Every problem worked through twice &mdash; once in <strong>Go</strong>, once in
+              <strong>Python</strong> &mdash; with the reasoning, the complexity analysis, and the
+              cases where the obvious approach falls over.
+            </p>
+            <div class="sf-card-foot">
+              <a class="sf-card-link" href="/leetcode/">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+                Browse all {{ lc.size }} solutions
+              </a>
+            </div>
+          </article>
+          <div class="sf-stat-row">
+            <div class="sf-stat"><strong>{{ lc.size }}</strong><span>solutions written up</span></div>
+            <div class="sf-stat"><strong>{{ site.data.leetcode_topics.size }}</strong><span>algorithm topics</span></div>
+            <div class="sf-stat"><strong>2</strong><span>languages per problem</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================== education ================================ -->
+    <section id="education" class="sf-section">
+      <div class="sf-wrap">
+        <div class="sf-edu-grid">
+          <div>
+            <div class="reveal">
+              <h2 class="sf-h2">
+                <span class="sf-h2-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" aria-hidden="true">
+                    <path d="M22 10 12 5 2 10l10 5 10-5Z" />
+                    <path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5" />
+                  </svg>
+                </span>
+                Education
+              </h2>
+            </div>
+
+            <div class="reveal" style="--reveal-delay: 0.1s">
+              <div class="sf-edu">
+                <img src="/images/UO.png" alt="" loading="lazy" decoding="async" />
+                <div>
+                  <span class="sf-edu-meta">2025 &ndash; 2027 &middot; The University of Osaka</span>
+                  <h3>MEng, Computer Science</h3>
+                  <p>Graduate School of Information Science and Technology. Advised by
+                    <a href="https://sites.google.com/site/chuanxiao1983/" target="_blank" rel="noopener">Prof. Chuan
+                      Xiao</a>. Researching multi-agent learning and emergent communication.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal" style="--reveal-delay: 0.2s">
+              <div class="sf-edu">
+                <img src="/images/wqu.svg" alt="" loading="lazy" decoding="async" />
+                <div>
+                  <span class="sf-edu-meta">2025 &ndash; 2027 &middot; WorldQuant University</span>
+                  <h3>MSc, Financial Engineering</h3>
+                  <p>Studied in parallel with the Osaka programme &mdash; quantitative methods,
+                    derivatives, and financial data analysis.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal" style="--reveal-delay: 0.3s">
+              <div class="sf-edu">
+                <img src="/images/HUST.png" alt="" loading="lazy" decoding="async" />
+                <div>
+                  <span class="sf-edu-meta">2019 &ndash; 2023 &middot; Huazhong University of Science and
+                    Technology</span>
+                  <h3>BE, Cyberspace Security</h3>
+                  <p>School of Cyber Science and Engineering. Coursework archived in
+                    <a href="https://github.com/zichuanxu/HUST-CSE-Experiments" target="_blank"
+                      rel="noopener">HUST-CSE-Experiments</a>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="reveal">
+              <h2 class="sf-h2">
+                <span class="sf-h2-icon is-violet">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="8" r="6" />
+                    <path d="m8.2 13.4-1.4 7.5L12 18l5.2 2.9-1.4-7.5" />
+                  </svg>
+                </span>
+                Certifications
+              </h2>
+            </div>
+            <div class="reveal sf-cert-list" style="--reveal-delay: 0.1s">
+              <a class="sf-cert" href="https://www.credly.com/badges/82e5200b-56e4-4d95-bd61-cbb9deec85e9"
+                target="_blank" rel="noopener">
+                <span class="sf-cert-year">2025</span>
+                <div class="sf-cert-body">
+                  <p>Foundations of Financial Engineering</p>
+                  <p>WorldQuant University</p>
+                </div>
+                <img class="sf-cert-logo" src="/images/wqu.svg" alt="" loading="lazy" decoding="async" />
+                <svg class="sf-cert-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17 17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= skills & stack ============================= -->
+    <section id="tech" class="sf-section is-muted">
+      <div class="sf-wrap">
+        <div class="reveal">
+          <h2 class="sf-h2" style="margin-bottom: 48px">
+            <span class="sf-h2-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="m16 18 6-6-6-6" />
+                <path d="m8 6-6 6 6 6" />
+              </svg>
+            </span>
+            Skills &amp; Stack
+          </h2>
+        </div>
+
+        <div class="sf-tech-grid">
+          <div class="reveal" style="--reveal-delay: 0.1s">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20" />
+                <path d="M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20Z" />
+              </svg>
+              Languages
+            </h3>
+            <div>
+              <div class="sf-lang-row is-native"><span>Chinese</span><span>Native</span></div>
+              <div class="sf-lang-row"><span>English</span><span>Full professional</span></div>
+              <div class="sf-lang-row"><span>Japanese</span><span>Professional working</span></div>
+            </div>
+            <h3 style="margin-top: 32px">Also</h3>
+            <div class="sf-soft">
+              <span>Software Development</span>
+              <span>Financial Analysis</span>
+              <span>Economics</span>
+              <span>Technical Writing</span>
+            </div>
+          </div>
+
+          <div class="reveal" style="--reveal-delay: 0.2s">
+            <h3>Tech stack</h3>
+            <div class="sf-stack-grid">
+              {%- comment -%}
+                Format: Group|icon-slug:Label,icon-slug:Label@NextGroup|...
+                Icon slugs resolve to /images/tech/<slug>.svg (brand-coloured, vendored).
+                Group separator is "@" and item separator "," — never ";", which would
+                tear HTML entities such as "&amp;" in half.
+              {%- endcomment -%}
+              {% assign stacks = "Languages|go:Go,python:Python,openjdk:Java,typescript:TypeScript,javascript:JavaScript,c:C@AI &amp; ML|pytorch:PyTorch,claude:Claude Code,openai:Codex,onnx:ONNX Runtime@Backend|gin:Gin,springboot:Spring Boot,laravel:Laravel,django:Django@Data|postgresql:PostgreSQL,mysql:MySQL,redis:Redis,apacheairflow:Airflow@Cloud &amp; infra|aws:AWS,docker:Docker,terraform:Terraform,linux:Linux@Frontend &amp; tools|react:React,vuedotjs:Vue,vite:Vite,nodedotjs:Node.js,git:Git,github:GitHub,markdown:Markdown,latex:LaTeX" | split: "@" %}
+              {% for stack in stacks %}
+              {% assign bits = stack | split: "|" %}
+              <div class="sf-stack">
+                <span>{{ bits[0] }}</span>
+                <div>
+                  {% assign tools = bits[1] | split: "," %}
+                  {% for tool in tools %}{% assign t = tool | split: ":" %}<span><img
+                      src="/images/tech/{{ t[0] }}.svg" alt="" loading="lazy" decoding="async" width="16"
+                      height="16" />{{ t[1] }}</span>{% endfor %}
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================ contact ================================= -->
+    <footer id="contact" class="sf-contact">
+      <div class="sf-contact-inner">
+        <div class="reveal">
+          <h2>Interested in working together?</h2>
+          <p>Research collaboration on multi-agent learning, or engineering work on agent systems,
+            LLM infrastructure and Go backends. Either one &mdash; get in touch.</p>
+        </div>
+        <div class="reveal" style="--reveal-delay: 0.1s">
+          <div class="sf-cta-row">
+            <a class="sf-cta is-primary" href="mailto:xu.zichuan@ist.osaka-u.ac.jp">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-10 6L2 7" />
+              </svg>
+              Email me
+            </a>
+            <a class="sf-cta is-ghost" href="https://www.linkedin.com/in/zichuanxu/" target="_blank"
+              rel="me noopener">
+              <svg class="sf-linkedin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14Zm1.78 13.02H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z" />
+              </svg>
+              LinkedIn
+            </a>
+            <a class="sf-cta is-ghost" href="https://github.com/zichuanxu" target="_blank" rel="me noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <p class="sf-colophon">
+          &copy; {{ 'now' | date: '%Y' }} Zichuan Xu
+          <span class="sep">|</span>
+          <a href="https://github.com/zichuanxu" target="_blank" rel="noopener">GitHub</a>
+          <span class="sep">|</span>
+          <a href="/blog/">Blog</a>
+        </p>
+      </div>
+    </footer>
   </main>
 
-  {% include site-2026/footer.html %}
+  <script>
+    (() => {
+      /* Hero typewriter — types one character at a time, deletes one word at a
+         time, mirroring the reference implementation. */
+      const el = document.querySelector('[data-typewriter]');
+      if (!el) return;
+      const roles = el.dataset.roles.split('|');
+      const pills = [...document.querySelectorAll('[data-pills] .sf-pill')];
+      let index = 0;
+      let text = roles[0];
+      let deleting = false;
+
+      const highlight = () => {
+        pills.forEach((pill, i) => pill.classList.toggle('is-active', i === index % pills.length));
+      };
+      highlight();
+
+      const tick = () => {
+        const role = roles[index];
+        let delay;
+        if (!deleting && text === role) {
+          deleting = true;
+          delay = 2000;
+        } else if (deleting && text === '') {
+          index = (index + 1) % roles.length;
+          deleting = false;
+          highlight();
+          delay = 300;
+        } else if (deleting) {
+          const words = text.trimEnd().split(' ');
+          words.pop();
+          text = words.length ? words.join(' ') + ' ' : '';
+          el.textContent = text;
+          delay = 60;
+        } else {
+          text = role.slice(0, text.length + 1);
+          el.textContent = text;
+          delay = 80;
+        }
+        setTimeout(tick, delay);
+      };
+
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        setTimeout(tick, 2000);
+      }
+    })();
+  </script>
 
 </body>
 
