@@ -1858,7 +1858,13 @@ h1, h2, h3, h4 { text-wrap: balance; }
   gap: 4px 16px;
   margin-bottom: 8px;
 }
-.sf-role-brand { display: flex; align-items: center; gap: 12px; }
+.sf-role-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+}
 /* Height-driven rather than square: wordmark logos (Rakuten, WQU) are ~3:1 and
    were shrinking to illegibility inside a 40px box. */
 .sf-role-brand img {
@@ -1872,13 +1878,19 @@ h1, h2, h3, h4 { text-wrap: balance; }
   padding: 7px;
   border: 1px solid var(--border-soft);
 }
+.sf-role-brand img.is-dameng {
+  object-fit: cover;
+  object-position: left center;
+}
 .sf-role-brand h3 {
   font-family: var(--font-display);
   font-size: 24px;
   font-weight: 700;
   margin: 0;
   letter-spacing: -0.01em;
+  transition: color var(--motion-base);
 }
+.sf-role-brand:hover h3 { color: var(--accent); }
 .sf-role-place { font-size: 14px; color: var(--muted); }
 .sf-role-title { color: var(--accent); font-weight: 500; margin: 0 0 4px; }
 .sf-role-period { font-size: 14px; color: var(--muted); margin: 0 0 8px; }
@@ -2073,6 +2085,7 @@ h1, h2, h3, h4 { text-wrap: balance; }
 }
 .sf-edu:hover { border-color: color-mix(in oklab, var(--accent) 30%, transparent); }
 .sf-edu + .sf-edu { margin-top: 16px; }
+.sf-edu-logo-link { display: block; flex: none; align-self: flex-start; }
 /* Fixed slot, not auto width: the three marks have wildly different aspect
    ratios (Osaka ~1:1, WQU ~3:1), and an auto-width logo pushes each card's
    text column to a different x. object-fit keeps every mark undistorted. */
@@ -2088,6 +2101,8 @@ h1, h2, h3, h4 { text-wrap: balance; }
   border: 1px solid var(--border-soft);
 }
 .sf-edu-meta { font-size: 12px; color: var(--accent); font-weight: 500; }
+.sf-edu-school { color: inherit; text-decoration: none; }
+.sf-edu-school:hover { text-decoration: underline; text-underline-offset: 2px; }
 .sf-edu h3 {
   font-family: var(--font-display);
   font-size: 16px;
@@ -2239,9 +2254,6 @@ h1, h2, h3, h4 { text-wrap: balance; }
 .sf-cta svg { width: 16px; height: 16px; }
 .sf-linkedin { color: var(--linkedin); }
 .sf-colophon { margin-top: 48px; font-size: 12px; color: var(--muted); }
-.sf-colophon a { color: inherit; text-decoration: none; }
-.sf-colophon a:hover { color: var(--accent); }
-.sf-colophon .sep { margin-inline: 8px; color: var(--border); }
 
 /* -- utility --------------------------------------------------------------- */
 .sr-only {
@@ -2295,6 +2307,7 @@ h1, h2, h3, h4 { text-wrap: balance; }
   font-size: 14px;
   font-weight: 500;
   color: var(--muted);
+  text-decoration: none;
   opacity: 0.8;
   transition: opacity var(--motion-base);
 }
