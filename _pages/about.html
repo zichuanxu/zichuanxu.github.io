@@ -173,21 +173,21 @@ sitemap: true
       <div class="sf-story-inner">
         <div class="reveal">
           <p class="sf-story-lead">
-            <span class="text-grad">Four years of security</span> at HUST.
-            <br />Then two years shaving a database client from ten minutes to three seconds.
+            <span class="text-grad">From security and database tooling</span>
+            <br />to AI agents that run on everyday hardware.
           </p>
         </div>
         <div class="reveal" style="--reveal-delay: 0.1s">
           <p class="sf-story-mid">
-            What keeps pulling me back isn&rsquo;t the model.
-            <br />It&rsquo;s <span class="text-grad">the plumbing around it</span>.
+            The model is only one part.
+            <br />I build <span class="text-grad">the systems that make it useful</span>.
           </p>
         </div>
         <div class="reveal" style="--reveal-delay: 0.2s">
           <p class="sf-story-body">
             At Initial. S I build Kura-chan &mdash; an agent platform that lives on a NAS in someone&rsquo;s
-            living room. 96k lines of Go, eight LLM backends behind one interface, and a vision
-            pipeline that has to fit in the memory a consumer box actually has.
+            living room. It brings together a Go backend, a web dashboard, multi-provider inference,
+            on-device intelligence, and a serverless cloud backbone.
           </p>
         </div>
         <div class="reveal" style="--reveal-delay: 0.3s">
@@ -218,17 +218,17 @@ sitemap: true
 
         <div class="reveal sf-summary" style="--reveal-delay: 0.1s">
           <p>
-            I build the plumbing that makes language models useful in production &mdash;
-            <strong>agent runtimes, inference layers, and the backends underneath them</strong> &mdash;
-            and I study the research question behind it: how independently trained agents
-            negotiate a shared protocol when their partners and environment keep changing.
+            I work across <strong>full-stack engineering, AI/ML, and cloud infrastructure</strong>,
+            with a focus on agent systems that stay useful across models, tools, and constrained devices.
+            My research explores how independently trained agents form shared protocols as their partners
+            and environments change.
           </p>
           <div class="sf-comp-grid">
             {%- comment -%}
               Separator is "@" rather than ";" — "&amp;" ends in a semicolon, so a ";" split
               tears entity-bearing titles like "Cloud &amp; IoT infrastructure" in half.
             {%- endcomment -%}
-            {% assign competencies = "AI agent runtimes|Tool calling, subagent spawning, and hot-pluggable skill loading.@Multi-provider inference|One interface over 8 LLM backends with standardized tool calls.@Go backend engineering|~96k LOC across 33 packages, from MQTT transport to REST.@Cloud &amp; IoT infrastructure|AWS IoT Core, Lambda, DynamoDB, API Gateway, Terraform.@On-device machine learning|ONNX Runtime pipelines inside NAS hardware constraints.@Data &amp; delivery pipelines|Airflow orchestration, multi-arch CI, 8-tool security scanning." | split: "@" %}
+            {% assign competencies = "AI agent systems|Agent runtimes, tool use, delegation, and skill loading.@Multi-model inference|Unified access to major LLM providers with consistent tool calling.@Full-stack engineering|Go, TypeScript, Python, and Java across backend and web products.@Cloud platforms|AWS serverless and IoT services, containers, and infrastructure as code.@Applied AI &amp; ML|Retrieval, computer vision, and local inference for real products.@Delivery &amp; reliability|Automated testing, security checks, and multi-architecture releases." | split: "@" %}
             {% for item in competencies %}
             {% assign parts = item | split: "|" %}
             <div class="sf-comp">
@@ -262,8 +262,8 @@ sitemap: true
             hardware &mdash; a Go backend, a React dashboard, and a serverless AWS backbone.
           </p>
           <ul class="sf-role-list">
-            <li>Go backend of roughly 96k LOC across 33 packages, with a React dashboard and an AWS
-              cloud backbone (IoT Core, 7 Lambdas, DynamoDB, API Gateway).</li>
+            <li>A production Go backend, React dashboard, and AWS cloud backbone spanning IoT Core,
+              Lambda, DynamoDB, and API Gateway.</li>
             <li>Architected a unified multi-provider LLM inference layer over 8 backends
               (Claude, OpenAI, Bedrock, Copilot and others) with standardized tool calling.</li>
             <li>Multi-channel chat across LINE, Slack, Telegram and WeChat over bidirectional MQTT.</li>
@@ -706,7 +706,7 @@ sitemap: true
                 Group separator is "@" and item separator "," — never ";", which would
                 tear HTML entities such as "&amp;" in half.
               {%- endcomment -%}
-              {% assign stacks = "Languages|go:Go,python:Python,openjdk:Java,typescript:TypeScript,javascript:JavaScript,c:C@AI &amp; ML|pytorch:PyTorch,claude:Claude Code,openai:Codex,onnx:ONNX Runtime@Backend|gin:Gin,springboot:Spring Boot,laravel:Laravel,django:Django@Data|postgresql:PostgreSQL,mysql:MySQL,redis:Redis,apacheairflow:Airflow@Cloud &amp; infra|aws:AWS,docker:Docker,terraform:Terraform,linux:Linux@Frontend &amp; tools|react:React,vuedotjs:Vue,vite:Vite,nodedotjs:Node.js,git:Git,github:GitHub,markdown:Markdown,latex:LaTeX" | split: "@" %}
+              {% assign stacks = "Full-stack development|typescript:TypeScript,react:React,nodedotjs:Node.js,go:Go,python:Python,openjdk:Java,springboot:Spring Boot,django:Django,postgresql:PostgreSQL@AI &amp; ML|pytorch:PyTorch,openai:OpenAI,claude:Claude@Cloud &amp; DevOps|aws:AWS,docker:Docker,terraform:Terraform,linux:Linux,git:Git,github:GitHub" | split: "@" %}
               {% for stack in stacks %}
               {% assign bits = stack | split: "|" %}
               <div class="sf-stack">
@@ -714,8 +714,8 @@ sitemap: true
                 <div>
                   {% assign tools = bits[1] | split: "," %}
                   {% for tool in tools %}{% assign t = tool | split: ":" %}<span><img
-                      src="/images/tech/{{ t[0] }}.svg" alt="" loading="lazy" decoding="async" width="16"
-                      height="16" />{{ t[1] }}</span>{% endfor %}
+                      src="/images/tech/{{ t[0] }}.svg" alt="" loading="lazy" decoding="async" width="18"
+                      height="18" />{{ t[1] }}</span>{% endfor %}
                 </div>
               </div>
               {% endfor %}
@@ -755,6 +755,14 @@ sitemap: true
                 <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" />
               </svg>
               GitHub
+            </a>
+            <a class="sf-cta is-ghost" href="/blog/">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 20h9" />
+                <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z" />
+              </svg>
+              Blog
             </a>
           </div>
         </div>
