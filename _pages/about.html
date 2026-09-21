@@ -215,35 +215,6 @@ sitemap: true
           </h2>
         </div>
 
-        <div class="reveal sf-summary" style="--reveal-delay: 0.1s">
-          <p>
-            I build <strong>AI agents and the full-stack systems around them</strong>: execution
-            harnesses, web and desktop interfaces, and cloud APIs. My focus is the work between
-            a model response and a completed task &mdash; tool access, session continuity,
-            permissions, and reliable delivery. Alongside engineering, I research coordination
-            and shared protocols in multi-agent learning.
-          </p>
-          <div class="sf-comp-grid">
-            {%- comment -%}
-              Separator is "@" rather than ";" — "&amp;" ends in a semicolon, so a ";" split
-              tears entity-bearing titles like "Cloud &amp; IoT infrastructure" in half.
-            {%- endcomment -%}
-            {% assign competencies = "Agent harnesses|Tool execution, session continuity, permissions, and native runtime integration.@Tools &amp; workflows|MCP integrations, reusable skills, and delegated tasks with results returned to the conversation.@Full-stack products|React and TypeScript interfaces connected to Go APIs and Electron desktop services.@LLM infrastructure|Provider adapters, streaming protocols, model routing, and quota-aware usage accounting.@Cloud services|Authentication, shared files, and serverless APIs on AWS, managed with Terraform.@Testing &amp; reliability|Regression tests, live acceptance checks, and failure handling across client and backend boundaries." | split: "@" %}
-            {% for item in competencies %}
-            {% assign parts = item | split: "|" %}
-            <div class="sf-comp">
-              <div class="sf-comp-head">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" aria-hidden="true">
-                  <path d="M13 2 3 14h8l-1 8 10-12h-8l1-8Z" />
-                </svg>
-                <span>{{ parts[0] }}</span>
-              </div>
-              <p>{{ parts[1] }}</p>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
 
         <!-- Initial. S -->
         <div class="reveal sf-role" style="--reveal-delay: 0.1s">
