@@ -229,31 +229,40 @@ sitemap: true
           <p class="sf-role-title">AI Agent Development Engineer</p>
           <p class="sf-role-period">April 2026 &ndash; Present</p>
           <p class="sf-role-desc">
-            Developing <strong>KuraClaw, KuraWork, and their cloud platform</strong> to turn
-            model capabilities into usable agent workflows. My scope spans runtime integration,
-            tool access, client interfaces, and the backend services that connect them.
+            Building <strong>agent products for everyday work</strong>: KuraWork, a desktop workspace
+            for expert-guided tasks and business workflows, and KuraClaw, a personal assistant
+            connecting knowledge, files, and daily tools. I contribute across the product
+            interfaces, agent harnesses, and shared cloud services.
           </p>
           <ul class="sf-role-list">
-            <li><strong>Agent harness integration.</strong> To support multi-step desktop tasks,
-              integrated native Codex capabilities into KuraWork, preserving tool and delegated-agent
-              continuation messages and connecting permission modes and user questions to the UI.
-              Verified child-agent completion and question-and-answer flows through the cloud route.</li>
-            <li><strong>Tools that complete workflows.</strong> Extended KuraClaw with GitHub actions,
-              mail retrieval, and search available to subagents; routed background transcription
-              results back into the conversation. Added fail-closed tests and an opt-in live GitHub
-              harness to check integrations beyond mocked responses.</li>
-            <li><strong>End-to-end product development.</strong> Connected React and TypeScript account,
-              model, and shared-drive screens to Electron services and Go cloud APIs. Implemented
-              role-aware file operations, revision checks, and streamed transfers, keeping credentials
-              out of the renderer and preventing stale UI state from authorizing writes.</li>
-            <li><strong>LLM infrastructure and accounting.</strong> Built on the shared cloud platform
-              to add product-specific model and billing contracts, quota reservations, and usage
-              settlement. Handled stream disconnects and failed requests so capacity is reconciled
-              while existing KuraClaw clients retain their API behavior.</li>
-            <li><strong>Reliability across the stack.</strong> Replaced fixed model-stream deadlines
-              with phase-aware timeouts, hardened tool network access and file serving, and added
-              regression and live acceptance checks. These changes address interrupted agent runs
-              and unsafe content handling at the client, runtime, and service boundaries.</li>
+            <li><strong>KuraWork &mdash; from an open-ended prompt to a configured workflow.</strong>
+              Helped develop a work-oriented product around the native Codex engine, with
+              searchable Inspiration templates, domain experts, and project spaces.
+              Templates prepare editable task drafts; projects carry default experts, skills,
+              and connector selections that individual tasks can override. This packages
+              reusable task setup around the engine rather than asking users to assemble it each time.</li>
+            <li><strong>KuraWork &mdash; execution connected to real work.</strong>
+              Integrated native tool execution, permissions, and delegated-agent conversations
+              with the desktop UI and model services. Connected account, model, and shared-file
+              workflows across React, Electron, and cloud APIs, bringing model selection,
+              subscription usage, and role-controlled file sharing into the desktop workspace.</li>
+            <li><strong>KuraClaw &mdash; searchable personal knowledge.</strong>
+              Developed a memory repository with hybrid search, article relationships, and
+              interactive knowledge graphs, alongside agent-accessible mail search and retrieval.
+              Connected Go data services to browsing, filtering, and reading interfaces so users
+              and agents can find and reuse information beyond the current conversation.</li>
+            <li><strong>KuraClaw &mdash; daily assistance beyond chat.</strong>
+              Built calendar views, recurring events, reminders, and task controls, with reminders
+              delivered through agent channels. Extended email, calendar, cloud-drive, and GitHub
+              integrations; supported scheduled workflows and background transcription alongside
+              the product&rsquo;s photo library and file management. These capabilities connect
+              information, actions, and follow-up in one assistant.</li>
+            <li><strong>Shared platform &mdash; full-stack delivery.</strong>
+              Developed model access, product-specific accounts and billing, and versioned
+              shared cloud storage on AWS. Added role-based file access, quota reservations,
+              usage settlement, and streaming recovery to support both products while preserving
+              existing client contracts. Backed changes with regression tests and targeted
+              end-to-end acceptance checks.</li>
           </ul>
           <div class="sf-role-tech">
             <span class="sf-chip">Go</span><span class="sf-chip">TypeScript</span><span class="sf-chip">React</span>
