@@ -2,7 +2,7 @@
 layout: null
 permalink: /
 title: "Zichuan Xu"
-description: "Zichuan Xu — AI agent development engineer at Initial. S in Tokyo and MEng student at The University of Osaka. Go backends, multi-provider LLM inference, on-device ML."
+description: "Zichuan Xu — AI agent and full-stack engineer at Initial. S in Tokyo and MEng student at The University of Osaka. Agent harnesses, LLM infrastructure, and web and desktop applications."
 redirect_from:
 - /about/
 - /about.html
@@ -70,7 +70,6 @@ sitemap: true
         <ul class="sf-toc-list">
           <li data-target="experience"><span class="sf-toc-dot" aria-hidden="true"></span><button type="button">Experience</button></li>
           <li data-target="projects"><span class="sf-toc-dot" aria-hidden="true"></span><button type="button">Projects</button></li>
-          <li data-target="writing"><span class="sf-toc-dot" aria-hidden="true"></span><button type="button">Writing</button></li>
           <li data-target="education"><span class="sf-toc-dot" aria-hidden="true"></span><button type="button">Education</button></li>
           <li data-target="tech"><span class="sf-toc-dot" aria-hidden="true"></span><button type="button">Skills &amp; Stack</button></li>
           <li data-target="contact"><span class="sf-toc-dot" aria-hidden="true"></span><button type="button">Contact</button></li>
@@ -106,15 +105,15 @@ sitemap: true
                 rel="me noopener">@zichuanxu</a>,</p>
             <h1 class="sf-hero-title">
               <span class="text-grad" data-typewriter
-                data-roles="an AI agent engineer|a Go backend developer|an on-device ML builder">an
+                data-roles="an AI agent engineer|a full-stack developer|an agent harness builder">an
                 AI agent engineer</span><span class="sf-caret" aria-hidden="true"></span>
-              <br />who ships agents that run
-              <br />on hardware people already own.
+              <br />building agents and applications
+              <br />from runtime to interface.
             </h1>
             <div class="sf-pills" data-pills>
               <span class="sf-pill">AI Agents</span>
-              <span class="sf-pill">Go &amp; Cloud</span>
-              <span class="sf-pill">On-device ML</span>
+              <span class="sf-pill">Full-stack</span>
+              <span class="sf-pill">Agent Harnesses</span>
               <span class="sf-pill">Research</span>
               <a class="sf-pill is-repo" href="https://github.com/zichuanxu/HUST-CSE-Experiments" target="_blank"
                 rel="noopener">
@@ -174,27 +173,27 @@ sitemap: true
         <div class="reveal">
           <p class="sf-story-lead">
             <span class="text-grad">From security and database tooling</span>
-            <br />to AI agents that run on everyday hardware.
+            <br />to agent systems and full-stack products.
           </p>
         </div>
         <div class="reveal" style="--reveal-delay: 0.1s">
           <p class="sf-story-mid">
-            The model is only one part.
-            <br />I build <span class="text-grad">the systems that make it useful</span>.
+            Useful agents need more than a model.
+            <br />They need <span class="text-grad">tools, context, and a product around them</span>.
           </p>
         </div>
         <div class="reveal" style="--reveal-delay: 0.2s">
           <p class="sf-story-body">
-            At Initial. S I build Kura-chan &mdash; an agent platform that lives on a NAS in someone&rsquo;s
-            living room. It brings together a Go backend, a web dashboard, multi-provider inference,
-            on-device intelligence, and a serverless cloud backbone.
+            At Initial. S, I develop KuraClaw, KuraWork, and their shared cloud services.
+            My work connects agent execution and tool integrations with React interfaces,
+            Go APIs, and the authentication, model routing, and usage accounting behind them.
           </p>
         </div>
         <div class="reveal" style="--reveal-delay: 0.3s">
           <p class="sf-story-close">
-            <strong>Constraints make the engineering honest.</strong>
-            <br />Cheap hardware. Real users. No room to hand-wave.
-            <br /><span class="text-grad">That&rsquo;s the interesting part.</span>
+            <strong>I work across the boundaries.</strong>
+            <br />From a tool call to a completed workflow.
+            <br /><span class="text-grad">From the backend contract to the user experience.</span>
           </p>
         </div>
       </div>
@@ -218,17 +217,18 @@ sitemap: true
 
         <div class="reveal sf-summary" style="--reveal-delay: 0.1s">
           <p>
-            I work across <strong>full-stack engineering, AI/ML, and cloud infrastructure</strong>,
-            with a focus on agent systems that stay useful across models, tools, and constrained devices.
-            My research explores how independently trained agents form shared protocols as their partners
-            and environments change.
+            I build <strong>AI agents and the full-stack systems around them</strong>: execution
+            harnesses, web and desktop interfaces, and cloud APIs. My focus is the work between
+            a model response and a completed task &mdash; tool access, session continuity,
+            permissions, and reliable delivery. Alongside engineering, I research coordination
+            and shared protocols in multi-agent learning.
           </p>
           <div class="sf-comp-grid">
             {%- comment -%}
               Separator is "@" rather than ";" — "&amp;" ends in a semicolon, so a ";" split
               tears entity-bearing titles like "Cloud &amp; IoT infrastructure" in half.
             {%- endcomment -%}
-            {% assign competencies = "AI agent systems|Agent runtimes, tool use, delegation, and skill loading.@Multi-model inference|Unified access to major LLM providers with consistent tool calling.@Full-stack engineering|Go, TypeScript, Python, and Java across backend and web products.@Cloud platforms|AWS serverless and IoT services, containers, and infrastructure as code.@Applied AI &amp; ML|Retrieval, computer vision, and local inference for real products.@Delivery &amp; reliability|Automated testing, security checks, and multi-architecture releases." | split: "@" %}
+            {% assign competencies = "Agent harnesses|Tool execution, session continuity, permissions, and native runtime integration.@Tools &amp; workflows|MCP integrations, reusable skills, and delegated tasks with results returned to the conversation.@Full-stack products|React and TypeScript interfaces connected to Go APIs and Electron desktop services.@LLM infrastructure|Provider adapters, streaming protocols, model routing, and quota-aware usage accounting.@Cloud services|Authentication, shared files, and serverless APIs on AWS, managed with Terraform.@Testing &amp; reliability|Regression tests, live acceptance checks, and failure handling across client and backend boundaries." | split: "@" %}
             {% for item in competencies %}
             {% assign parts = item | split: "|" %}
             <div class="sf-comp">
@@ -258,27 +258,36 @@ sitemap: true
           <p class="sf-role-title">AI Agent Development Engineer</p>
           <p class="sf-role-period">April 2026 &ndash; Present</p>
           <p class="sf-role-desc">
-            Building <strong>Kura-chan</strong>, an AI agent platform that runs on consumer NAS
-            hardware &mdash; a Go backend, a React dashboard, and a serverless AWS backbone.
+            Developing <strong>KuraClaw, KuraWork, and their cloud platform</strong> to turn
+            model capabilities into usable agent workflows. My scope spans runtime integration,
+            tool access, client interfaces, and the backend services that connect them.
           </p>
           <ul class="sf-role-list">
-            <li>A production Go backend, React dashboard, and AWS cloud backbone spanning IoT Core,
-              Lambda, DynamoDB, and API Gateway.</li>
-            <li>Architected a unified multi-provider LLM inference layer over 8 backends
-              (Claude, OpenAI, Bedrock, Copilot and others) with standardized tool calling.</li>
-            <li>Multi-channel chat across LINE, Slack, Telegram and WeChat over bidirectional MQTT.</li>
-            <li>On-device photo intelligence pipeline (11k LOC) on ONNX Runtime: face
-              detection and recognition, CLIP semantic search, perceptual-hash dedup &mdash; all
-              inside NAS hardware limits.</li>
-            <li>25+ agent tools (web search, shell, wiki, subagent spawning, scheduled tasks) plus a
-              dynamic skill-loading system with OpenAPI codegen.</li>
-            <li>CI/CD with 8-tool security scanning (govulncheck, gosec, semgrep, trivy), multi-arch
-              builds for amd64/arm64/riscv64, and Terraform across 2 AWS stacks with fleet provisioning.</li>
+            <li><strong>Agent harness integration.</strong> To support multi-step desktop tasks,
+              integrated native Codex capabilities into KuraWork, preserving tool and delegated-agent
+              continuation messages and connecting permission modes and user questions to the UI.
+              Verified child-agent completion and question-and-answer flows through the cloud route.</li>
+            <li><strong>Tools that complete workflows.</strong> Extended KuraClaw with GitHub actions,
+              mail retrieval, and search available to subagents; routed background transcription
+              results back into the conversation. Added fail-closed tests and an opt-in live GitHub
+              harness to check integrations beyond mocked responses.</li>
+            <li><strong>End-to-end product development.</strong> Connected React and TypeScript account,
+              model, and shared-drive screens to Electron services and Go cloud APIs. Implemented
+              role-aware file operations, revision checks, and streamed transfers, keeping credentials
+              out of the renderer and preventing stale UI state from authorizing writes.</li>
+            <li><strong>LLM infrastructure and accounting.</strong> Built on the shared cloud platform
+              to add product-specific model and billing contracts, quota reservations, and usage
+              settlement. Handled stream disconnects and failed requests so capacity is reconciled
+              while existing KuraClaw clients retain their API behavior.</li>
+            <li><strong>Reliability across the stack.</strong> Replaced fixed model-stream deadlines
+              with phase-aware timeouts, hardened tool network access and file serving, and added
+              regression and live acceptance checks. These changes address interrupted agent runs
+              and unsafe content handling at the client, runtime, and service boundaries.</li>
           </ul>
           <div class="sf-role-tech">
-            <span class="sf-chip">Go</span><span class="sf-chip">React</span><span class="sf-chip">AWS IoT Core</span>
-            <span class="sf-chip">Lambda</span><span class="sf-chip">DynamoDB</span><span class="sf-chip">MQTT</span>
-            <span class="sf-chip">ONNX Runtime</span><span class="sf-chip">CLIP</span><span class="sf-chip">Terraform</span>
+            <span class="sf-chip">Go</span><span class="sf-chip">TypeScript</span><span class="sf-chip">React</span>
+            <span class="sf-chip">Electron</span><span class="sf-chip">Codex</span><span class="sf-chip">MCP</span>
+            <span class="sf-chip">AWS Lambda</span><span class="sf-chip">DynamoDB</span><span class="sf-chip">Terraform</span>
           </div>
         </div>
 
@@ -481,86 +490,6 @@ sitemap: true
       </div>
     </section>
 
-    <!-- ================================ writing ================================= -->
-    {% assign writing = site.posts | where: "category", "writing" | sort: "date" | reverse %}
-    {% assign lc = site.posts | where: "category", "algorithms" %}
-    <section id="writing" class="sf-section is-muted">
-      <div class="sf-wrap">
-        <div class="reveal">
-          <div class="sf-h2-row">
-            <h2 class="sf-h2">
-              <span class="sf-h2-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" aria-hidden="true">
-                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" />
-                </svg>
-              </span>
-              Writing
-            </h2>
-            <a class="sf-h2-aside" href="/blog/">
-              All notes
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <div class="sf-note-stack">
-          {% for post in writing %}
-          <div class="reveal" style="--reveal-delay: {{ forloop.index0 | times: 0.1 | plus: 0.1 }}s">
-            <a class="sf-note" href="{{ post.url }}">
-              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
-              <div class="sf-note-body">
-                <h3>{{ post.title }}</h3>
-                <p>{{ post.description }}</p>
-                <div class="sf-chips" style="margin-bottom: 0">
-                  {% for tag in post.tags %}<span class="sf-chip">{{ tag }}</span>{% endfor %}
-                </div>
-              </div>
-              <svg class="sf-note-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
-                <path d="M7 17 17 7" />
-                <path d="M7 7h10v10" />
-              </svg>
-            </a>
-          </div>
-          {% endfor %}
-        </div>
-
-        <div class="reveal" style="--reveal-delay: 0.3s">
-          <article class="sf-card is-tool">
-            <div class="sf-card-head">
-              <h3>LeetCode Hot 100</h3>
-              <span class="sf-badge is-tool">Series</span>
-            </div>
-            <p>
-              Every problem worked through twice &mdash; once in <strong>Go</strong>, once in
-              <strong>Python</strong> &mdash; with the reasoning, the complexity analysis, and the
-              cases where the obvious approach falls over.
-            </p>
-            <div class="sf-card-foot">
-              <a class="sf-card-link" href="/leetcode/">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" aria-hidden="true">
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-                Browse all {{ lc.size }} solutions
-              </a>
-            </div>
-          </article>
-          <div class="sf-stat-row">
-            <div class="sf-stat"><strong>{{ lc.size }}</strong><span>solutions written up</span></div>
-            <div class="sf-stat"><strong>{{ site.data.leetcode_topics.size }}</strong><span>algorithm topics</span></div>
-            <div class="sf-stat"><strong>2</strong><span>languages per problem</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- =============================== education ================================ -->
     <section id="education" class="sf-section">
@@ -761,14 +690,6 @@ sitemap: true
                 <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" />
               </svg>
               GitHub
-            </a>
-            <a class="sf-cta is-ghost" href="/blog/">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 20h9" />
-                <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z" />
-              </svg>
-              Blog
             </a>
           </div>
         </div>
