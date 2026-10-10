@@ -1400,10 +1400,10 @@ h1, h2, h3, h4 { text-wrap: balance; }
   margin: 0 auto;
   padding-inline: 24px;
 }
-.sf-section { padding-block: 64px; }
+.sf-section { padding-block: 48px; }
 .sf-section.is-muted { background: color-mix(in oklab, var(--surface) 30%, transparent); }
 @media (min-width: 768px) {
-  .sf-section { padding-block: 96px; }
+  .sf-section { padding-block: 72px; }
 }
 
 .sf-h2 {
@@ -1437,7 +1437,7 @@ h1, h2, h3, h4 { text-wrap: balance; }
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   flex-wrap: wrap;
 }
 .sf-h2-row .sf-h2 { margin-bottom: 0; }
@@ -1640,7 +1640,7 @@ h1, h2, h3, h4 { text-wrap: balance; }
   padding: 80px 24px 48px;
 }
 @media (min-width: 768px) {
-  .sf-hero-inner { padding: 128px 24px 64px; }
+  .sf-hero-inner { padding: 96px 24px 48px; }
 }
 .sf-hero-grid {
   display: flex;
@@ -1806,7 +1806,7 @@ h1, h2, h3, h4 { text-wrap: balance; }
 
 
 /* -- experience roles ------------------------------------------------------ */
-.sf-role { margin-bottom: 64px; }
+.sf-role { margin-bottom: 48px; }
 .sf-role:last-child { margin-bottom: 0; }
 .sf-role-head {
   display: flex;
@@ -1839,6 +1839,12 @@ h1, h2, h3, h4 { text-wrap: balance; }
   object-fit: cover;
   object-position: left center;
 }
+.sf-role-brand img.is-initial-s {
+  width: 192px;
+  height: auto;
+  max-width: 38vw;
+  padding: 10px;
+}
 .sf-role-brand h3 {
   font-family: var(--font-display);
   font-size: 24px;
@@ -1853,7 +1859,7 @@ h1, h2, h3, h4 { text-wrap: balance; }
 .sf-role-period { font-size: 14px; color: var(--muted); margin: 0 0 8px; }
 .sf-role-desc { color: var(--muted); margin: 0 0 16px; }
 .sf-role-list { list-style: disc; margin: 0; padding-left: 1.2em; font-size: 15px; line-height: 1.75; color: var(--muted); }
-.sf-role-list li { padding-left: 4px; margin-bottom: 16px; }
+.sf-role-list li { padding-left: 4px; margin-bottom: 12px; }
 .sf-role-list li::marker { color: var(--accent); }
 .sf-role-list li > strong:first-child { display: block; margin-bottom: 4px; color: var(--fg); font-weight: 600; }
 .sf-role-list li:last-child { margin-bottom: 0; }
@@ -2164,8 +2170,8 @@ h1, h2, h3, h4 { text-wrap: balance; }
 }
 
 /* -- contact --------------------------------------------------------------- */
-.sf-contact { position: relative; padding-block: 64px; text-align: center; }
-@media (min-width: 768px) { .sf-contact { padding-block: 96px; } }
+.sf-contact { position: relative; padding-block: 48px; text-align: center; }
+@media (min-width: 768px) { .sf-contact { padding-block: 72px; } }
 .sf-contact::before {
   content: "";
   position: absolute;
@@ -2270,10 +2276,10 @@ h1, h2, h3, h4 { text-wrap: balance; }
 
 /* -- story ----------------------------------------------------------------- */
 .sf-story {
-  padding-block: 80px;
+  padding-block: 56px;
   background: color-mix(in oklab, var(--surface) 30%, transparent);
 }
-@media (min-width: 768px) { .sf-story { padding-block: 112px; } }
+@media (min-width: 768px) { .sf-story { padding-block: 80px; } }
 .sf-story-inner {
   max-width: 48rem;
   margin: 0 auto;
@@ -2290,7 +2296,7 @@ h1, h2, h3, h4 { text-wrap: balance; }
   color: var(--fg);
 }
 .sf-story-mid {
-  margin-top: 40px !important;
+  margin-top: 32px !important;
   font-family: var(--font-display);
   font-size: clamp(19px, 2.6vw, 26px);
   font-weight: 500;
@@ -2298,7 +2304,7 @@ h1, h2, h3, h4 { text-wrap: balance; }
   color: var(--muted);
 }
 .sf-story-body {
-  margin-top: 40px !important;
+  margin-top: 32px !important;
   font-size: 16px;
   line-height: 1.75;
   color: var(--meta);
@@ -2306,7 +2312,7 @@ h1, h2, h3, h4 { text-wrap: balance; }
   margin-inline: auto !important;
 }
 .sf-story-close {
-  margin-top: 48px !important;
+  margin-top: 32px !important;
   font-family: var(--font-display);
   font-size: clamp(18px, 2.4vw, 24px);
   line-height: 1.5;
