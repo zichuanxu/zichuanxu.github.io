@@ -19,18 +19,22 @@ sitemap: false
 </head>
 
 <body>
-  {% include site-2026/chrome.html home=true %}
-  <main id="content">
-    <section class="section page-header" data-od-id="page-header">
-      <div class="container">
-        <p class="eyebrow">404</p>
-        <h1>Page not found.</h1>
-        <p class="lead">Sorry, the page you were trying to view does not exist.</p>
-        <a class="btn btn-secondary btn-arrow" href="/">← Back home</a>
-      </div>
-    </section>
-  </main>
-  {% include site-2026/footer.html %}
+<a class="skip" href="#main">Skip to content</a>
+{% include site-2026/bar.html %}
+
+<main id="main" class="lost">
+  <div class="wrap">
+    <p class="eyebrow">404</p>
+    <h1>Not in service.</h1>
+    <p class="lost-text">Sorry, the page you were trying to view does not exist.</p>
+    <svg class="lost-line" viewBox="0 0 320 40" aria-hidden="true" focusable="false"><path d="M6 20 H272" /><circle cx="296" cy="20" r="11" /></svg>
+    <div class="cta"><a class="btn primary" href="/">Back to the map</a></div>
+  </div>
+</main>
+
+<footer class="lost-foot">
+  <div class="wrap colophon"><span>&copy; {{ 'now' | date: '%Y' }} Zichuan Xu</span><span>Tokyo · Osaka</span></div>
+</footer>
 </body>
 
 </html>
