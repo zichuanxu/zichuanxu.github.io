@@ -8,29 +8,12 @@ baseurl                  : ""
 repository               : "zichuanxu/zichuanxu.github.io"
 
 # Build settings
-future                   : true            # build posts dated today/future
 encoding                 : "utf-8"
 timezone                 : Etc/UTC
-markdown                 : kramdown
-highlighter              : rouge
-excerpt_separator        : "\n\n"
-permalink                : /:categories/:title/
-
-# Markdown processing (kept verbatim so code highlighting is unchanged)
-kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
 
 # Reading files
 include:
   - _pages
-  - files
 exclude:
   - .bundle
   - .github
@@ -43,6 +26,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - AGENTS.md
+  - CLAUDE.md
   - CONTRIBUTING.md
   - LICENSE
   - Dockerfile
@@ -50,12 +35,8 @@ exclude:
 
 # Plugins (GitHub Pages --safe: only whitelisted plugins run)
 plugins:
-  - jekyll-feed
   - jekyll-sitemap
   - jekyll-redirect-from
-  - jemoji
 whitelist:
-  - jekyll-feed
   - jekyll-sitemap
   - jekyll-redirect-from
-  - jemoji
