@@ -24,10 +24,14 @@ sitemap: true
   <meta property="og:title" content="Zichuan Xu" />
   <meta property="og:description" content="{{ page.description }}" />
   <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-  <meta property="og:image" content="{{ site.url }}/images/profile.png" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="{{ site.url }}/images/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Zichuan Xu, AI agent engineer: a route map of his career" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Zichuan Xu" />
   <meta name="twitter:description" content="{{ page.description }}" />
+  <meta name="twitter:image" content="{{ site.url }}/images/og-card.png" />
   <link rel="stylesheet" href="/assets/css/site-2026.css?v={{ site.time | date: '%s' }}" />
   <link rel="icon" href="/favicon.ico?v={{ site.time | date: '%s' }}" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v={{ site.time | date: '%s' }}" />
@@ -38,7 +42,6 @@ sitemap: true
     "@type": "Person",
     "name": "Zichuan Xu",
     "url": "{{ site.url }}",
-    "image": "{{ site.url }}/images/profile.png",
     "email": "mailto:xu.zichuan@ist.osaka-u.ac.jp",
     "jobTitle": "AI Agent Development Engineer",
     "worksFor": { "@type": "Organization", "name": "Initial. S Co. Ltd.", "url": "https://initial-s.com/" },
@@ -55,681 +58,452 @@ sitemap: true
   </script>
 </head>
 
-<body class="home-page">
+<body>
+<a class="skip" href="#main">Skip to content</a>
+{% include site-2026/bar.html nav=true %}
 
-  {% include site-2026/chrome.html %}
-
-  <main class="sf-main">
-    <a href="#main-content" class="skip-link">Skip to content</a>
-
-    <!-- ============================ table of contents ============================ -->
-    <nav class="sf-toc" aria-label="Table of contents">
-      <div class="sf-toc-rail">
-        <span class="sf-toc-line" aria-hidden="true"></span>
-        <span class="sf-toc-progress" aria-hidden="true"></span>
-        <ul class="sf-toc-list">
-          <li data-target="experience"><span class="sf-toc-dot" aria-hidden="true"></span><button type="button">Experience</button></li>
-          <li data-target="projects"><span class="sf-toc-dot" aria-hidden="true"></span><button type="button">Projects</button></li>
-          <li data-target="education"><span class="sf-toc-dot" aria-hidden="true"></span><button type="button">Education</button></li>
-          <li data-target="tech"><span class="sf-toc-dot" aria-hidden="true"></span><button type="button">Skills &amp; Stack</button></li>
-          <li data-target="contact"><span class="sf-toc-dot" aria-hidden="true"></span><button type="button">Contact</button></li>
-        </ul>
+<main id="main">
+  <!-- ================================ hero ================================ -->
+  <section class="hero" id="top" aria-label="Introduction">
+    <div class="wrap">
+      <div class="hero-copy">
+        <div class="status" style="--d:0s">
+          <span class="now-dot" aria-hidden="true"></span>
+          <p>Now at <b>Initial. S</b>, Tokyo<br>MEng student, <b>The University of Osaka</b></p>
+        </div>
+        <h1 style="--d:.08s">Zichuan Xu</h1>
+        <p class="lede" style="--d:.16s">AI agent engineer, building agents and applications from runtime to interface.</p>
+        <div class="lines" style="--d:.24s" role="group" aria-label="Highlight a line on the route map">
+          <button class="line-chip S" type="button" data-line="S" aria-pressed="false"><b aria-hidden="true">S</b>Security</button>
+          <button class="line-chip R" type="button" data-line="R" aria-pressed="false"><b aria-hidden="true">R</b>Research</button>
+          <button class="line-chip F" type="button" data-line="F" aria-pressed="false"><b aria-hidden="true">F</b>Full-stack</button>
+          <button class="line-chip A" type="button" data-line="A" aria-pressed="false"><b aria-hidden="true">A</b>Agents</button>
+          <button class="line-chip Q" type="button" data-line="Q" aria-pressed="false"><b aria-hidden="true">Q</b>Finance</button>
+        </div>
+        <div class="cta" style="--d:.32s">
+          <a class="btn primary" href="mailto:xu.zichuan@ist.osaka-u.ac.jp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Email me</a>
+          <a class="btn" href="https://github.com/zichuanxu" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/zichuanxu/" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14Zm1.78 13.02H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg>LinkedIn</a>
+        </div>
       </div>
-    </nav>
 
-    <!-- ================================== hero ================================== -->
-    <header id="main-content" class="sf-hero">
-      <div class="sf-hero-veil" aria-hidden="true"></div>
-      <div class="sf-orb sf-orb-a" aria-hidden="true"></div>
-      <div class="sf-orb sf-orb-b" aria-hidden="true"></div>
+      <figure class="map" aria-label="Route map of Zichuan's career">
+        <svg class="map-svg" viewBox="0 0 600 560" aria-hidden="true" focusable="false">
+          <path class="ln S" pathLength="1" d="M60 470 H300" style="--d:.2s"/>
+          <path class="ln R" pathLength="1" d="M180 470 V320 L250 250" style="--d:.6s"/>
+          <path class="ln F" pathLength="1" d="M300 470 L390 380 V260 L480 170" style="--d:.9s"/>
+          <path class="ln Q" pathLength="1" d="M250 250 V130" style="--d:1.4s"/>
+          <path class="ln A" pathLength="1" d="M250 250 L330 170 H480" style="--d:1.55s"/>
+          <a class="next pop A" href="#contact" tabindex="-1" style="--d:2.45s"><path d="M494 170 H560"/><text class="yr" x="568" y="174">next</text></a>
+          <a class="stn pop S" href="#edu-hust" tabindex="-1" style="--d:.55s"><circle class="st" cx="60" cy="470" r="8"/><text class="lbl" x="60" y="503" text-anchor="middle">HUST</text><text class="yr" x="60" y="520" text-anchor="middle">2019</text></a>
+          <a class="stn pop x S R" href="#stop-vt" tabindex="-1" style="--d:.8s"><circle class="st" cx="180" cy="470" r="10.5"/><text class="lbl" x="180" y="503" text-anchor="middle">Virginia Tech</text><text class="yr" x="180" y="520" text-anchor="middle">2022</text></a>
+          <a class="stn pop x S F" href="#stop-nsfocus" tabindex="-1" style="--d:1.05s"><circle class="st" cx="300" cy="470" r="10.5"/><text class="lbl" x="300" y="503" text-anchor="middle">NSFOCUS</text><text class="yr" x="300" y="520" text-anchor="middle">2023</text></a>
+          <a class="stn pop F" href="#stop-dameng" tabindex="-1" style="--d:1.2s"><circle class="st" cx="390" cy="380" r="8"/><text class="lbl" x="412" y="385">Dameng</text><text class="yr" x="412" y="402">2023–25</text></a>
+          <a class="stn pop F" href="#stop-rakuten" tabindex="-1" style="--d:1.35s"><circle class="st" cx="390" cy="260" r="8"/><text class="lbl" x="412" y="276">Rakuten</text><text class="yr" x="412" y="293">2025</text></a>
+          <a class="stn pop x R A Q" href="#edu-osaka" tabindex="-1" style="--d:1.6s"><circle class="st" cx="250" cy="250" r="10.5"/><text class="lbl" x="232" y="236" text-anchor="end">Osaka U.</text><text class="yr" x="232" y="253" text-anchor="end">2025–27</text></a>
+          <a class="stn pop Q" href="#edu-wqu" tabindex="-1" style="--d:1.75s"><circle class="st" cx="250" cy="130" r="8"/><text class="lbl" x="232" y="127" text-anchor="end">WorldQuant U.</text><text class="yr" x="232" y="144" text-anchor="end">2025–27</text></a>
+          <a class="stn pop x F A" href="#stop-initial-s" tabindex="-1" style="--d:2.15s">
+            <circle class="pulse" cx="480" cy="170" r="11"/>
+            <circle class="st" cx="480" cy="170" r="11"/>
+            <text class="lbl big" x="480" y="137" text-anchor="middle">Initial. S</text>
+            <g class="flag"><rect x="426" y="86" width="108" height="22" rx="11"/><text x="480" y="101" text-anchor="middle">YOU ARE HERE</text></g>
+          </a>
+        </svg>
 
-      <div class="sf-hero-inner">
-        <div class="sf-hero-grid">
-          <div class="sf-avatar">
-            <div class="sf-avatar-ring">
-              <div class="sf-avatar-frame">
-                <img src="/images/profile.png" alt="Zichuan Xu" width="192" height="192" fetchpriority="high" />
+        <ol class="route" aria-label="Career route, newest first">
+          <li class="now x F A"><span class="dot" aria-hidden="true"></span><a href="#stop-initial-s"><b>Initial. S</b><small>Tokyo · 2026 – now · you are here</small></a><span class="pips" aria-hidden="true"><i class="F"></i><i class="A"></i></span></li>
+          <li class="F"><span class="dot" aria-hidden="true"></span><a href="#stop-rakuten"><b>Rakuten</b><small>Tokyo · 2025</small></a><span class="pips" aria-hidden="true"><i class="F"></i></span></li>
+          <li class="x R A Q"><span class="dot" aria-hidden="true"></span><a href="#edu-osaka"><b>The University of Osaka</b><small>Suita · 2025 – 2027</small></a><span class="pips" aria-hidden="true"><i class="R"></i><i class="A"></i><i class="Q"></i></span></li>
+          <li class="Q"><span class="dot" aria-hidden="true"></span><a href="#edu-wqu"><b>WorldQuant University</b><small>Online · 2025 – 2027</small></a><span class="pips" aria-hidden="true"><i class="Q"></i></span></li>
+          <li class="F"><span class="dot" aria-hidden="true"></span><a href="#stop-dameng"><b>Dameng</b><small>Shanghai · 2023 – 2025</small></a><span class="pips" aria-hidden="true"><i class="F"></i></span></li>
+          <li class="x S F"><span class="dot" aria-hidden="true"></span><a href="#stop-nsfocus"><b>NSFOCUS</b><small>Wuhan · 2023</small></a><span class="pips" aria-hidden="true"><i class="S"></i><i class="F"></i></span></li>
+          <li class="x S R"><span class="dot" aria-hidden="true"></span><a href="#stop-vt"><b>Virginia Tech</b><small>Blacksburg · 2022</small></a><span class="pips" aria-hidden="true"><i class="S"></i><i class="R"></i></span></li>
+          <li class="S"><span class="dot" aria-hidden="true"></span><a href="#edu-hust"><b>HUST</b><small>Wuhan · 2019 – 2023</small></a><span class="pips" aria-hidden="true"><i class="S"></i></span></li>
+        </ol>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================================ about =============================== -->
+  <section class="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow" id="about-title">About</p>
+        <p class="about-lead">From <u class="S">security</u> and <u class="F">database tooling</u> to <u class="A">agent systems</u> and <u class="F">full-stack products</u>.</p>
+      </div>
+      <div class="reveal">
+        <p class="about-mid">Useful agents need more than a model. They need tools, context, and a product around them.</p>
+        <p class="about-body">At Initial. S, I develop KuraClaw, KuraWork, and their shared cloud services. My work connects agent execution and tool integrations with React interfaces, Go APIs, and the authentication, model routing, and usage accounting behind them.</p>
+        <p class="about-close"><strong>I work across the boundaries.</strong><br>From a tool call to a completed workflow.<br>From the backend contract to the user experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== experience ============================ -->
+  <section class="sec" id="experience" aria-labelledby="experience-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title" id="experience-title"><span class="plat" aria-hidden="true">1</span>Experience</h2>
+        <p class="sec-meta">5 stops · 2022 → now</p>
+      </div>
+
+      <div class="stops">
+        <!-- Initial. S -->
+        <article class="stop reveal" id="stop-initial-s">
+          <div class="band" aria-hidden="true"><i class="F"></i><i class="A"></i></div>
+          <div class="stop-head">
+            <div>
+              <h3 class="stop-title"><a href="https://initial-s.com/" target="_blank" rel="noopener">Initial. S Co. Ltd.</a></h3>
+              <p class="stop-role"><b>AI Agent Development Engineer</b> · Tokyo, Japan</p>
+            </div>
+            <div class="stop-side">
+              <span class="plate"><img src="/images/initial-s.png" alt="" width="1713" height="153" loading="lazy" decoding="async"></span>
+              <span class="when"><span class="now-flag"><i></i>Now</span>Apr 2026 → now</span>
+            </div>
+          </div>
+          <div class="stop-body">
+            <p class="stop-desc">Building <strong>agent products for everyday work</strong>: KuraWork, a desktop workspace for expert-guided tasks and business workflows, and KuraClaw, a personal assistant connecting knowledge, files, and daily tools. I contribute across the product interfaces, agent harnesses, and shared cloud services.</p>
+            <div class="groups">
+              <div class="group A">
+                <h4>KuraWork</h4>
+                <article><h5>From an open-ended prompt to a configured workflow.</h5><p>Helped develop a work-oriented product around the native Codex engine, with searchable Inspiration templates, domain experts, and project spaces. Templates prepare editable task drafts; projects carry default experts, skills, and connector selections that individual tasks can override. This packages reusable task setup around the engine rather than asking users to assemble it each time.</p></article>
+                <article><h5>Execution connected to real work.</h5><p>Integrated native tool execution, permissions, and delegated-agent conversations with the desktop UI and model services. Connected account, model, and shared-file workflows across React, Electron, and cloud APIs, bringing model selection, subscription usage, and role-controlled file sharing into the desktop workspace.</p></article>
+              </div>
+              <div class="group A">
+                <h4>KuraClaw</h4>
+                <article><h5>Searchable personal knowledge.</h5><p>Developed a memory repository with hybrid search, article relationships, and interactive knowledge graphs, alongside agent-accessible mail search and retrieval. Connected Go data services to browsing, filtering, and reading interfaces so users and agents can find and reuse information beyond the current conversation.</p></article>
+                <article><h5>Daily assistance beyond chat.</h5><p>Built calendar views, recurring events, reminders, and task controls, with reminders delivered through agent channels. Extended email, calendar, cloud-drive, and GitHub integrations; supported scheduled workflows and background transcription alongside the product&rsquo;s photo library and file management. These capabilities connect information, actions, and follow-up in one assistant.</p></article>
+              </div>
+              <div class="group F">
+                <h4>Shared platform</h4>
+                <article><h5>Full-stack delivery.</h5><p>Developed model access, product-specific accounts and billing, and versioned shared cloud storage on AWS. Added role-based file access, quota reservations, usage settlement, and streaming recovery to support both products while preserving existing client contracts. Backed changes with regression tests and targeted end-to-end acceptance checks.</p></article>
               </div>
             </div>
-            <span class="sf-avatar-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path d="M9 12l2 2 4-4" />
-                <path d="M12 3l1.9 1.4 2.3-.3 1 2.1 2.1 1-.3 2.3L20.4 12l-1.4 1.9.3 2.3-2.1 1-1 2.1-2.3-.3L12 20.4l-1.9-1.4-2.3.3-1-2.1-2.1-1 .3-2.3L3.6 12l1.4-1.9-.3-2.3 2.1-1 1-2.1 2.3.3z" />
-              </svg>
-            </span>
           </div>
-
-          <div>
-            <p class="sf-hi">Hi, I&rsquo;m <a class="text-grad" href="https://github.com/zichuanxu" target="_blank"
-                rel="me noopener">@zichuanxu</a>,</p>
-            <h1 class="sf-hero-title">
-              <span class="text-grad" data-typewriter
-                data-roles="an AI agent engineer|a full-stack developer|an agent harness builder">an
-                AI agent engineer</span><span class="sf-caret" aria-hidden="true"></span>
-              <br />building agents and applications
-              <br />from runtime to interface.
-            </h1>
-            <div class="sf-pills" data-pills>
-              <span class="sf-pill">AI Agents</span>
-              <span class="sf-pill">Full-stack</span>
-              <span class="sf-pill">Agent Harnesses</span>
-              <span class="sf-pill">Research</span>
-              <a class="sf-pill is-repo" href="https://github.com/zichuanxu/HUST-CSE-Experiments" target="_blank"
-                rel="noopener">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" />
-                </svg>
-                HUST-CSE-Experiments
-                <svg class="sf-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z" />
-                </svg>
-                387
-              </a>
-            </div>
+          <div class="stop-foot">
+            <a href="#stop-rakuten"><span aria-hidden="true">↓</span>Previous stop · Rakuten <small>2025</small></a>
+            <span class="tech">Go · TypeScript · React · Electron · Codex · MCP · AWS Lambda · DynamoDB · Terraform</span>
           </div>
-        </div>
-
-        <div class="sf-hero-meta">
-          <span class="sf-hero-caption">Suita, Osaka &middot; Japan</span>
-          <div class="sf-hero-links">
-            <a href="https://github.com/zichuanxu" target="_blank" rel="me noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" />
-              </svg>
-              GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/zichuanxu/" target="_blank" rel="me noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14Zm1.78 13.02H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z" />
-              </svg>
-              LinkedIn
-            </a>
-            <a href="mailto:xu.zichuan@ist.osaka-u.ac.jp">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="m22 7-10 6L2 7" />
-              </svg>
-              Email
-            </a>
-          </div>
-        </div>
-
-        <div class="sf-featured">
-          <span class="sf-featured-label">Currently at</span>
-          <div class="sf-featured-row">
-            <a class="sf-featured-item" href="https://initial-s.com/" target="_blank" rel="noopener">Initial. S</a>
-            <a class="sf-featured-item" href="https://www.osaka-u.ac.jp/ja" target="_blank" rel="noopener">The University of Osaka</a>
-            <a class="sf-featured-item" href="https://www.wqu.edu/" target="_blank" rel="noopener">WorldQuant University</a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- ================================= story ================================== -->
-    <section class="sf-story" aria-label="About">
-      <div class="sf-story-inner">
-        <div class="reveal">
-          <p class="sf-story-lead">
-            <span class="text-grad">From security and database tooling</span>
-            <br />to agent systems and full-stack products.
-          </p>
-        </div>
-        <div class="reveal" style="--reveal-delay: 0.1s">
-          <p class="sf-story-mid">
-            Useful agents need more than a model.
-            <br />They need <span class="text-grad">tools, context, and a product around them</span>.
-          </p>
-        </div>
-        <div class="reveal" style="--reveal-delay: 0.2s">
-          <p class="sf-story-body">
-            At Initial. S, I develop KuraClaw, KuraWork, and their shared cloud services.
-            My work connects agent execution and tool integrations with React interfaces,
-            Go APIs, and the authentication, model routing, and usage accounting behind them.
-          </p>
-        </div>
-        <div class="reveal" style="--reveal-delay: 0.3s">
-          <p class="sf-story-close">
-            <strong>I work across the boundaries.</strong>
-            <br />From a tool call to a completed workflow.
-            <br /><span class="text-grad">From the backend contract to the user experience.</span>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =============================== experience =============================== -->
-    <section id="experience" class="sf-section is-muted">
-      <div class="sf-wrap">
-        <div class="reveal">
-          <h2 class="sf-h2">
-            <span class="sf-h2-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="7" width="20" height="14" rx="2" />
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-              </svg>
-            </span>
-            Experience
-          </h2>
-        </div>
-
-
-        <!-- Initial. S -->
-        <div class="reveal sf-role" style="--reveal-delay: 0.1s">
-          <div class="sf-role-head">
-            <a class="sf-role-brand" href="https://initial-s.com/" target="_blank" rel="noopener">
-              <img class="is-initial-s" src="/images/initial-s.png" alt="" width="1713" height="153" loading="lazy" decoding="async" />
-              <h3>Initial. S Co. Ltd.</h3>
-            </a>
-            <span class="sf-role-place">Tokyo, Japan</span>
-            <span class="sf-badge is-live"><span class="sf-dot-live" aria-hidden="true"></span>Current</span>
-          </div>
-          <p class="sf-role-title">AI Agent Development Engineer</p>
-          <p class="sf-role-period">April 2026 &ndash; Present</p>
-          <p class="sf-role-desc">
-            Building <strong>agent products for everyday work</strong>: KuraWork, a desktop workspace
-            for expert-guided tasks and business workflows, and KuraClaw, a personal assistant
-            connecting knowledge, files, and daily tools. I contribute across the product
-            interfaces, agent harnesses, and shared cloud services.
-          </p>
-          <ul class="sf-role-list">
-            <li><strong>KuraWork &mdash; from an open-ended prompt to a configured workflow.</strong>
-              Helped develop a work-oriented product around the native Codex engine, with
-              searchable Inspiration templates, domain experts, and project spaces.
-              Templates prepare editable task drafts; projects carry default experts, skills,
-              and connector selections that individual tasks can override. This packages
-              reusable task setup around the engine rather than asking users to assemble it each time.</li>
-            <li><strong>KuraWork &mdash; execution connected to real work.</strong>
-              Integrated native tool execution, permissions, and delegated-agent conversations
-              with the desktop UI and model services. Connected account, model, and shared-file
-              workflows across React, Electron, and cloud APIs, bringing model selection,
-              subscription usage, and role-controlled file sharing into the desktop workspace.</li>
-            <li><strong>KuraClaw &mdash; searchable personal knowledge.</strong>
-              Developed a memory repository with hybrid search, article relationships, and
-              interactive knowledge graphs, alongside agent-accessible mail search and retrieval.
-              Connected Go data services to browsing, filtering, and reading interfaces so users
-              and agents can find and reuse information beyond the current conversation.</li>
-            <li><strong>KuraClaw &mdash; daily assistance beyond chat.</strong>
-              Built calendar views, recurring events, reminders, and task controls, with reminders
-              delivered through agent channels. Extended email, calendar, cloud-drive, and GitHub
-              integrations; supported scheduled workflows and background transcription alongside
-              the product&rsquo;s photo library and file management. These capabilities connect
-              information, actions, and follow-up in one assistant.</li>
-            <li><strong>Shared platform &mdash; full-stack delivery.</strong>
-              Developed model access, product-specific accounts and billing, and versioned
-              shared cloud storage on AWS. Added role-based file access, quota reservations,
-              usage settlement, and streaming recovery to support both products while preserving
-              existing client contracts. Backed changes with regression tests and targeted
-              end-to-end acceptance checks.</li>
-          </ul>
-          <div class="sf-role-tech">
-            <span class="sf-chip">Go</span><span class="sf-chip">TypeScript</span><span class="sf-chip">React</span>
-            <span class="sf-chip">Electron</span><span class="sf-chip">Codex</span><span class="sf-chip">MCP</span>
-            <span class="sf-chip">AWS Lambda</span><span class="sf-chip">DynamoDB</span><span class="sf-chip">Terraform</span>
-          </div>
-        </div>
+        </article>
 
         <!-- Rakuten -->
-        <div class="reveal sf-role" style="--reveal-delay: 0.1s">
-          <div class="sf-role-head">
-            <a class="sf-role-brand" href="https://global.rakuten.com/corp/" target="_blank" rel="noopener">
-              <img src="/images/rakuten-logo.png" alt="" loading="lazy" decoding="async" />
-              <h3>Rakuten</h3>
-            </a>
-            <span class="sf-role-place">Tokyo, Japan</span>
+        <article class="stop reveal" id="stop-rakuten">
+          <div class="band" aria-hidden="true"><i class="F"></i></div>
+          <div class="stop-head">
+            <div>
+              <h3 class="stop-title"><a href="https://global.rakuten.com/corp/" target="_blank" rel="noopener">Rakuten</a></h3>
+              <p class="stop-role"><b>Application Engineer</b> · Tokyo, Japan</p>
+            </div>
+            <div class="stop-side">
+              <span class="plate"><img src="/images/rakuten-logo.png" alt="" loading="lazy" decoding="async"></span>
+              <span class="when">Sep 2025 → Oct 2025</span>
+            </div>
           </div>
-          <p class="sf-role-title">Application Engineer</p>
-          <p class="sf-role-period">September 2025 &ndash; October 2025</p>
-          <p class="sf-role-desc">
-            Turned two manual, ticket-driven internal workflows into real-time self-service platforms.
-          </p>
-          <ul class="sf-role-list">
-            <li>Two internal web applications in PHP/Laravel and Bootstrap 5, replacing ticket-based
-              request handling with self-service.</li>
-            <li>A data automation pipeline in Python and Apache Airflow for Rakuten Card&rsquo;s monthly
-              validation process.</li>
-            <li>Held above 85% unit-test line coverage with zero SonarQube code smells across all
-              deliverables.</li>
-          </ul>
-          <div class="sf-role-tech">
-            <span class="sf-chip">PHP</span><span class="sf-chip">Laravel</span><span class="sf-chip">Python</span>
-            <span class="sf-chip">Apache Airflow</span><span class="sf-chip">SonarQube</span>
+          <div class="stop-body F">
+            <p class="stop-desc">Turned two manual, ticket-driven internal workflows into real-time self-service platforms.</p>
+            <ul class="stop-list">
+              <li>Two internal web applications in PHP/Laravel and Bootstrap 5, replacing ticket-based request handling with self-service.</li>
+              <li>A data automation pipeline in Python and Apache Airflow for Rakuten Card&rsquo;s monthly validation process.</li>
+              <li>Held above 85% unit-test line coverage with zero SonarQube code smells across all deliverables.</li>
+            </ul>
           </div>
-        </div>
+          <div class="stop-foot">
+            <a href="#stop-dameng"><span aria-hidden="true">↓</span>Previous stop · Dameng <small>2023–25</small></a>
+            <span class="tech">PHP · Laravel · Python · Apache Airflow · SonarQube</span>
+          </div>
+        </article>
 
         <!-- Dameng -->
-        <div class="reveal sf-role" style="--reveal-delay: 0.1s">
-          <div class="sf-role-head">
-            <a class="sf-role-brand" href="https://www.dameng.com/" target="_blank" rel="noopener">
-              <img class="is-dameng" src="/images/DM.png" alt="" loading="lazy" decoding="async" />
-              <h3>Wuhan Dameng Data Co. Ltd.</h3>
-            </a>
-            <span class="sf-role-place">Shanghai, China</span>
+        <article class="stop reveal" id="stop-dameng">
+          <div class="band" aria-hidden="true"><i class="F"></i></div>
+          <div class="stop-head">
+            <div>
+              <h3 class="stop-title"><a href="https://www.dameng.com/" target="_blank" rel="noopener">Wuhan Dameng Data Co. Ltd.</a></h3>
+              <p class="stop-role"><b>Development Engineer</b> · Shanghai, China</p>
+            </div>
+            <div class="stop-side">
+              <span class="plate"><img src="/images/DM.png" alt="" loading="lazy" decoding="async"></span>
+              <span class="when">Jul 2023 → Feb 2025</span>
+            </div>
           </div>
-          <p class="sf-role-title">Development Engineer</p>
-          <p class="sf-role-period">July 2023 &ndash; February 2025</p>
-          <p class="sf-role-desc">
-            Rendering and tooling for a next-generation database management client.
-          </p>
-          <ul class="sf-role-list">
-            <li>Built a massive-dataset rendering engine on the NatTable framework, replacing pure SWT
-              tables.</li>
-            <li>Cut query display time for 100,000-row result sets from 10 minutes to 3 seconds &mdash;
-              a 200&times; speedup.</li>
-            <li>Engineered a Universal Installer framework that decoupled environment-specific
-              dependencies for cross-platform deployment of the whole database suite.</li>
-            <li>Led an embedded interactive terminal for direct SQL execution and a SQL formatter.</li>
-            <li>Owned the end-to-end SDLC for core modules, from requirement analysis to technical
-              documentation.</li>
-          </ul>
-          <div class="sf-role-tech">
-            <span class="sf-chip">Java</span><span class="sf-chip">SWT</span><span class="sf-chip">NatTable</span>
-            <span class="sf-chip">Eclipse RCP</span><span class="sf-chip">SQL</span>
+          <div class="stop-body F">
+            <p class="stop-desc">Rendering and tooling for a next-generation database management client.</p>
+            <ul class="stop-list">
+              <li>Built a massive-dataset rendering engine on the NatTable framework, replacing pure SWT tables.</li>
+              <li>Cut query display time for 100,000-row result sets from 10 minutes to 3 seconds &mdash; a 200&times; speedup.</li>
+              <li>Engineered a Universal Installer framework that decoupled environment-specific dependencies for cross-platform deployment of the whole database suite.</li>
+              <li>Led an embedded interactive terminal for direct SQL execution and a SQL formatter.</li>
+              <li>Owned the end-to-end SDLC for core modules, from requirement analysis to technical documentation.</li>
+            </ul>
           </div>
-        </div>
+          <div class="stop-foot">
+            <a href="#stop-nsfocus"><span aria-hidden="true">↓</span>Previous stop · NSFOCUS <small>2023</small></a>
+            <span class="tech">Java · SWT · NatTable · Eclipse RCP · SQL</span>
+          </div>
+        </article>
 
         <!-- NSFOCUS -->
-        <div class="reveal sf-role" style="--reveal-delay: 0.1s">
-          <div class="sf-role-head">
-            <a class="sf-role-brand" href="https://www.nsfocus.com.cn/" target="_blank" rel="noopener">
-              <img src="/images/NSFOCUS.png" alt="" loading="lazy" decoding="async" />
-              <h3>NSFOCUS</h3>
-            </a>
-            <span class="sf-role-place">Wuhan, China</span>
+        <article class="stop reveal" id="stop-nsfocus">
+          <div class="band" aria-hidden="true"><i class="S"></i><i class="F"></i></div>
+          <div class="stop-head">
+            <div>
+              <h3 class="stop-title"><a href="https://www.nsfocus.com.cn/" target="_blank" rel="noopener">NSFOCUS</a></h3>
+              <p class="stop-role"><b>Research and Development Engineer</b> · Wuhan, China</p>
+            </div>
+            <div class="stop-side">
+              <span class="plate"><img src="/images/NSFOCUS.png" alt="" loading="lazy" decoding="async"></span>
+              <span class="when">Feb 2023 → Apr 2023</span>
+            </div>
           </div>
-          <p class="sf-role-title">Research and Development Engineer</p>
-          <p class="sf-role-period">February 2023 &ndash; April 2023</p>
-          <ul class="sf-role-list">
-            <li>Gathered intelligence on fraudulent applications with Python Scrapy, and built the
-              Django backend of a network probing system.</li>
-            <li>Devised encryption schemes to anonymize customer data for machine-learning training.</li>
-            <li>Ran technology assessments and routine maintenance for customer-facing issues.</li>
-          </ul>
-          <div class="sf-role-tech">
-            <span class="sf-chip">Python</span><span class="sf-chip">Scrapy</span><span class="sf-chip">Django</span>
-            <span class="sf-chip">Cryptography</span>
+          <div class="stop-body S">
+            <ul class="stop-list">
+              <li>Gathered intelligence on fraudulent applications with Python Scrapy, and built the Django backend of a network probing system.</li>
+              <li>Devised encryption schemes to anonymize customer data for machine-learning training.</li>
+              <li>Ran technology assessments and routine maintenance for customer-facing issues.</li>
+            </ul>
           </div>
-        </div>
+          <div class="stop-foot">
+            <a href="#stop-vt"><span aria-hidden="true">↓</span>Previous stop · Virginia Tech <small>2022</small></a>
+            <span class="tech">Python · Scrapy · Django · Cryptography</span>
+          </div>
+        </article>
 
         <!-- Virginia Tech -->
-        <div class="reveal sf-role" style="--reveal-delay: 0.1s">
-          <div class="sf-role-head">
-            <a class="sf-role-brand" href="https://www.vt.edu/" target="_blank" rel="noopener">
-              <img src="/images/VT.svg" alt="" loading="lazy" decoding="async" />
-              <h3>Virginia Tech</h3>
-            </a>
-            <span class="sf-role-place">Blacksburg, Virginia, USA</span>
-          </div>
-          <p class="sf-role-title">Undergraduate Research Assistant</p>
-          <p class="sf-role-period">April 2022 &ndash; September 2022</p>
-          <p class="sf-role-desc">
-            Theme: a graph learning framework for system provenance-based security analysis.
-          </p>
-          <ul class="sf-role-list">
-            <li>Researched graph neural networks over system provenance graphs to identify
-              Advanced Persistent Threat behaviour.</li>
-            <li>Designed a graph representation learning framework in PyTorch that extracts
-              topological features from massive, sparse system audit logs.</li>
-            <li>Reached 97% accuracy predicting malicious system entities while holding a low
-              false-positive rate on large-scale security datasets.</li>
-          </ul>
-          <div class="sf-role-tech">
-            <span class="sf-chip">PyTorch</span><span class="sf-chip">GNN</span>
-            <span class="sf-chip">Provenance graphs</span><span class="sf-chip">APT detection</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================ projects ================================ -->
-    <section id="projects" class="sf-section">
-      <div class="sf-wrap">
-        <div class="reveal">
-          <div class="sf-h2-row">
-            <h2 class="sf-h2">
-              <span class="sf-h2-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" aria-hidden="true">
-                  <path d="M4 20V6a2 2 0 0 1 2-2h3l2 2h7a2 2 0 0 1 2 2v2" />
-                  <path d="M2 12h20l-2 8H4l-2-8Z" />
-                </svg>
-              </span>
-              Projects
-            </h2>
-            <a class="sf-h2-aside" href="https://github.com/zichuanxu" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" />
-              </svg>
-              zichuanxu
-            </a>
-          </div>
-        </div>
-
-        <div class="sf-grid-2">
-          <div class="reveal" style="--reveal-delay: 0.1s">
-            <article class="sf-card is-highlight">
-              <div class="sf-card-head">
-                <h3>HUST-CSE-Experiments</h3>
-                <span class="sf-badge is-violet">Open source</span>
-              </div>
-              <p>
-                A four-year archive of coursework from HUST&rsquo;s School of Cyber Science and
-                Engineering &mdash; <strong>33+ courses</strong> spanning cryptography, software and
-                network security, reverse engineering, compilers, operating systems, blockchain and
-                trusted computing. The most-used thing I have published.
-              </p>
-              <div class="sf-chips">
-                <span class="sf-chip">C</span><span class="sf-chip">Assembly</span>
-                <span class="sf-chip">Security</span><span class="sf-chip">Systems</span>
-              </div>
-              <div class="sf-card-foot">
-                <a class="sf-card-link" href="https://github.com/zichuanxu/HUST-CSE-Experiments" target="_blank"
-                  rel="noopener">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" />
-                  </svg>
-                  View code
-                </a>
-                <span class="sf-card-stat">
-                  <svg class="sf-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z" />
-                  </svg>
-                  387
-                </span>
-              </div>
-            </article>
-          </div>
-          <div class="reveal" style="--reveal-delay: 0.2s">
-            <article class="sf-card is-tool">
-              <div class="sf-card-head">
-                <h3>NimGet</h3>
-                <span class="sf-badge is-tool">Open source</span>
-              </div>
-              <p>
-                A lightweight <strong>download manager built in Go</strong>, with a desktop app for
-                macOS and Windows and a CLI for Linux too. Parallel connections and crash-safe
-                resume keep downloads moving; a persistent queue, speed limits, scheduling,
-                and HLS support handle longer workflows. The React desktop interface and CLI
-                share the same background service.
-              </p>
-              <div class="sf-chips">
-                <span class="sf-chip">Go</span><span class="sf-chip">React</span>
-                <span class="sf-chip">Wails</span><span class="sf-chip">SQLite</span>
-              </div>
-              <div class="sf-card-foot">
-                <a class="sf-card-link" href="https://github.com/zichuanxu/nimget" target="_blank" rel="noopener">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" />
-                  </svg>
-                  View code
-                </a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- =============================== education ================================ -->
-    <section id="education" class="sf-section">
-      <div class="sf-wrap">
-        <div class="sf-edu-grid">
-          <div>
-            <div class="reveal">
-              <h2 class="sf-h2">
-                <span class="sf-h2-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" aria-hidden="true">
-                    <path d="M22 10 12 5 2 10l10 5 10-5Z" />
-                    <path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5" />
-                  </svg>
-                </span>
-                Education
-              </h2>
-            </div>
-
-            <div class="reveal" style="--reveal-delay: 0.1s">
-              <div class="sf-edu">
-                <a class="sf-edu-logo-link" href="https://www.osaka-u.ac.jp/ja" target="_blank" rel="noopener">
-                  <img src="/images/UO.png" alt="The University of Osaka" loading="lazy" decoding="async" />
-                </a>
-                <div>
-                  <span class="sf-edu-meta">2025 &ndash; 2027 &middot;
-                    <a class="sf-edu-school" href="https://www.osaka-u.ac.jp/ja" target="_blank" rel="noopener">The University of Osaka</a>
-                  </span>
-                  <h3>MEng, Computer Science</h3>
-                  <p>Graduate School of Information Science and Technology. Advised by
-                    <a href="https://sites.google.com/site/chuanxiao1983/" target="_blank" rel="noopener">Prof. Chuan
-                      Xiao</a>. Researching multi-agent learning and emergent communication.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="reveal" style="--reveal-delay: 0.2s">
-              <div class="sf-edu">
-                <a class="sf-edu-logo-link" href="https://www.wqu.edu/" target="_blank" rel="noopener">
-                  <img src="/images/wqu.svg" alt="WorldQuant University" loading="lazy" decoding="async" />
-                </a>
-                <div>
-                  <span class="sf-edu-meta">2025 &ndash; 2027 &middot;
-                    <a class="sf-edu-school" href="https://www.wqu.edu/" target="_blank" rel="noopener">WorldQuant University</a>
-                  </span>
-                  <h3>MSc, Financial Engineering</h3>
-                  <p>Studied in parallel with the Osaka programme &mdash; quantitative methods,
-                    derivatives, and financial data analysis.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="reveal" style="--reveal-delay: 0.3s">
-              <div class="sf-edu">
-                <a class="sf-edu-logo-link" href="https://www.hust.edu.cn/" target="_blank" rel="noopener">
-                  <img src="/images/HUST.png" alt="Huazhong University of Science and Technology" loading="lazy" decoding="async" />
-                </a>
-                <div>
-                  <span class="sf-edu-meta">2019 &ndash; 2023 &middot;
-                    <a class="sf-edu-school" href="https://www.hust.edu.cn/" target="_blank" rel="noopener">Huazhong University of Science and Technology</a>
-                  </span>
-                  <h3>BE, Cyberspace Security</h3>
-                  <p>School of Cyber Science and Engineering. Coursework archived in
-                    <a href="https://github.com/zichuanxu/HUST-CSE-Experiments" target="_blank"
-                      rel="noopener">HUST-CSE-Experiments</a>.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="reveal">
-              <h2 class="sf-h2">
-                <span class="sf-h2-icon is-violet">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" aria-hidden="true">
-                    <circle cx="12" cy="8" r="6" />
-                    <path d="m8.2 13.4-1.4 7.5L12 18l5.2 2.9-1.4-7.5" />
-                  </svg>
-                </span>
-                Certifications
-              </h2>
-            </div>
-            <div class="reveal sf-cert-list" style="--reveal-delay: 0.1s">
-              <a class="sf-cert" href="https://www.credly.com/badges/82e5200b-56e4-4d95-bd61-cbb9deec85e9"
-                target="_blank" rel="noopener">
-                <span class="sf-cert-year">2025</span>
-                <div class="sf-cert-body">
-                  <p>Foundations of Financial Engineering</p>
-                  <p>WorldQuant University</p>
-                </div>
-                <img class="sf-cert-logo" src="/images/wqu.svg" alt="" loading="lazy" decoding="async" />
-                <svg class="sf-cert-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M7 17 17 7" />
-                  <path d="M7 7h10v10" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================= skills & stack ============================= -->
-    <section id="tech" class="sf-section is-muted">
-      <div class="sf-wrap">
-        <div class="reveal">
-          <h2 class="sf-h2" style="margin-bottom: 48px">
-            <span class="sf-h2-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="m16 18 6-6-6-6" />
-                <path d="m8 6-6 6 6 6" />
-              </svg>
-            </span>
-            Skills &amp; Stack
-          </h2>
-        </div>
-
-        <div class="sf-tech-grid">
-          <div class="reveal" style="--reveal-delay: 0.1s">
-            <h3>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M2 12h20" />
-                <path d="M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20Z" />
-              </svg>
-              Languages
-            </h3>
+        <article class="stop reveal" id="stop-vt">
+          <div class="band" aria-hidden="true"><i class="S"></i><i class="R"></i></div>
+          <div class="stop-head">
             <div>
-              <div class="sf-lang-row is-native"><span>Chinese</span><span>Native</span></div>
-              <div class="sf-lang-row"><span>English</span><span>IELTS 7.5 &middot; C1</span></div>
-              <div class="sf-lang-row"><span>Japanese</span><span>JLPT N1 &middot; B2</span></div>
+              <h3 class="stop-title"><a href="https://www.vt.edu/" target="_blank" rel="noopener">Virginia Tech</a></h3>
+              <p class="stop-role"><b>Undergraduate Research Assistant</b> · Blacksburg, Virginia, USA</p>
             </div>
-            <h3 style="margin-top: 32px">Also</h3>
-            <div class="sf-soft">
-              <span>Software Development</span>
-              <span>Financial Analysis</span>
-              <span>Economics</span>
-              <span>Technical Writing</span>
+            <div class="stop-side">
+              <span class="plate tall"><img src="/images/VT.svg" alt="" loading="lazy" decoding="async"></span>
+              <span class="when">Apr 2022 → Sep 2022</span>
             </div>
           </div>
+          <div class="stop-body R">
+            <p class="stop-desc">Theme: a graph learning framework for system provenance-based security analysis.</p>
+            <ul class="stop-list">
+              <li>Researched graph neural networks over system provenance graphs to identify Advanced Persistent Threat behaviour.</li>
+              <li>Designed a graph representation learning framework in PyTorch that extracts topological features from massive, sparse system audit logs.</li>
+              <li>Reached 97% accuracy predicting malicious system entities while holding a low false-positive rate on large-scale security datasets.</li>
+            </ul>
+          </div>
+          <div class="stop-foot">
+            <a href="#edu-hust"><span aria-hidden="true">↓</span>Origin · HUST <small>2019</small></a>
+            <span class="tech">PyTorch · GNN · Provenance graphs · APT detection</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-          <div class="reveal" style="--reveal-delay: 0.2s">
-            <h3>Tech stack</h3>
-            <div class="sf-stack-grid">
-              {%- comment -%}
-                Format: Group|icon-slug:Label,icon-slug:Label@NextGroup|...
-                Icon slugs resolve to /images/tech/<slug>.svg (brand-coloured, vendored).
-                Group separator is "@" and item separator "," — never ";", which would
-                tear HTML entities such as "&amp;" in half.
-              {%- endcomment -%}
-              {% assign stacks = "Full-stack development|typescript:TypeScript,react:React,nodedotjs:Node.js,go:Go,python:Python,openjdk:Java,springboot:Spring Boot,django:Django,postgresql:PostgreSQL@AI &amp; ML|pytorch:PyTorch,huggingface:Hugging Face,openai:OpenAI,claude:Claude,aws:Amazon Bedrock,github:GitHub Copilot@Cloud &amp; DevOps|aws:AWS,docker:Docker,terraform:Terraform,linux:Linux,git:Git,github:GitHub" | split: "@" %}
-              {% for stack in stacks %}
-              {% assign bits = stack | split: "|" %}
-              <div class="sf-stack">
-                <span>{{ bits[0] }}</span>
-                <div>
-                  {% assign tools = bits[1] | split: "," %}
-                  {% for tool in tools %}{% assign t = tool | split: ":" %}<span><img
-                      src="/images/tech/{{ t[0] }}.svg" alt="" loading="lazy" decoding="async" width="18"
-                      height="18" />{{ t[1] }}</span>{% endfor %}
-                </div>
-              </div>
-              {% endfor %}
+  <!-- =============================== projects ============================= -->
+  <section class="sec alt" id="projects" aria-labelledby="projects-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title" id="projects-title"><span class="plat" aria-hidden="true">2</span>Projects</h2>
+        <p class="sec-meta"><a href="https://github.com/zichuanxu" target="_blank" rel="noopener">github.com/zichuanxu ↗</a></p>
+      </div>
+      <div class="projects">
+        <article class="proj reveal S">
+          <div class="band" aria-hidden="true"><i class="S"></i></div>
+          <div class="proj-body">
+            <div class="proj-head"><h3>HUST-CSE-Experiments</h3><span class="badge">Open source</span></div>
+            <p>A four-year archive of coursework from HUST&rsquo;s School of Cyber Science and Engineering &mdash; <strong>33+ courses</strong> spanning cryptography, software and network security, reverse engineering, compilers, operating systems, blockchain and trusted computing. The most-used thing I have published.</p>
+            <div class="chips"><span>C</span><span>Assembly</span><span>Security</span><span>Systems</span></div>
+            <div class="proj-foot">
+              <a class="link S" href="https://github.com/zichuanxu/HUST-CSE-Experiments" target="_blank" rel="noopener">View code ↗</a>
+              <span class="stars" data-stars hidden><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg><span data-stars-count></span><span class="sr-only">stars on GitHub</span></span>
             </div>
           </div>
+        </article>
+        <article class="proj reveal F">
+          <div class="band" aria-hidden="true"><i class="F"></i></div>
+          <div class="proj-body">
+            <div class="proj-head"><h3>NimGet</h3><span class="badge">Open source</span></div>
+            <p>A lightweight <strong>download manager built in Go</strong>, with a desktop app for macOS and Windows and a CLI for Linux too. Parallel connections and crash-safe resume keep downloads moving; a persistent queue, speed limits, scheduling, and HLS support handle longer workflows. The React desktop interface and CLI share the same background service.</p>
+            <div class="chips"><span>Go</span><span>React</span><span>Wails</span><span>SQLite</span></div>
+            <div class="proj-foot">
+              <a class="link F" href="https://github.com/zichuanxu/nimget" target="_blank" rel="noopener">View code ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== education ============================= -->
+  <section class="sec" id="education" aria-labelledby="education-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title" id="education-title"><span class="plat" aria-hidden="true">3</span>Education</h2>
+        <p class="sec-meta">3 stations · 2019 → 2027</p>
+      </div>
+      <div class="edu">
+        <article class="stop reveal" id="edu-osaka">
+          <div class="band" aria-hidden="true"><i class="R"></i><i class="A"></i><i class="Q"></i></div>
+          <div class="stop-head">
+            <span class="plate"><img src="/images/osaka-university-logo.png" alt="" loading="lazy" decoding="async"></span>
+          </div>
+          <div class="stop-body">
+            <div>
+              <h3 class="stop-title" style="margin-top:0">MEng, Computer Science</h3>
+              <p class="stop-role"><a class="school" href="https://www.osaka-u.ac.jp/ja" target="_blank" rel="noopener">The University of Osaka</a></p>
+            </div>
+            <span class="when">Suita, Osaka · 2025 → 2027</span>
+            <p class="stop-desc">Graduate School of Information Science and Technology. Advised by <a href="https://sites.google.com/site/chuanxiao1983/" target="_blank" rel="noopener">Prof. Chuan Xiao</a>. Researching multi-agent learning and emergent communication.</p>
+          </div>
+        </article>
+        <article class="stop reveal" id="edu-wqu">
+          <div class="band" aria-hidden="true"><i class="Q"></i></div>
+          <div class="stop-head">
+            <span class="plate"><img src="/images/wqu.svg" alt="" loading="lazy" decoding="async"></span>
+          </div>
+          <div class="stop-body">
+            <div>
+              <h3 class="stop-title" style="margin-top:0">MSc, Financial Engineering</h3>
+              <p class="stop-role"><a class="school" href="https://www.wqu.edu/" target="_blank" rel="noopener">WorldQuant University</a></p>
+            </div>
+            <span class="when">Online · 2025 → 2027</span>
+            <p class="stop-desc">Studied in parallel with the Osaka programme &mdash; quantitative methods, derivatives, and financial data analysis.</p>
+            <a class="cert" href="https://www.credly.com/badges/82e5200b-56e4-4d95-bd61-cbb9deec85e9" target="_blank" rel="noopener"><span><b>Foundations of Financial Engineering</b><small>Certificate · 2025</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>
+          </div>
+        </article>
+        <article class="stop reveal" id="edu-hust">
+          <div class="band" aria-hidden="true"><i class="S"></i></div>
+          <div class="stop-head">
+            <span class="plate tall"><img src="/images/HUST.png" alt="" loading="lazy" decoding="async"></span>
+          </div>
+          <div class="stop-body">
+            <div>
+              <h3 class="stop-title" style="margin-top:0">BE, Cyberspace Security</h3>
+              <p class="stop-role"><a class="school" href="https://www.hust.edu.cn/" target="_blank" rel="noopener">Huazhong University of Science and Technology</a></p>
+            </div>
+            <span class="when">Wuhan, China · 2019 → 2023</span>
+            <p class="stop-desc">School of Cyber Science and Engineering. Coursework archived in <a href="https://github.com/zichuanxu/HUST-CSE-Experiments" target="_blank" rel="noopener">HUST-CSE-Experiments</a>.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ skills ============================== -->
+  <section class="sec alt" id="skills" aria-labelledby="skills-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title" id="skills-title"><span class="plat" aria-hidden="true">4</span>Skills &amp; Stack</h2>
+      </div>
+      <div class="skills">
+        <div class="reveal">
+          <h3>Languages</h3>
+          <div class="lang">Chinese<span>Native</span></div>
+          <div class="lang">English<span>IELTS 7.5 · C1</span></div>
+          <div class="lang">Japanese<span>JLPT N1 · B2</span></div>
+          <h3 style="margin-top:28px">Also</h3>
+          <div class="also"><span>Software Development</span><span>Financial Analysis</span><span>Economics</span><span>Technical Writing</span></div>
+        </div>
+        <div class="stack reveal">
+          {%- comment -%}
+            Format: Group|icon-slug:Label,icon-slug:Label@NextGroup|...
+            Icon slugs resolve to /images/tech/<slug>.svg (brand-coloured, vendored).
+            Group separator is "@" and item separator "," — never ";", which would
+            tear HTML entities such as "&amp;" in half.
+          {%- endcomment -%}
+          {%- assign stacks = "Full-stack development|typescript:TypeScript,react:React,nodedotjs:Node.js,go:Go,python:Python,openjdk:Java,springboot:Spring Boot,django:Django,postgresql:PostgreSQL@AI &amp; ML|pytorch:PyTorch,huggingface:Hugging Face,openai:OpenAI,claude:Claude,aws:Amazon Bedrock,github:GitHub Copilot@Cloud &amp; DevOps|aws:AWS,docker:Docker,terraform:Terraform,linux:Linux,git:Git,github:GitHub" | split: "@" %}
+          {%- for stack in stacks %}
+          {%- assign bits = stack | split: "|" %}
+          <div class="stack-group">
+            <h3>{{ bits[0] }}</h3>
+            <ul>
+              {%- assign tools = bits[1] | split: "," %}
+              {%- for tool in tools %}{% assign t = tool | split: ":" %}
+              <li><img src="/images/tech/{{ t[0] }}.svg" alt="" loading="lazy" decoding="async" width="18" height="18">{{ t[1] }}</li>
+              {%- endfor %}
+            </ul>
+          </div>
+          {%- endfor %}
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+</main>
 
-    <!-- ================================ contact ================================= -->
-    <footer id="contact" class="sf-contact">
-      <div class="sf-contact-inner">
-        <div class="reveal" style="--reveal-delay: 0.1s">
-          <div class="sf-cta-row">
-            <a class="sf-cta is-primary" href="mailto:xu.zichuan@ist.osaka-u.ac.jp">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="m22 7-10 6L2 7" />
-              </svg>
-              Email me
-            </a>
-            <a class="sf-cta is-ghost" href="https://www.linkedin.com/in/zichuanxu/" target="_blank"
-              rel="me noopener">
-              <svg class="sf-linkedin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14Zm1.78 13.02H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z" />
-              </svg>
-              LinkedIn
-            </a>
-            <a class="sf-cta is-ghost" href="https://github.com/zichuanxu" target="_blank" rel="me noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z" />
-              </svg>
-              GitHub
-            </a>
-          </div>
-        </div>
-        <p class="sf-colophon">
-          &copy; {{ 'now' | date: '%Y' }} Zichuan Xu
-        </p>
-      </div>
-    </footer>
-  </main>
+<footer class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <svg class="next-line" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 H960"/></svg>
+    <p class="eyebrow"><span class="plat" aria-hidden="true">5</span>Contact</p>
+    <h2 id="contact-title">Next stop?</h2>
+    <a class="mail" href="mailto:xu.zichuan@ist.osaka-u.ac.jp">xu.zichuan@ist.osaka-u.ac.jp</a>
+    <div class="cta">
+      <a class="btn primary" href="mailto:xu.zichuan@ist.osaka-u.ac.jp">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/zichuanxu/" target="_blank" rel="me noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/zichuanxu" target="_blank" rel="me noopener">GitHub</a>
+    </div>
+    <div class="colophon"><span>&copy; {{ 'now' | date: '%Y' }} Zichuan Xu</span><span>Tokyo · Osaka</span></div>
+  </div>
+</footer>
 
-  <script>
-    (() => {
-      /* Hero typewriter — types one character at a time, deletes one word at a
-         time, mirroring the reference implementation. */
-      const el = document.querySelector('[data-typewriter]');
-      if (!el) return;
-      const roles = el.dataset.roles.split('|');
-      const pills = [...document.querySelectorAll('[data-pills] .sf-pill')];
-      let index = 0;
-      let text = roles[0];
-      let deleting = false;
+<script>
+  (() => {
+    /* Line focus: a legend chip highlights one line on the map and the route list. */
+    const map = document.querySelector('.map');
+    const chips = [...document.querySelectorAll('.line-chip')];
+    const focus = (line) => {
+      if (line) map.dataset.focus = line; else delete map.dataset.focus;
+      chips.forEach((chip) => chip.setAttribute('aria-pressed', String(chip.dataset.line === line)));
+    };
+    chips.forEach((chip) => chip.addEventListener('click', () => {
+      focus(chip.getAttribute('aria-pressed') === 'true' ? null : chip.dataset.line);
+    }));
 
-      const highlight = () => {
-        pills.forEach((pill, i) => pill.classList.toggle('is-active', i === index % pills.length));
-      };
-      highlight();
+    /* Scrollspy: the platform number of the section in view lights up. */
+    const links = [...document.querySelectorAll('[data-spy]')];
+    const targets = links.map((a) => document.getElementById(a.dataset.spy));
+    const spy = () => {
+      const line = window.innerHeight * 0.35;
+      let active = null;
+      targets.forEach((el, i) => { if (el && el.getBoundingClientRect().top <= line) active = i; });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) active = targets.length - 1;
+      links.forEach((a, i) => a.setAttribute('aria-current', String(i === active)));
+    };
+    window.addEventListener('scroll', spy, { passive: true });
+    window.addEventListener('resize', spy, { passive: true });
+    spy();
 
-      const tick = () => {
-        const role = roles[index];
-        let delay;
-        if (!deleting && text === role) {
-          deleting = true;
-          delay = 2000;
-        } else if (deleting && text === '') {
-          index = (index + 1) % roles.length;
-          deleting = false;
-          highlight();
-          delay = 300;
-        } else if (deleting) {
-          const words = text.trimEnd().split(' ');
-          words.pop();
-          text = words.length ? words.join(' ') + ' ' : '';
-          el.textContent = text;
-          delay = 60;
-        } else {
-          text = role.slice(0, text.length + 1);
-          el.textContent = text;
-          delay = 80;
-        }
-        setTimeout(tick, delay);
-      };
+    /* Reveal on scroll. A background tab never runs observer callbacks, so show
+       everything if none has fired after 1.5 s; without the API, show it at once. */
+    const items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      let fired = false;
+      const io = new IntersectionObserver((entries) => {
+        fired = true;
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      items.forEach((el) => io.observe(el));
+      setTimeout(() => { if (!fired) items.forEach((el) => el.classList.add('in')); }, 1500);
+    } else {
+      items.forEach((el) => el.classList.add('in'));
+    }
 
-      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        setTimeout(tick, 2000);
-      }
-    })();
-  </script>
-
+    /* Live star count for HUST-CSE-Experiments; it stays hidden if the API fails. */
+    const stars = document.querySelector('[data-stars]');
+    if (stars && window.fetch) {
+      fetch('https://api.github.com/repos/zichuanxu/HUST-CSE-Experiments')
+        .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
+        .then((repo) => {
+          if (typeof repo.stargazers_count !== 'number') return;
+          stars.querySelector('[data-stars-count]').textContent = repo.stargazers_count.toLocaleString('en');
+          stars.hidden = false;
+        })
+        .catch(() => {});
+    }
+  })();
+</script>
 </body>
 
 </html>
