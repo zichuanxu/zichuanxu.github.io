@@ -387,6 +387,7 @@ sitemap: true
       const box = lines[0].parentElement;
       const cs = getComputedStyle(box);
       const inner = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      if (!(inner > 0)) return; // hidden or zero-size viewport: keep the CSS size, fit again once visible
       letters.forEach((el) => { el.style.fontStretch = '96%'; });
       lines.forEach((line) => { line.style.fontSize = '100px'; });
       const size = Math.min((100 * inner * 0.94) / lines[0].getBoundingClientRect().width, 340);
@@ -420,6 +421,7 @@ sitemap: true
     const start = () => { fit(); run(); };
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(start); else start();
     window.addEventListener('resize', fit, { passive: true });
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) fit(); });
     if (!still) {
       hero.addEventListener('pointermove', (e) => { pointer = { x: e.clientX, y: e.clientY }; });
       hero.addEventListener('pointerleave', () => { pointer = null; });
