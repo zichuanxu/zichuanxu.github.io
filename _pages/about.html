@@ -415,7 +415,7 @@ sitemap: true
           Group separator is "@" and item separator "," — never ";", which would
           tear HTML entities such as "&amp;" in half.
         {%- endcomment -%}
-        {%- assign stacks = "Full-stack development|F|typescript:TypeScript,react:React,nodedotjs:Node.js,go:Go,python:Python,openjdk:Java,springboot:Spring Boot,django:Django,postgresql:PostgreSQL@AI &amp; ML|R A|pytorch:PyTorch,huggingface:Hugging Face,openai:OpenAI,claude:Claude,aws:Amazon Bedrock,github:GitHub Copilot@Cloud &amp; DevOps|-|aws:AWS,docker:Docker,terraform:Terraform,linux:Linux,git:Git,github:GitHub" | split: "@" %}
+        {%- assign stacks = "Full-stack development|F|typescript:TypeScript,react:React,vuedotjs:Vue.js,nodedotjs:Node.js,go:Go,python:Python,openjdk:Java,springboot:Spring Boot,django:Django,laravel:Laravel,postgresql:PostgreSQL,mysql:MySQL,redis:Redis@AI &amp; ML|R A|pytorch:PyTorch,huggingface:Hugging Face,onnx:ONNX,openai:Codex,claude:Claude Code,aws:Amazon Bedrock@Cloud &amp; DevOps|-|aws:AWS,docker:Docker,terraform:Terraform,linux:Linux,git:Git,github:GitHub,apacheairflow:Apache Airflow" | split: "@" %}
         {%- for stack in stacks %}
         {%- assign bits = stack | split: "|" %}
         {%- assign lines = bits[1] | split: " " %}
