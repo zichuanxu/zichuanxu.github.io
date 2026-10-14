@@ -4,11 +4,11 @@
     <div class="bar-right">
       {%- if include.nav %}
       <nav class="nav" aria-label="Sections">
-        <a href="#experience" data-spy="experience"><span class="plat" aria-hidden="true">1</span>Experience</a>
-        <a href="#education" data-spy="education"><span class="plat" aria-hidden="true">2</span>Education</a>
-        <a href="#projects" data-spy="projects"><span class="plat" aria-hidden="true">3</span>Projects</a>
-        <a href="#skills" data-spy="skills"><span class="plat" aria-hidden="true">4</span>Skills</a>
-        <a href="#contact" data-spy="contact"><span class="plat" aria-hidden="true">5</span>Contact</a>
+        <a href="#experience" data-spy="experience">Experience</a>
+        <a href="#education" data-spy="education">Education</a>
+        <a href="#projects" data-spy="projects">Projects</a>
+        <a href="#skills" data-spy="skills">Skills</a>
+        <a href="#contact" data-spy="contact">Contact</a>
       </nav>
       {%- endif %}
       <button class="toggle" type="button" aria-label="Switch theme">
@@ -30,7 +30,7 @@
     const sync = () => {
       const theme = current();
       document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
-        meta.content = theme === 'dark' ? '#0F1115' : '#F6F5F0';
+        meta.content = theme === 'dark' ? '#111216' : '#F4F1EA';
       });
       toggle.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`);
     };
