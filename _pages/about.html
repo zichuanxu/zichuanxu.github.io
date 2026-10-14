@@ -340,47 +340,58 @@ sitemap: true
         <h2 class="sec-title" id="education-title"><span class="plat" aria-hidden="true">3</span>Education</h2>
         <p class="sec-meta">3 stations · 2019 → 2027</p>
       </div>
-      <div class="edu">
+      <div class="stops edu">
+        <!-- The University of Osaka -->
         <article class="stop reveal" id="edu-osaka">
           <div class="band" aria-hidden="true"><i class="R"></i><i class="A"></i><i class="Q"></i></div>
           <div class="stop-head">
-            <span class="plate"><img src="/images/osaka-university-logo.png" alt="" loading="lazy" decoding="async"></span>
+            <div>
+              <h3 class="stop-title"><a href="https://www.osaka-u.ac.jp/ja" target="_blank" rel="noopener">The University of Osaka</a></h3>
+              <p class="stop-role"><b>Master of Information Science and Technology</b> · Suita, Osaka</p>
+            </div>
+            <div class="stop-side">
+              <span class="plate"><img src="/images/osaka-university-logo.png" alt="" width="696" height="176" loading="lazy" decoding="async"></span>
+              <span class="when">2025 → 2027</span>
+            </div>
           </div>
           <div class="stop-body">
-            <div>
-              <h3 class="stop-title" style="margin-top:0">MEng, Computer Science</h3>
-              <p class="stop-role"><a class="school" href="https://www.osaka-u.ac.jp/ja" target="_blank" rel="noopener">The University of Osaka</a></p>
-            </div>
-            <span class="when">Suita, Osaka · 2025 → 2027</span>
             <p class="stop-desc">Graduate School of Information Science and Technology. Advised by <a href="https://sites.google.com/site/chuanxiao1983/" target="_blank" rel="noopener">Prof. Chuan Xiao</a>. Researching multi-agent learning and emergent communication.</p>
           </div>
         </article>
+
+        <!-- WorldQuant University -->
         <article class="stop reveal" id="edu-wqu">
           <div class="band" aria-hidden="true"><i class="Q"></i></div>
           <div class="stop-head">
-            <span class="plate"><img src="/images/wqu.svg" alt="" loading="lazy" decoding="async"></span>
+            <div>
+              <h3 class="stop-title"><a href="https://www.wqu.edu/" target="_blank" rel="noopener">WorldQuant University</a></h3>
+              <p class="stop-role"><b>MSc, Financial Engineering</b> · Online</p>
+            </div>
+            <div class="stop-side">
+              <span class="plate"><img src="/images/wqu.svg" alt="" width="220" height="74" loading="lazy" decoding="async"></span>
+              <span class="when">2025 → 2027</span>
+            </div>
           </div>
           <div class="stop-body">
-            <div>
-              <h3 class="stop-title" style="margin-top:0">MSc, Financial Engineering</h3>
-              <p class="stop-role"><a class="school" href="https://www.wqu.edu/" target="_blank" rel="noopener">WorldQuant University</a></p>
-            </div>
-            <span class="when">Online · 2025 → 2027</span>
             <p class="stop-desc">Studied in parallel with the Osaka programme &mdash; quantitative methods, derivatives, and financial data analysis.</p>
             <a class="cert" href="https://www.credly.com/badges/82e5200b-56e4-4d95-bd61-cbb9deec85e9" target="_blank" rel="noopener"><span><b>Foundations of Financial Engineering</b><small>Certificate · 2025</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>
           </div>
         </article>
+
+        <!-- HUST -->
         <article class="stop reveal" id="edu-hust">
           <div class="band" aria-hidden="true"><i class="S"></i></div>
           <div class="stop-head">
-            <span class="plate tall"><img src="/images/HUST.png" alt="" loading="lazy" decoding="async"></span>
+            <div>
+              <h3 class="stop-title"><a href="https://www.hust.edu.cn/" target="_blank" rel="noopener">Huazhong University of Science and Technology</a></h3>
+              <p class="stop-role"><b>BEng, Cyberspace Security</b> · Wuhan, China</p>
+            </div>
+            <div class="stop-side">
+              <span class="plate"><img src="/images/hust-logo.png" alt="" width="400" height="94" loading="lazy" decoding="async"></span>
+              <span class="when">2019 → 2023</span>
+            </div>
           </div>
           <div class="stop-body">
-            <div>
-              <h3 class="stop-title" style="margin-top:0">BE, Cyberspace Security</h3>
-              <p class="stop-role"><a class="school" href="https://www.hust.edu.cn/" target="_blank" rel="noopener">Huazhong University of Science and Technology</a></p>
-            </div>
-            <span class="when">Wuhan, China · 2019 → 2023</span>
             <p class="stop-desc">School of Cyber Science and Engineering. Coursework archived in <a href="https://github.com/zichuanxu/HUST-CSE-Experiments" target="_blank" rel="noopener">HUST-CSE-Experiments</a>.</p>
           </div>
         </article>
@@ -394,35 +405,37 @@ sitemap: true
       <div class="sec-head">
         <h2 class="sec-title" id="skills-title"><span class="plat" aria-hidden="true">4</span>Skills &amp; Stack</h2>
       </div>
-      <div class="skills">
-        <div class="reveal">
-          <h3>Languages</h3>
-          <div class="lang">Chinese<span>Native</span></div>
-          <div class="lang">English<span>IELTS 7.5 · C1</span></div>
-          <div class="lang">Japanese<span>JLPT N1 · B2</span></div>
-          <h3 style="margin-top:28px">Also</h3>
-          <div class="also"><span>Software Development</span><span>Financial Analysis</span><span>Economics</span><span>Technical Writing</span></div>
+      <div class="sheet">
+        {%- comment -%}
+          One row per group; each tool is a logo tile.
+          Format: Group|lines|icon-slug:Label,icon-slug:Label@NextGroup|...
+          "lines" are the career-line pips drawn before the group name, space-separated
+          (e.g. "R A"); "-" draws a single ink pip for a group outside the five lines.
+          Icon slugs resolve to /images/tech/<slug>.svg (brand-coloured, vendored).
+          Group separator is "@" and item separator "," — never ";", which would
+          tear HTML entities such as "&amp;" in half.
+        {%- endcomment -%}
+        {%- assign stacks = "Full-stack development|F|typescript:TypeScript,react:React,nodedotjs:Node.js,go:Go,python:Python,openjdk:Java,springboot:Spring Boot,django:Django,postgresql:PostgreSQL@AI &amp; ML|R A|pytorch:PyTorch,huggingface:Hugging Face,openai:OpenAI,claude:Claude,aws:Amazon Bedrock,github:GitHub Copilot@Cloud &amp; DevOps|-|aws:AWS,docker:Docker,terraform:Terraform,linux:Linux,git:Git,github:GitHub" | split: "@" %}
+        {%- for stack in stacks %}
+        {%- assign bits = stack | split: "|" %}
+        {%- assign lines = bits[1] | split: " " %}
+        <div class="sheet-row reveal">
+          <h3><span class="pips" aria-hidden="true">{% for l in lines %}<i{% if l != "-" %} class="{{ l }}"{% endif %}></i>{% endfor %}</span>{{ bits[0] }}</h3>
+          <ul class="tiles">
+            {%- assign tools = bits[2] | split: "," %}
+            {%- for tool in tools %}{% assign t = tool | split: ":" %}
+            <li class="tile" style="--i:{{ forloop.index0 }}"><span class="ico"><img src="/images/tech/{{ t[0] }}.svg" alt="" width="26" height="26" loading="lazy" decoding="async"></span>{{ t[1] }}</li>
+            {%- endfor %}
+          </ul>
         </div>
-        <div class="stack reveal">
-          {%- comment -%}
-            Format: Group|icon-slug:Label,icon-slug:Label@NextGroup|...
-            Icon slugs resolve to /images/tech/<slug>.svg (brand-coloured, vendored).
-            Group separator is "@" and item separator "," — never ";", which would
-            tear HTML entities such as "&amp;" in half.
-          {%- endcomment -%}
-          {%- assign stacks = "Full-stack development|typescript:TypeScript,react:React,nodedotjs:Node.js,go:Go,python:Python,openjdk:Java,springboot:Spring Boot,django:Django,postgresql:PostgreSQL@AI &amp; ML|pytorch:PyTorch,huggingface:Hugging Face,openai:OpenAI,claude:Claude,aws:Amazon Bedrock,github:GitHub Copilot@Cloud &amp; DevOps|aws:AWS,docker:Docker,terraform:Terraform,linux:Linux,git:Git,github:GitHub" | split: "@" %}
-          {%- for stack in stacks %}
-          {%- assign bits = stack | split: "|" %}
-          <div class="stack-group">
-            <h3>{{ bits[0] }}</h3>
-            <ul>
-              {%- assign tools = bits[1] | split: "," %}
-              {%- for tool in tools %}{% assign t = tool | split: ":" %}
-              <li><img src="/images/tech/{{ t[0] }}.svg" alt="" loading="lazy" decoding="async" width="18" height="18">{{ t[1] }}</li>
-              {%- endfor %}
-            </ul>
-          </div>
-          {%- endfor %}
+        {%- endfor %}
+        <div class="sheet-row reveal">
+          <h3>Languages</h3>
+          <ul class="tiles langs">
+            <li class="tile">Chinese <small>Native</small></li>
+            <li class="tile">English <small>IELTS 7.5 · C1</small></li>
+            <li class="tile">Japanese <small>JLPT N1 · B2</small></li>
+          </ul>
         </div>
       </div>
     </div>
