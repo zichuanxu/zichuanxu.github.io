@@ -112,7 +112,8 @@ button { font: inherit; color: inherit; }
 .bar { position: sticky; top: 0; z-index: 40; height: var(--bar-h); background: color-mix(in oklab, var(--paper) 86%, transparent); -webkit-backdrop-filter: saturate(1.3) blur(12px); backdrop-filter: saturate(1.3) blur(12px); border-bottom: 1px solid var(--rule); }
 .bar .wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 600; font-size: 15.5px; letter-spacing: -.01em; }
-.mark { width: 34px; height: 34px; border-radius: 50%; border: 4px solid var(--A); background: var(--card); display: grid; place-items: center; font: 700 11.5px/1 var(--font); letter-spacing: -.03em; }
+/* the mark: an ink square and an orange circle overlapping (same drawing as favicon.svg) */
+.mark { width: 34px; height: 34px; flex: none; display: block; }
 .bar-right { display: flex; align-items: center; gap: 8px; }
 .nav { display: flex; align-items: center; gap: 2px; }
 .nav a { display: inline-flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 8px; font-size: 14.5px; font-weight: 500; color: var(--mute); text-decoration: none; transition: color .2s, background-color .2s; }
