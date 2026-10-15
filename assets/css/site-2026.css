@@ -267,7 +267,7 @@ button { font: inherit; color: inherit; }
 /* =========================================================================
    Contact
    ========================================================================= */
-.contact { margin-top: clamp(80px, 9vw, 120px); padding-top: clamp(72px, 9vw, 120px); background: var(--sign); color: var(--sign-ink); overflow: hidden; }
+.contact { margin-top: clamp(80px, 9vw, 120px); padding-block: clamp(72px, 9vw, 120px) 36px; background: var(--sign); color: var(--sign-ink); overflow: hidden; }
 .contact .sec-head { border-bottom-color: var(--sign-ink); }
 /* one row per channel, the whole row is the link */
 .channels { list-style: none; }
@@ -282,10 +282,6 @@ button { font: inherit; color: inherit; }
 .channels a:hover .k, .channels a:hover .go, .channels a:focus-visible .go { color: var(--accent); }
 .channels a:focus-visible { outline-offset: -3px; }
 .colophon { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: clamp(36px, 4vw, 56px); padding-top: 18px; border-top: 1px solid color-mix(in oklab, var(--sign-ink) 16%, transparent); font: 500 12.5px var(--mono); color: var(--sign-mute); }
-/* the name closes the page on one line, cut by the bottom edge; without the script
-   this size still fits "Zichuan Xu" inside the content box */
-.kline.end { margin-top: clamp(20px, 3vw, 40px); margin-bottom: -.13em; font-size: clamp(48px, 17vw, 260px); }
-.contact .kline span { color: color-mix(in oklab, var(--accent) calc(var(--h, 0) * 100%), var(--sign-ink)); }
 @media (max-width: 700px) {
   .channels a { grid-template-columns: minmax(0, 1fr) 28px; }
   .channels .k { grid-column: 1 / -1; }
@@ -345,5 +341,4 @@ button { font: inherit; color: inherit; }
   .has-js .reveal .yr { background: none !important; -webkit-text-stroke: 0 !important; font-stretch: 84% !important; }
   .has-js .reveal .tile { opacity: 1 !important; transform: none !important; }
   .kline span { font-stretch: 96% !important; }
-  .kline.end { display: none !important; }
 }

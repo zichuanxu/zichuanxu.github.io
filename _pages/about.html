@@ -362,8 +362,7 @@ sitemap: true
       <li><a href="https://www.linkedin.com/in/zichuanxu/" target="_blank" rel="me noopener"><span class="k">LinkedIn</span><span class="v">in/zichuanxu</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></li>
       <li><a href="https://github.com/zichuanxu" target="_blank" rel="me noopener"><span class="k">GitHub</span><span class="v">github.com/zichuanxu</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></li>
     </ul>
-    <div class="colophon"><span>&copy; {{ 'now' | date: '%Y' }} Zichuan Xu</span><span>Tokyo · Osaka</span></div>
-    <div class="kline end" aria-hidden="true"><span>Z</span><span>i</span><span>c</span><span>h</span><span>u</span><span>a</span><span>n</span><span>&nbsp;</span><span>X</span><span>u</span></div>
+    <div class="colophon"><span>&copy; {{ 'now' | date: '%Y' }} Zichuan Xu</span></div>
   </div>
 </footer>
 
@@ -372,70 +371,65 @@ sitemap: true
     const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     /* The name: every letter's width (font-stretch) is animated. The letters open
-       from 62% when the name comes into view; idle, a slow wave runs through them;
-       near the pointer a letter widens and turns orange. The hero sets it on two
-       lines sharing one size, fitted so that "Zichuan" spans the content box; the
-       footer closes the page with it on one line. The loop only runs while its
-       area is on screen. */
-    const animateName = (area, ratio) => {
-      const lines = [...area.querySelectorAll('.kline')];
-      const letters = lines.flatMap((line) => [...line.children]);
-      const width = letters.map(() => (still ? 96 : 62));
-      const heat = letters.map(() => 0);
-      const paint = () => letters.forEach((el, i) => {
-        el.style.fontStretch = `${width[i].toFixed(1)}%`;
-        el.style.setProperty('--h', heat[i].toFixed(3));
-      });
-      const fit = () => {
-        const box = lines[0].parentElement;
-        const cs = getComputedStyle(box);
-        const inner = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
-        if (!(inner > 0)) return; // hidden or zero-size viewport: keep the CSS size, fit again once visible
-        letters.forEach((el) => { el.style.fontStretch = '96%'; });
-        lines.forEach((line) => { line.style.fontSize = '100px'; });
-        const size = Math.min((100 * inner * ratio) / lines[0].getBoundingClientRect().width, 340);
-        lines.forEach((line) => { line.style.fontSize = `${size.toFixed(1)}px`; });
-        paint();
-      };
-      let pointer = null;
-      let frame = 0;
-      let onScreen = !('IntersectionObserver' in window);
-      const tick = (now) => {
-        frame = 0;
-        const size = parseFloat(lines[0].style.fontSize) || 200;
-        letters.forEach((el, i) => {
-          let w = 96 + 10 * Math.sin(now / 900 - i * 0.6);
-          let h = 0;
-          if (pointer) {
-            const r = el.getBoundingClientRect();
-            const dx = (r.left + r.width / 2 - pointer.x) / size;
-            const dy = (r.top + r.height / 2 - pointer.y) / size;
-            const d2 = dx * dx + dy * dy * 1.6;
-            w = 74 + 51 * Math.exp(-d2 / 0.35);
-            h = Math.min(1, 1.8 * Math.exp(-d2 / 0.22));
-          }
-          width[i] += (w - width[i]) * 0.1;
-          heat[i] += (h - heat[i]) * 0.12;
-        });
-        paint();
-        if (onScreen && !document.hidden) frame = requestAnimationFrame(tick);
-      };
-      const run = () => { if (!frame && !still) frame = requestAnimationFrame(tick); };
-      const start = () => { fit(); run(); };
-      if (document.fonts && document.fonts.ready) document.fonts.ready.then(start); else start();
-      window.addEventListener('resize', fit, { passive: true });
-      document.addEventListener('visibilitychange', () => { if (!document.hidden) fit(); });
-      if (!still) {
-        area.addEventListener('pointermove', (e) => { pointer = { x: e.clientX, y: e.clientY }; });
-        area.addEventListener('pointerleave', () => { pointer = null; });
-        document.addEventListener('visibilitychange', run);
-        if ('IntersectionObserver' in window) {
-          new IntersectionObserver(([entry]) => { onScreen = entry.isIntersecting; run(); }).observe(area);
-        }
-      }
+       from 62% on load; idle, a slow wave runs through them; near the pointer a
+       letter widens and turns orange. Both lines share one size, fitted so that
+       "Zichuan" spans the content box. */
+    const hero = document.querySelector('.hero');
+    const lines = [...document.querySelectorAll('.kline')];
+    const letters = lines.flatMap((line) => [...line.children]);
+    const width = letters.map(() => (still ? 96 : 62));
+    const heat = letters.map(() => 0);
+    const paint = () => letters.forEach((el, i) => {
+      el.style.fontStretch = `${width[i].toFixed(1)}%`;
+      el.style.setProperty('--h', heat[i].toFixed(3));
+    });
+    const fit = () => {
+      const box = lines[0].parentElement;
+      const cs = getComputedStyle(box);
+      const inner = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      if (!(inner > 0)) return; // hidden or zero-size viewport: keep the CSS size, fit again once visible
+      letters.forEach((el) => { el.style.fontStretch = '96%'; });
+      lines.forEach((line) => { line.style.fontSize = '100px'; });
+      const size = Math.min((100 * inner * 0.94) / lines[0].getBoundingClientRect().width, 340);
+      lines.forEach((line) => { line.style.fontSize = `${size.toFixed(1)}px`; });
+      paint();
     };
-    animateName(document.querySelector('.hero'), 0.94);
-    animateName(document.querySelector('.contact'), 0.97);
+    let pointer = null;
+    let frame = 0;
+    let onScreen = true;
+    const tick = (now) => {
+      frame = 0;
+      const size = parseFloat(lines[0].style.fontSize) || 200;
+      letters.forEach((el, i) => {
+        let w = 96 + 10 * Math.sin(now / 900 - i * 0.6);
+        let h = 0;
+        if (pointer) {
+          const r = el.getBoundingClientRect();
+          const dx = (r.left + r.width / 2 - pointer.x) / size;
+          const dy = (r.top + r.height / 2 - pointer.y) / size;
+          const d2 = dx * dx + dy * dy * 1.6;
+          w = 74 + 51 * Math.exp(-d2 / 0.35);
+          h = Math.min(1, 1.8 * Math.exp(-d2 / 0.22));
+        }
+        width[i] += (w - width[i]) * 0.1;
+        heat[i] += (h - heat[i]) * 0.12;
+      });
+      paint();
+      if (onScreen && !document.hidden) frame = requestAnimationFrame(tick);
+    };
+    const run = () => { if (!frame && !still) frame = requestAnimationFrame(tick); };
+    const start = () => { fit(); run(); };
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(start); else start();
+    window.addEventListener('resize', fit, { passive: true });
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) fit(); });
+    if (!still) {
+      hero.addEventListener('pointermove', (e) => { pointer = { x: e.clientX, y: e.clientY }; });
+      hero.addEventListener('pointerleave', () => { pointer = null; });
+      document.addEventListener('visibilitychange', run);
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(([entry]) => { onScreen = entry.isIntersecting; run(); }).observe(hero);
+      }
+    }
 
     /* Scrollspy: the nav link of the section in view is underlined. */
     const links = [...document.querySelectorAll('[data-spy]')];
