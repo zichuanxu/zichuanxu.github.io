@@ -267,18 +267,30 @@ button { font: inherit; color: inherit; }
 /* =========================================================================
    Contact
    ========================================================================= */
-.contact { margin-top: clamp(80px, 9vw, 120px); padding-block: clamp(72px, 9vw, 120px) 36px; background: var(--sign); color: var(--sign-ink); overflow: hidden; }
-.contact .eyebrow { margin-bottom: 20px; color: var(--sign-mute); }
-.contact h2 { font-size: clamp(56px, 11vw, 176px); font-weight: 800; font-stretch: 116%; line-height: .82; letter-spacing: -.05em; }
-.contact h2 .q { color: var(--accent); }
-.mail { display: inline-block; margin-top: 22px; font: 500 clamp(14px, 1.6vw, 19px)/1.4 var(--mono); color: var(--sign-ink); text-decoration: none; border-bottom: 1.5px solid color-mix(in oklab, var(--sign-ink) 35%, transparent); word-break: break-all; }
-.mail:hover { border-color: var(--accent); }
-.contact .cta { margin-top: 30px; }
-.contact .btn { border-color: color-mix(in oklab, var(--sign-ink) 55%, transparent); color: var(--sign-ink); }
-.contact .btn:hover { background: var(--sign-ink); color: var(--sign); border-color: var(--sign-ink); }
-.contact .btn.primary { background: var(--accent); border-color: var(--accent); color: #121317; }
-.contact .btn.primary:hover { background: var(--sign-ink); border-color: var(--sign-ink); color: var(--sign); }
-.colophon { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: clamp(56px, 8vw, 96px); padding-top: 18px; border-top: 1px solid color-mix(in oklab, var(--sign-ink) 16%, transparent); font: 500 12.5px var(--mono); color: var(--sign-mute); }
+.contact { margin-top: clamp(80px, 9vw, 120px); padding-top: clamp(72px, 9vw, 120px); background: var(--sign); color: var(--sign-ink); overflow: hidden; }
+.contact .sec-head { border-bottom-color: var(--sign-ink); }
+/* one row per channel, the whole row is the link */
+.channels { list-style: none; }
+.channels li:last-child a { border-bottom: 0; }
+.channels a { display: grid; grid-template-columns: 170px minmax(0, 1fr) 40px; align-items: center; gap: 6px 24px; padding-block: clamp(18px, 2.2vw, 28px); border-bottom: 1px solid color-mix(in oklab, var(--sign-ink) 16%, transparent); color: var(--sign-ink); text-decoration: none; }
+.channels .k { font: 500 12.5px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--sign-mute); }
+.channels .v { font-size: clamp(22px, 3.4vw, 48px); font-weight: 700; font-stretch: 100%; line-height: 1.05; letter-spacing: -.025em; overflow-wrap: anywhere; }
+/* a long address breaks only before the @ */
+.channels .v span { white-space: nowrap; }
+.channels .go { width: 34px; height: 34px; justify-self: end; color: var(--sign-mute); }
+.channels a:hover .v, .channels a:focus-visible .v { font-stretch: 112%; }
+.channels a:hover .k, .channels a:hover .go, .channels a:focus-visible .go { color: var(--accent); }
+.channels a:focus-visible { outline-offset: -3px; }
+.colophon { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: clamp(36px, 4vw, 56px); padding-top: 18px; border-top: 1px solid color-mix(in oklab, var(--sign-ink) 16%, transparent); font: 500 12.5px var(--mono); color: var(--sign-mute); }
+/* the name closes the page on one line, cut by the bottom edge; without the script
+   this size still fits "Zichuan Xu" inside the content box */
+.kline.end { margin-top: clamp(20px, 3vw, 40px); margin-bottom: -.13em; font-size: clamp(48px, 17vw, 260px); }
+.contact .kline span { color: color-mix(in oklab, var(--accent) calc(var(--h, 0) * 100%), var(--sign-ink)); }
+@media (max-width: 700px) {
+  .channels a { grid-template-columns: minmax(0, 1fr) 28px; }
+  .channels .k { grid-column: 1 / -1; }
+  .channels .go { width: 24px; height: 24px; }
+}
 
 /* =========================================================================
    404 — "Not in service."
@@ -309,6 +321,10 @@ button { font: inherit; color: inherit; }
   /* skills: tiles settle in turn once their row is revealed */
   .has-js .reveal .tile { opacity: 0; transform: translateY(8px); transition: opacity .45s var(--ease), transform .45s var(--ease); transition-delay: calc(.12s + var(--i, 0) * 45ms); }
   .has-js .reveal.in .tile { opacity: 1; transform: none; }
+  /* contact rows: the value widens and the arrow lifts on hover */
+  .channels .v { transition: font-stretch .5s var(--ease); }
+  .channels .k, .channels .go { transition: color .3s, transform .4s var(--ease); }
+  .channels a:hover .go { transform: translate(4px, -4px); }
 }
 @media (prefers-reduced-motion: reduce) {
   .now-dot, .now-flag i { animation: none; }
@@ -329,4 +345,5 @@ button { font: inherit; color: inherit; }
   .has-js .reveal .yr { background: none !important; -webkit-text-stroke: 0 !important; font-stretch: 84% !important; }
   .has-js .reveal .tile { opacity: 1 !important; transform: none !important; }
   .kline span { font-stretch: 96% !important; }
+  .kline.end { display: none !important; }
 }
