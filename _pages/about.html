@@ -283,32 +283,43 @@ sitemap: true
     </div>
   </section>
 
-  <!-- =============================== projects ============================= -->
-  <section class="sec" id="projects" aria-labelledby="projects-title">
+  <!-- ============================= publications =========================== -->
+  <section class="sec" id="publications" aria-labelledby="publications-title">
     <div class="wrap">
       <div class="sec-head">
-        <h2 class="sec-title" id="projects-title">Projects</h2>
-        <p class="sec-meta"><a href="https://github.com/zichuanxu" target="_blank" rel="noopener">github.com/zichuanxu ↗</a></p>
+        <h2 class="sec-title" id="publications-title">Publications</h2>
+        <p class="sec-meta">01 · 2026</p>
       </div>
-      <div class="projects">
-        <article class="proj">
-          <div class="proj-head"><h3>HUST-CSE-Experiments</h3><span class="badge">Open source</span></div>
-          <p>A four-year archive of coursework from HUST&rsquo;s School of Cyber Science and Engineering &mdash; <strong>33+ courses</strong> spanning cryptography, software and network security, reverse engineering, compilers, operating systems, blockchain and trusted computing. The most-used thing I have published.</p>
-          <div class="chips"><span>C</span><span>Assembly</span><span>Security</span><span>Systems</span></div>
-          <div class="proj-foot">
-            <a class="link" href="https://github.com/zichuanxu/HUST-CSE-Experiments" target="_blank" rel="noopener">View code ↗</a>
-            <span class="stars" data-stars hidden><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1L12 2Z"/></svg><span data-stars-count></span><span class="sr-only">stars on GitHub</span></span>
+      <ol class="pubs">
+        <li class="pub" id="pub-toolbottleneckbench">
+          <div class="pub-tag"><span class="venue">arXiv</span><span class="when">Oct 2026</span></div>
+          <div class="pub-main">
+            <h3 class="pub-title"><a href="https://arxiv.org/abs/2610.21098" target="_blank" rel="noopener">ToolBottleneckBench: Measuring Tool-Agent Performance under Controlled Pressures and Fixed Harness Budgets</a></h3>
+            <p class="pub-authors"><b class="me">Zichuan Xu</b>, Yuyang Dong, Makoto Onizuka, Chuan Xiao</p>
+            <p class="pub-venue"><i>arXiv preprint arXiv:2610.21098</i>, 2026</p>
+            <div class="pub-links">
+              <button class="pub-btn" type="button" aria-expanded="false" aria-controls="abs-toolbottleneckbench">Abstract</button>
+              <a class="pub-btn" href="https://arxiv.org/abs/2610.21098" target="_blank" rel="noopener">arXiv</a>
+              <a class="pub-btn" href="https://arxiv.org/pdf/2610.21098" target="_blank" rel="noopener">PDF</a>
+              <a class="pub-btn" href="https://github.com/zichuanxu/tool-bottleneck-bench" target="_blank" rel="noopener">Code</a>
+              <button class="pub-btn" type="button" aria-expanded="false" aria-controls="bib-toolbottleneckbench">BibTeX</button>
+            </div>
+            <div class="pub-panel" id="abs-toolbottleneckbench">
+              <p>The success score of a tool agent reflects both its model and the budgets of the harness that runs it. We present ToolBottleneckBench, a benchmark that measures tool-agent performance under controlled pressures and fixed harness budgets. Synthetic enterprise tasks stay fixed while one pressure varies: the registered tool catalog, the visible tool menu, the certified workflow, or the encoding of returned records. An exact grader records the first unmet obligation of each failed episode and the harness limit, if any, that ended it. Across 21 model and harness configurations, the visible menu is the only one of the three pressures that act on the model with a large penalty, and this penalty tracks truncation at the completion cap. Raising the cap sixteenfold removes most of the penalty in the truncation-heavy configurations. Most failures end at a harness limit, and the failure record identifies the assigned pressure no more reliably than a count of tool calls. The repairs that help change which tools reach the model or who issues the calls, and only two repairs, neither improving model behavior, beat every configuration switch. We recommend reporting pressure effects with the harness budgets under which they were measured.</p>
+            </div>
+            <div class="pub-panel bib" id="bib-toolbottleneckbench">
+              <button class="pub-copy" type="button" data-copy-from="bibtex-toolbottleneckbench">Copy</button>
+<pre id="bibtex-toolbottleneckbench">@article{xu2026toolbottleneckbench,
+  title   = {ToolBottleneckBench: Measuring Tool-Agent Performance under Controlled Pressures and Fixed Harness Budgets},
+  author  = {Xu, Zichuan and Dong, Yuyang and Onizuka, Makoto and Xiao, Chuan},
+  journal = {arXiv preprint arXiv:2610.21098},
+  year    = {2026}
+}</pre>
+            </div>
           </div>
-        </article>
-        <article class="proj">
-          <div class="proj-head"><h3>NimGet</h3><span class="badge">Open source</span></div>
-          <p>A lightweight <strong>download manager built in Go</strong>, with a desktop app for macOS and Windows and a CLI for Linux too. Parallel connections and crash-safe resume keep downloads moving; a persistent queue, speed limits, scheduling, and HLS support handle longer workflows. The React desktop interface and CLI share the same background service.</p>
-          <div class="chips"><span>Go</span><span>React</span><span>Wails</span><span>SQLite</span></div>
-          <div class="proj-foot">
-            <a class="link" href="https://github.com/zichuanxu/nimget" target="_blank" rel="noopener">View code ↗</a>
-          </div>
-        </article>
-      </div>
+          <a class="pub-fig" href="/images/pubs/toolbottleneckbench-fig1.webp" target="_blank" rel="noopener"><img src="/images/pubs/toolbottleneckbench-fig1.webp" width="1800" height="578" loading="lazy" alt="Figure 1 of the paper: a task family, one pressure varied at a time, a frozen harness with fixed budgets, and an exact grader that records the first unmet obligation."></a>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -465,18 +476,24 @@ sitemap: true
       items.forEach((el) => el.classList.add('in'));
     }
 
-    /* Live star count for HUST-CSE-Experiments; it stays hidden if the API fails. */
-    const stars = document.querySelector('[data-stars]');
-    if (stars && window.fetch) {
-      fetch('https://api.github.com/repos/zichuanxu/HUST-CSE-Experiments')
-        .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-        .then((repo) => {
-          if (typeof repo.stargazers_count !== 'number') return;
-          stars.querySelector('[data-stars-count]').textContent = repo.stargazers_count.toLocaleString('en');
-          stars.hidden = false;
-        })
-        .catch(() => {});
-    }
+    /* Publications: Abstract and BibTeX open in place (both are shown without the
+       script); the BibTeX panel can be copied. */
+    document.querySelectorAll('.pub-btn[aria-controls]').forEach((btn) => {
+      const panel = document.getElementById(btn.getAttribute('aria-controls'));
+      btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') !== 'true';
+        btn.setAttribute('aria-expanded', String(open));
+        panel.classList.toggle('open', open);
+      });
+    });
+    document.querySelectorAll('[data-copy-from]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const done = (label) => { btn.textContent = label; setTimeout(() => { btn.textContent = 'Copy'; }, 1800); };
+        const textToCopy = document.getElementById(btn.dataset.copyFrom).textContent;
+        if (navigator.clipboard) navigator.clipboard.writeText(textToCopy).then(() => done('Copied'), () => done('Press ⌘C'));
+        else done('Press ⌘C');
+      });
+    });
   })();
 </script>
 </body>
