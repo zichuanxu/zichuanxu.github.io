@@ -1,6 +1,6 @@
 /* zichuanxu.me — "Type" design system (2026-10-14).
    The only graphic is the name, set in Archivo with a variable width axis.
-   Paper, ink and one orange accent; every other colour comes from the real logos.
+   White, black and one signal-red accent (since 2026-10-25; paper and orange before); every other colour comes from the real logos.
    Tokens are declared three times: light, explicit dark, and system dark.
    Motion is scoped to .has-js (set by theme-init.html) and only runs under
    prefers-reduced-motion: no-preference. */
@@ -10,19 +10,20 @@
    ========================================================================= */
 :root {
   color-scheme: light;
-  --paper: #F4F1EA;
-  --paper-2: #ECE8DF;
+  --paper: #FFFFFF;
+  --paper-2: #F3F3F1;
   --card: #FFFFFF;
-  --ink: #121317;
-  --ink-2: #2A2C33;
-  --mute: #62666F;
-  --rule: #D9D3C7;
+  --ink: #0A0A0A;
+  --ink-2: #262626;
+  --mute: #6B6B6B;
+  --rule: #E2E2DF;
   --plate: #FFFFFF;
-  --sign: #121317;
-  --sign-ink: #F4F1EA;
-  --sign-mute: #A3A6AE;
-  --accent: #F08A24;
-  --focus: #C2600E;
+  --sign: #0A0A0A;
+  --sign-ink: #FFFFFF;
+  --sign-mute: #9A9A9A;
+  --accent: #E3262E;
+  --focus: #E3262E; /* 4.6:1 on white, 4.3:1 on the black footer */
+  --on-accent: #FFFFFF;
   --font: "Archivo", "Helvetica Neue", Arial, system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --wrap: 1440px;
@@ -32,34 +33,36 @@
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --paper: #111216;
-  --paper-2: #17181D;
-  --card: #1A1C21;
-  --ink: #F1EEE6;
-  --ink-2: #D2CFC7;
-  --mute: #9A9DA6;
-  --rule: #2A2C33;
-  --sign: #08090B;
-  --sign-ink: #F1EEE6;
-  --sign-mute: #8E9199;
-  --accent: #FF9A3C;
-  --focus: #FF9A3C;
+  --paper: #0A0A0A;
+  --paper-2: #141414;
+  --card: #1B1B1B;
+  --ink: #F5F5F3;
+  --ink-2: #D6D6D3;
+  --mute: #9A9A97;
+  --rule: #2A2A2A;
+  --sign: #000000;
+  --sign-ink: #F5F5F3;
+  --sign-mute: #8A8A87;
+  --accent: #FF4040;
+  --focus: #FF5A5A;
+  --on-accent: #FFFFFF;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --paper: #111216;
-    --paper-2: #17181D;
-    --card: #1A1C21;
-    --ink: #F1EEE6;
-    --ink-2: #D2CFC7;
-    --mute: #9A9DA6;
-    --rule: #2A2C33;
-    --sign: #08090B;
-    --sign-ink: #F1EEE6;
-    --sign-mute: #8E9199;
-    --accent: #FF9A3C;
-    --focus: #FF9A3C;
+    --paper: #0A0A0A;
+    --paper-2: #141414;
+    --card: #1B1B1B;
+    --ink: #F5F5F3;
+    --ink-2: #D6D6D3;
+    --mute: #9A9A97;
+    --rule: #2A2A2A;
+    --sign: #000000;
+    --sign-ink: #F5F5F3;
+    --sign-mute: #8A8A87;
+    --accent: #FF4040;
+    --focus: #FF5A5A;
+    --on-accent: #FFFFFF;
   }
 }
 
@@ -139,7 +142,7 @@ button { font: inherit; color: inherit; }
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 20px; border-radius: 999px; border: 2px solid var(--ink); font-size: 15px; font-weight: 600; line-height: 1; text-decoration: none; transition: background-color .2s, color .2s, border-color .2s; }
 .btn svg { width: 16px; height: 16px; flex: none; }
 .btn:hover, .btn.primary { background: var(--ink); color: var(--paper); }
-.btn.primary:hover { background: var(--accent); border-color: var(--accent); color: #121317; }
+.btn.primary:hover { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: minmax(0, 1fr); }
   .hero-side { display: contents; }
@@ -193,12 +196,12 @@ button { font: inherit; color: inherit; }
 .edu .plate { height: 64px; }
 .edu .plate img { max-height: 40px; }
 .when { font: 500 13px var(--mono); color: var(--mute); white-space: nowrap; }
-.now-flag { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px 5px 8px; border-radius: 999px; background: var(--accent); color: #121317; font: 800 10.5px/1 var(--font); letter-spacing: .1em; text-transform: uppercase; }
-.now-flag i { width: 6px; height: 6px; border-radius: 50%; background: #121317; }
+.now-flag { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px 5px 8px; border-radius: 999px; background: var(--accent); color: var(--on-accent); font: 800 10.5px/1 var(--font); letter-spacing: .1em; text-transform: uppercase; }
+.now-flag i { width: 6px; height: 6px; border-radius: 50%; background: var(--on-accent); }
 /* WQU's certificate: a dark strip inside its row */
 .cert { display: flex; align-items: center; gap: 12px; margin-top: 18px; max-width: 74ch; padding: 13px 18px; border-radius: 12px; background: var(--sign); color: var(--sign-ink); font-size: 14px; font-weight: 600; line-height: 1.35; text-decoration: none; transition: background-color .2s; }
 .cert:hover { background: color-mix(in oklab, var(--sign) 86%, var(--sign-ink)); }
-.cert .seal { width: 26px; height: 26px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: #121317; }
+.cert .seal { width: 26px; height: 26px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: var(--on-accent); }
 .cert .seal svg { width: 15px; height: 15px; }
 .cert small { display: inline-block; margin-left: 8px; font: 500 12px var(--mono); color: var(--sign-mute); }
 .cert .go { width: 16px; height: 16px; flex: none; margin-left: auto; color: var(--sign-mute); }

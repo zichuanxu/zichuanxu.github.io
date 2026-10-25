@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <defs><clipPath id="c"><rect x="11" y="11" width="28" height="28" rx="7"/></clipPath></defs>
-  <rect x="2" y="2" width="60" height="60" rx="16" fill="#F6F5F0" stroke="#DEDAD0" stroke-width="1.5"/>
-  <rect x="11" y="11" width="28" height="28" rx="7" fill="#15171C"/>
-  <circle cx="39" cy="39" r="15" fill="#F08A24"/>
-  <circle cx="39" cy="39" r="15" fill="#F6F5F0" clip-path="url(#c)"/>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="#FFFFFF" stroke="#E2E2DF" stroke-width="1.5"/>
+  <rect x="11" y="11" width="28" height="28" rx="7" fill="#0A0A0A"/>
+  <circle cx="39" cy="39" r="15" fill="#E3262E"/>
+  <circle cx="39" cy="39" r="15" fill="#FFFFFF" clip-path="url(#c)"/>
 </svg>
