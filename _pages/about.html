@@ -82,7 +82,7 @@ sitemap: true
           <div class="cells">
             <a class="cell" href="#initial-s"><span class="k"><span class="now-dot" aria-hidden="true"></span>Now</span><span class="v">AI Agent Development Engineer</span><span class="m">Initial. S, Tokyo · Apr 2026 → now</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7 17 17M17 8v9H8"/></svg></a>
             <a class="cell" href="#osaka"><span class="k">Study</span><span class="v">The University of Osaka</span><span class="m">Researching LLMs, Agents, and Benchmarking.</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7 17 17M17 8v9H8"/></svg></a>
-            <a class="cell" href="#toolbottleneckbench"><span class="k">Latest paper</span><span class="v">ToolBottleneckBench</span><span class="m">Tool-agent performance under controlled pressures and fixed harness budgets · arXiv 2026</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7 17 17M17 8v9H8"/></svg></a>
+            <a class="cell" href="#memshift"><span class="k">Latest paper</span><span class="v">MemShift</span><span class="m">Separating detection from repair in LLM-derived personal memory · arXiv 2026</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7 17 17M17 8v9H8"/></svg></a>
             <a class="cell" href="#rakuten"><span class="k">Before</span><span class="v">Rakuten · Dameng · NSFOCUS · Virginia Tech</span><span class="m">From security and database tooling to agent systems and full-stack products.</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7 17 17M17 8v9H8"/></svg></a>
           </div>
         <div class="cta">
@@ -266,9 +266,37 @@ sitemap: true
     <div class="wrap">
       <div class="sec-head">
         <h2 class="sec-title" id="publications-title">Publications</h2>
-        <p class="sec-meta">01 · 2026</p>
+        <p class="sec-meta">02 · 2026</p>
       </div>
       <ol class="pubs">
+        <li class="pub" id="memshift">
+          <div class="pub-tag"><span class="venue">arXiv</span><span class="when">Nov 2026</span></div>
+          <div class="pub-main">
+            <h3 class="pub-title"><a href="https://arxiv.org/abs/2611.02338" target="_blank" rel="noopener">MemShift: Separating Detection from Repair in LLM-Derived Personal Memory</a></h3>
+            <p class="pub-authors"><b class="me">Zichuan Xu</b>, Haochen Zhang, Yuyang Dong, Makoto Onizuka, Chuan Xiao</p>
+            <p class="pub-venue"><i>arXiv preprint arXiv:2611.02338</i>, 2026</p>
+            <div class="pub-links">
+              <button class="pub-btn" type="button" aria-expanded="false" aria-controls="abs-memshift">Abstract</button>
+              <a class="pub-btn" href="https://arxiv.org/abs/2611.02338" target="_blank" rel="noopener">arXiv</a>
+              <a class="pub-btn" href="https://arxiv.org/pdf/2611.02338" target="_blank" rel="noopener">PDF</a>
+              <a class="pub-btn" href="https://github.com/zichuanxu/memshift" target="_blank" rel="noopener">Code</a>
+              <button class="pub-btn" type="button" aria-expanded="false" aria-controls="bib-memshift">BibTeX</button>
+            </div>
+            <div class="pub-panel" id="abs-memshift">
+              <p>AI assistants store values that a language model derived from a person&rsquo;s records under the person&rsquo;s own definitions, such as their important contacts. Keeping such a value correct takes two steps: detection, noticing that an input changed, and repair, producing the correct new value. Benchmarks that score only the final answer cannot tell which step failed, and they state every change as new text. Seeing this limitation, we present MemShift, a benchmark of five shifts: source revision, deletion, redefinition, writer switch, and export. The first three fork a synthetic world into branches that differ only in the shift. Gold values and dependencies are fixed before any text, and a deterministic scorer replaces an LLM judge. For a memory that reports its invalidations, MemShift shows for each changed item whether the memory noticed the change and whether its repair was right. Moreover, we build a reference memory with known detection and repair to validate the measure. By evaluating four open-weight LLMs, we find that detection helps only as much as repair allows: the LLMs re-derive few values computed by the person&rsquo;s definitions correctly, and programs that the LLM writes over typed records close most of the gap to exact recomputation.</p>
+            </div>
+            <div class="pub-panel bib" id="bib-memshift">
+              <button class="pub-copy" type="button" data-copy-from="bibtex-memshift">Copy</button>
+<pre id="bibtex-memshift">@article{xu2026memshift,
+  title   = {MemShift: Separating Detection from Repair in LLM-Derived Personal Memory},
+  author  = {Xu, Zichuan and Zhang, Haochen and Dong, Yuyang and Onizuka, Makoto and Xiao, Chuan},
+  journal = {arXiv preprint arXiv:2611.02338},
+  year    = {2026}
+}</pre>
+            </div>
+          </div>
+          <a class="pub-fig" href="/images/pubs/memshift-fig1.webp" target="_blank" rel="noopener"><img src="/images/pubs/memshift-fig1.webp" width="1801" height="599" loading="lazy" alt="Figure 1 of the paper: one memory item under five shifts, and detection versus repair after a redefinition, with and without a key and with re-derivation or exact recomputation."></a>
+        </li>
         <li class="pub" id="toolbottleneckbench">
           <div class="pub-tag"><span class="venue">arXiv</span><span class="when">Oct 2026</span></div>
           <div class="pub-main">
