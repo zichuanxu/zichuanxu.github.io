@@ -96,13 +96,9 @@ sitemap: true
           <h3 class="pub-title"><a href="https://arxiv.org/abs/2611.02338" target="_blank" rel="noopener">MemShift: Separating Detection from Repair in LLM-Derived Personal Memory</a></h3>
           <p class="pub-authors"><b class="me">Zichuan Xu</b>, Haochen Zhang, Yuyang Dong, Makoto Onizuka, Chuan Xiao</p>
           <div class="pub-links">
-            <button class="pub-btn" type="button" aria-expanded="false" aria-controls="abs-memshift">Abstract</button>
             <a class="pub-btn" href="https://arxiv.org/pdf/2611.02338" target="_blank" rel="noopener">PDF</a>
             <a class="pub-btn" href="https://github.com/zichuanxu/memshift" target="_blank" rel="noopener">Code</a>
             <button class="pub-btn" type="button" aria-expanded="false" aria-controls="bib-memshift">BibTeX</button>
-          </div>
-          <div class="pub-panel" id="abs-memshift">
-            <p>AI assistants store values that a language model derived from a person&rsquo;s records under the person&rsquo;s own definitions, such as their important contacts. Keeping such a value correct takes two steps: detection, noticing that an input changed, and repair, producing the correct new value. Benchmarks that score only the final answer cannot tell which step failed, and they state every change as new text. Seeing this limitation, we present MemShift, a benchmark of five shifts: source revision, deletion, redefinition, writer switch, and export. The first three fork a synthetic world into branches that differ only in the shift. Gold values and dependencies are fixed before any text, and a deterministic scorer replaces an LLM judge. For a memory that reports its invalidations, MemShift shows for each changed item whether the memory noticed the change and whether its repair was right. Moreover, we build a reference memory with known detection and repair to validate the measure. By evaluating four open-weight LLMs, we find that detection helps only as much as repair allows: the LLMs re-derive few values computed by the person&rsquo;s definitions correctly, and programs that the LLM writes over typed records close most of the gap to exact recomputation.</p>
           </div>
           <div class="pub-panel bib" id="bib-memshift">
             <button class="pub-copy" type="button" data-copy-from="bibtex-memshift">Copy</button>
@@ -119,13 +115,9 @@ sitemap: true
           <h3 class="pub-title"><a href="https://arxiv.org/abs/2610.21098" target="_blank" rel="noopener">ToolBottleneckBench: Measuring Tool-Agent Performance under Controlled Pressures and Fixed Harness Budgets</a></h3>
           <p class="pub-authors"><b class="me">Zichuan Xu</b>, Yuyang Dong, Makoto Onizuka, Chuan Xiao</p>
           <div class="pub-links">
-            <button class="pub-btn" type="button" aria-expanded="false" aria-controls="abs-toolbottleneckbench">Abstract</button>
             <a class="pub-btn" href="https://arxiv.org/pdf/2610.21098" target="_blank" rel="noopener">PDF</a>
             <a class="pub-btn" href="https://github.com/zichuanxu/tool-bottleneck-bench" target="_blank" rel="noopener">Code</a>
             <button class="pub-btn" type="button" aria-expanded="false" aria-controls="bib-toolbottleneckbench">BibTeX</button>
-          </div>
-          <div class="pub-panel" id="abs-toolbottleneckbench">
-            <p>The success score of a tool agent reflects both its model and the budgets of the harness that runs it. We present ToolBottleneckBench, a benchmark that measures tool-agent performance under controlled pressures and fixed harness budgets. Synthetic enterprise tasks stay fixed while one pressure varies: the registered tool catalog, the visible tool menu, the certified workflow, or the encoding of returned records. An exact grader records the first unmet obligation of each failed episode and the harness limit, if any, that ended it. Across 21 model and harness configurations, the visible menu is the only one of the three pressures that act on the model with a large penalty, and this penalty tracks truncation at the completion cap. Raising the cap sixteenfold removes most of the penalty in the truncation-heavy configurations. Most failures end at a harness limit, and the failure record identifies the assigned pressure no more reliably than a count of tool calls. The repairs that help change which tools reach the model or who issues the calls, and only two repairs, neither improving model behavior, beat every configuration switch. We recommend reporting pressure effects with the harness budgets under which they were measured.</p>
           </div>
           <div class="pub-panel bib" id="bib-toolbottleneckbench">
             <button class="pub-copy" type="button" data-copy-from="bibtex-toolbottleneckbench">Copy</button>
@@ -326,7 +318,7 @@ sitemap: true
     window.addEventListener('resize', spy, { passive: true });
     spy();
 
-    /* Publications: Abstract and BibTeX open in place (both are shown without the
+    /* Publications: BibTeX opens in place (both are shown without the
        script); the BibTeX panel can be copied. */
     document.querySelectorAll('.pub-btn[aria-controls]').forEach((btn) => {
       const panel = document.getElementById(btn.getAttribute('aria-controls'));
