@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <defs><clipPath id="c"><rect x="11" y="11" width="28" height="28" rx="7"/></clipPath></defs>
-  <rect x="2" y="2" width="60" height="60" rx="16" fill="#FFFFFF" stroke="#E2E2DF" stroke-width="1.5"/>
-  <rect x="11" y="11" width="28" height="28" rx="7" fill="#0A0A0A"/>
-  <circle cx="39" cy="39" r="15" fill="#E3262E"/>
-  <circle cx="39" cy="39" r="15" fill="#FFFFFF" clip-path="url(#c)"/>
+  <!-- The loop: an open ring with one step waiting in its gap (observe, act, repeat). -->
+  <rect width="64" height="64" rx="15" fill="#2E46E6"/>
+  <path d="M32 16.5A15.5 15.5 0 1 1 16.5 32" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="21.1" cy="21.1" r="5" fill="#FFFFFF"/>
 </svg>

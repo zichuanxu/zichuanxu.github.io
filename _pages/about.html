@@ -24,14 +24,14 @@ sitemap: true
   <meta property="og:title" content="Zichuan Xu" />
   <meta property="og:description" content="{{ page.description }}" />
   <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-  <meta property="og:image" content="{{ site.url }}/images/og-card.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Make AI Great Again. Zichuan Xu, AI agent engineer" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="{{ site.url }}/images/profile.jpg" />
+  <meta property="og:image:width" content="384" />
+  <meta property="og:image:height" content="384" />
+  <meta property="og:image:alt" content="Portrait of Zichuan Xu" />
+  <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Zichuan Xu" />
   <meta name="twitter:description" content="{{ page.description }}" />
-  <meta name="twitter:image" content="{{ site.url }}/images/og-card.png" />
+  <meta name="twitter:image" content="{{ site.url }}/images/profile.jpg" />
   <link rel="stylesheet" href="/assets/css/site-2026.css?v={{ site.time | date: '%s' }}" />
   <link rel="icon" href="/favicon.ico?v={{ site.time | date: '%s' }}" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v={{ site.time | date: '%s' }}" />
@@ -42,6 +42,7 @@ sitemap: true
     "@type": "Person",
     "name": "Zichuan Xu",
     "url": "{{ site.url }}",
+    "image": "{{ site.url }}/images/profile.jpg",
     "email": "mailto:xu.zichuan@ist.osaka-u.ac.jp",
     "jobTitle": "AI Agent Development Engineer",
     "worksFor": { "@type": "Organization", "name": "Initial. S Co. Ltd.", "url": "https://initial-s.com/" },
@@ -58,328 +59,218 @@ sitemap: true
   </script>
 </head>
 
-<body>
+<body class="home">
 <a class="skip" href="#main">Skip to content</a>
 {% include site-2026/bar.html nav=true %}
 
 <main id="main">
-  <!-- ================================ hero ================================ -->
-  <section class="hero" id="top" aria-label="Introduction">
+  <!-- ================================ intro =============================== -->
+  <section class="intro" id="top" aria-label="Introduction">
     <div class="wrap">
-      <p class="sr-only">Make AI Great Again.</p>
-      <div class="hero-grid">
-        <div class="hero-words" aria-hidden="true">
-          <div class="kline"><span class="ac">M</span><span>a</span><span>k</span><span>e</span></div>
-          <div class="kline"><span class="ac">A</span><span>I</span></div>
-          <div class="kline"><span class="ac">G</span><span>r</span><span>e</span><span>a</span><span>t</span></div>
-          <div class="kline"><span class="ac">A</span><span>g</span><span>a</span><span>i</span><span>n</span><span>.</span></div>
-        </div>
-        <div class="hero-side">
-          <div>
-            <h1 class="hero-name">Zichuan Xu</h1>
-            <p class="lede">AI agent engineer, building agents and applications from runtime to interface.</p>
-          </div>
-          <div class="cells">
-            <a class="cell" href="#initial-s"><span class="k"><span class="now-dot" aria-hidden="true"></span>Now</span><span class="v">AI Agent Development Engineer</span><span class="m">Initial. S, Tokyo · Apr 2026 → now</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7 17 17M17 8v9H8"/></svg></a>
-            <a class="cell" href="#osaka"><span class="k">Study</span><span class="v">The University of Osaka</span><span class="m">Researching LLMs, Agents, and Benchmarking.</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7 17 17M17 8v9H8"/></svg></a>
-            <a class="cell" href="#memshift"><span class="k">Latest paper</span><span class="v">MemShift</span><span class="m">Separating detection from repair in LLM-derived personal memory · arXiv 2026</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7 17 17M17 8v9H8"/></svg></a>
-            <a class="cell" href="#rakuten"><span class="k">Before</span><span class="v">Rakuten · Dameng · NSFOCUS · Virginia Tech</span><span class="m">From security and database tooling to agent systems and full-stack products.</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7 17 17M17 8v9H8"/></svg></a>
-          </div>
-        <div class="cta">
-          <a class="btn primary" href="mailto:xu.zichuan@ist.osaka-u.ac.jp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>Email me</a>
-          <a class="btn" href="https://github.com/zichuanxu" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/zichuanxu/" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14Zm1.78 13.02H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg>LinkedIn</a>
-        </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================== experience ============================ -->
-  <section class="sec" id="experience" aria-labelledby="experience-title">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 class="sec-title" id="experience-title">Experience</h2>
-        <p class="sec-meta">05 · 2022 → now</p>
+      <div>
+        <h1 class="name">Zichuan Xu</h1>
+        <p class="tagline">Building <em>agents</em> that hold up outside the demo.</p>
+        <p class="role">AI agent engineer, Initial. S, Tokyo · Master&rsquo;s student, The University of Osaka</p>
       </div>
 
-      <!-- Initial. S -->
-      <article class="row reveal is-now" id="initial-s">
-        <p class="yr" aria-hidden="true">2026<small>Tokyo</small></p>
-        <div class="row-main">
-          <h3 class="row-title"><a href="https://initial-s.com/" target="_blank" rel="noopener">Initial. S Co. Ltd.</a></h3>
-          <p class="row-role"><b>AI Agent Development Engineer</b> · Tokyo, Japan</p>
-          <p class="row-desc">Building <strong>agent products for everyday work</strong>: a desktop workspace for business workflows and a personal assistant for knowledge, files, and daily tools.</p>
-          <ul class="row-list">
-            <li><b>Desktop workspace:</b> reusable task templates, domain experts, and project spaces around the Codex engine, with native tool execution and permissions in an Electron + React app.</li>
-            <li><b>Personal assistant:</b> a searchable memory with knowledge graphs, plus calendar, reminders, and email, cloud-drive, and GitHub integrations.</li>
-            <li><b>Shared platform:</b> model access, accounts and billing, and versioned cloud storage on AWS, backed by regression and end-to-end tests.</li>
-          </ul>
-          <p class="tech">Go · TypeScript · React · Electron · Codex · MCP · AWS Lambda · DynamoDB · Terraform</p>
-        </div>
-        <div class="row-side">
-          <span class="plate"><img src="/images/initial-s.png" alt="" width="1713" height="153" loading="lazy" decoding="async"></span>
-          <span class="now-flag"><i aria-hidden="true"></i>Now</span>
-          <span class="when">Apr 2026 → now</span>
-        </div>
-      </article>
-
-      <!-- Rakuten -->
-      <article class="row reveal" id="rakuten">
-        <p class="yr" aria-hidden="true">2025<small>Tokyo</small></p>
-        <div class="row-main">
-          <h3 class="row-title"><a href="https://global.rakuten.com/corp/" target="_blank" rel="noopener">Rakuten</a></h3>
-          <p class="row-role"><b>Application Engineer</b> · Tokyo, Japan</p>
-          <p class="row-desc">Turned two manual, ticket-driven internal workflows into real-time self-service platforms.</p>
-          <ul class="row-list">
-            <li>Built two internal web apps in Laravel that replaced ticket-based requests with self-service.</li>
-            <li>Automated Rakuten Card&rsquo;s monthly data validation with Python and Apache Airflow.</li>
-            <li>Kept unit-test coverage above 85% with zero SonarQube code smells.</li>
-          </ul>
-          <p class="tech">PHP · Laravel · Python · Apache Airflow · SonarQube</p>
-        </div>
-        <div class="row-side">
-          <span class="plate"><img src="/images/rakuten-logo.png" alt="" loading="lazy" decoding="async"></span>
-          <span class="when">Sep 2025 → Oct 2025</span>
-        </div>
-      </article>
-
-      <!-- Dameng -->
-      <article class="row reveal" id="dameng">
-        <p class="yr" aria-hidden="true">2023<small>Shanghai</small></p>
-        <div class="row-main">
-          <h3 class="row-title"><a href="https://www.dameng.com/" target="_blank" rel="noopener">Wuhan Dameng Data Co. Ltd.</a></h3>
-          <p class="row-role"><b>Development Engineer</b> · Shanghai, China</p>
-          <p class="row-desc">Rendering and tooling for a next-generation database management client.</p>
-          <ul class="row-list">
-            <li>Built a NatTable rendering engine that cut display time for 100,000-row results from 10 minutes to 3 seconds (200&times;).</li>
-            <li>Engineered a cross-platform installer framework for the whole database suite.</li>
-            <li>Led an embedded SQL terminal and formatter, owning core modules end to end.</li>
-          </ul>
-          <p class="tech">Java · SWT · NatTable · Eclipse RCP · SQL</p>
-        </div>
-        <div class="row-side">
-          <span class="plate"><img src="/images/dameng-logo.png" alt="" width="267" height="58" loading="lazy" decoding="async"></span>
-          <span class="when">Jul 2023 → Feb 2025</span>
-        </div>
-      </article>
-
-      <!-- NSFOCUS -->
-      <article class="row reveal" id="nsfocus">
-        <p class="yr" aria-hidden="true">2023<small>Wuhan</small></p>
-        <div class="row-main">
-          <h3 class="row-title"><a href="https://www.nsfocus.com.cn/" target="_blank" rel="noopener">NSFOCUS</a></h3>
-          <p class="row-role"><b>Research and Development Engineer</b> · Wuhan, China</p>
-          <ul class="row-list">
-            <li>Built a Scrapy crawler for fraudulent-app intelligence and the Django backend of a network probing system.</li>
-            <li>Designed encryption schemes to anonymize customer data for machine-learning training.</li>
-          </ul>
-          <p class="tech">Python · Scrapy · Django · Cryptography</p>
-        </div>
-        <div class="row-side">
-          <span class="plate"><img src="/images/NSFOCUS.png" alt="" loading="lazy" decoding="async"></span>
-          <span class="when">Feb 2023 → Apr 2023</span>
-        </div>
-      </article>
-
-      <!-- Virginia Tech -->
-      <article class="row reveal" id="virginia-tech">
-        <p class="yr" aria-hidden="true">2022<small>Blacksburg</small></p>
-        <div class="row-main">
-          <h3 class="row-title"><a href="https://www.vt.edu/" target="_blank" rel="noopener">Virginia Tech</a></h3>
-          <p class="row-role"><b>Undergraduate Research Assistant</b> · Blacksburg, Virginia, USA</p>
-          <p class="row-desc">Theme: a graph learning framework for system provenance-based security analysis. Advised by <a href="https://people.cs.vt.edu/penggao/" target="_blank" rel="noopener">Prof. Peng Gao</a>.</p>
-          <ul class="row-list">
-            <li>Designed a PyTorch graph representation learning framework over large, sparse system audit logs.</li>
-            <li>Reached 97% accuracy predicting malicious system entities with a low false-positive rate.</li>
-          </ul>
-          <p class="tech">PyTorch · GNN · Provenance graphs · APT detection</p>
-        </div>
-        <div class="row-side">
-          <span class="plate"><img src="/images/vt-logo.svg" alt="" width="225" height="44" loading="lazy" decoding="async"></span>
-          <span class="when">Apr 2022 → Sep 2022</span>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ============================== education ============================= -->
-  <section class="sec edu" id="education" aria-labelledby="education-title">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 class="sec-title" id="education-title">Education</h2>
-        <p class="sec-meta">03 · 2019 → 2027</p>
+      <div class="bio">
+        <p>I build AI agents at <a href="https://initial-s.com/" target="_blank" rel="noopener">Initial. S</a> in Tokyo, from the agent harness to the interface and the cloud services behind it.</p>
+        <p>I&rsquo;m also a Master&rsquo;s student at <a href="https://www.osaka-u.ac.jp/ja" target="_blank" rel="noopener">The University of Osaka</a>, advised by <a href="https://sites.google.com/site/chuanxiao1983/" target="_blank" rel="noopener">Prof. Chuan Xiao</a>, working on LLM agents and benchmarks.</p>
       </div>
 
-      <!-- The University of Osaka -->
-      <article class="row reveal" id="osaka">
-        <p class="yr" aria-hidden="true">2025<small>Osaka</small></p>
-        <div class="row-main">
-          <h3 class="row-title"><a href="https://www.osaka-u.ac.jp/ja" target="_blank" rel="noopener">The University of Osaka</a></h3>
-          <p class="row-role"><b>Master of Information Science and Technology</b> · Osaka, Japan</p>
-          <p class="row-desc">Graduate School of Information Science and Technology. Advised by <a href="https://sites.google.com/site/chuanxiao1983/" target="_blank" rel="noopener">Prof. Chuan Xiao</a>. Researching LLMs, Agents, and Benchmarking.</p>
-        </div>
-        <div class="row-side">
-          <span class="plate"><img src="/images/osaka-university-logo.png" alt="" width="696" height="176" loading="lazy" decoding="async"></span>
-          <span class="when">2025 → 2027</span>
-        </div>
-      </article>
-
-      <!-- WorldQuant University -->
-      <article class="row reveal" id="worldquant">
-        <p class="yr" aria-hidden="true">2025<small>Online</small></p>
-        <div class="row-main">
-          <h3 class="row-title"><a href="https://www.wqu.edu/" target="_blank" rel="noopener">WorldQuant University</a></h3>
-          <p class="row-role"><b>MSc, Financial Engineering</b> · Online</p>
-          <p class="row-desc">Studied in parallel with the Osaka programme &mdash; quantitative methods, derivatives, and financial data analysis.</p>
-          <a class="cert" href="https://www.credly.com/badges/82e5200b-56e4-4d95-bd61-cbb9deec85e9" target="_blank" rel="noopener">
-            <span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 13.5 7 21l5-3 5 3-1.5-7.5"/></svg></span>
-            <span>Foundations of Financial Engineering <small>Certificate · 2025</small></span>
-            <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
-          </a>
-        </div>
-        <div class="row-side">
-          <span class="plate"><img src="/images/wqu.svg" alt="" width="220" height="74" loading="lazy" decoding="async"></span>
-          <span class="when">2025 → 2027</span>
-        </div>
-      </article>
-
-      <!-- HUST -->
-      <article class="row reveal" id="hust">
-        <p class="yr" aria-hidden="true">2019<small>Wuhan</small></p>
-        <div class="row-main">
-          <h3 class="row-title"><a href="https://www.hust.edu.cn/" target="_blank" rel="noopener">Huazhong University of Science and Technology</a></h3>
-          <p class="row-role"><b>BEng, Cyberspace Security</b> · Wuhan, China</p>
-          <p class="row-desc">School of Cyber Science and Engineering. Coursework archived in <a href="https://github.com/zichuanxu/HUST-CSE-Experiments" target="_blank" rel="noopener">HUST-CSE-Experiments</a>.</p>
-        </div>
-        <div class="row-side">
-          <span class="plate"><img src="/images/hust-logo.png" alt="" width="400" height="94" loading="lazy" decoding="async"></span>
-          <span class="when">2019 → 2023</span>
-        </div>
-      </article>
+      <ul class="links">
+        <li><a href="mailto:xu.zichuan@ist.osaka-u.ac.jp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><span>Email</span></a></li>
+        <li><a href="https://github.com/zichuanxu" target="_blank" rel="me noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg><span>GitHub</span></a></li>
+        <li><a href="https://www.linkedin.com/in/zichuanxu/" target="_blank" rel="me noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14Zm1.78 13.02H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></svg><span>LinkedIn</span></a></li>
+      </ul>
     </div>
   </section>
 
   <!-- ============================= publications =========================== -->
   <section class="sec" id="publications" aria-labelledby="publications-title">
     <div class="wrap">
-      <div class="sec-head">
-        <h2 class="sec-title" id="publications-title">Publications</h2>
-        <p class="sec-meta">02 · 2026</p>
-      </div>
+      <h2 class="sec-title" id="publications-title">Publications</h2>
       <ol class="pubs">
         <li class="pub" id="memshift">
-          <div class="pub-tag"><span class="venue">arXiv</span><span class="when">Nov 2026</span></div>
-          <div class="pub-main">
-            <h3 class="pub-title"><a href="https://arxiv.org/abs/2611.02338" target="_blank" rel="noopener">MemShift: Separating Detection from Repair in LLM-Derived Personal Memory</a></h3>
-            <p class="pub-authors"><b class="me">Zichuan Xu</b>, Haochen Zhang, Yuyang Dong, Makoto Onizuka, Chuan Xiao</p>
-            <p class="pub-venue"><i>arXiv preprint arXiv:2611.02338</i>, 2026</p>
-            <div class="pub-links">
-              <button class="pub-btn" type="button" aria-expanded="false" aria-controls="abs-memshift">Abstract</button>
-              <a class="pub-btn" href="https://arxiv.org/abs/2611.02338" target="_blank" rel="noopener">arXiv</a>
-              <a class="pub-btn" href="https://arxiv.org/pdf/2611.02338" target="_blank" rel="noopener">PDF</a>
-              <a class="pub-btn" href="https://github.com/zichuanxu/memshift" target="_blank" rel="noopener">Code</a>
-              <button class="pub-btn" type="button" aria-expanded="false" aria-controls="bib-memshift">BibTeX</button>
-            </div>
-            <div class="pub-panel" id="abs-memshift">
-              <p>AI assistants store values that a language model derived from a person&rsquo;s records under the person&rsquo;s own definitions, such as their important contacts. Keeping such a value correct takes two steps: detection, noticing that an input changed, and repair, producing the correct new value. Benchmarks that score only the final answer cannot tell which step failed, and they state every change as new text. Seeing this limitation, we present MemShift, a benchmark of five shifts: source revision, deletion, redefinition, writer switch, and export. The first three fork a synthetic world into branches that differ only in the shift. Gold values and dependencies are fixed before any text, and a deterministic scorer replaces an LLM judge. For a memory that reports its invalidations, MemShift shows for each changed item whether the memory noticed the change and whether its repair was right. Moreover, we build a reference memory with known detection and repair to validate the measure. By evaluating four open-weight LLMs, we find that detection helps only as much as repair allows: the LLMs re-derive few values computed by the person&rsquo;s definitions correctly, and programs that the LLM writes over typed records close most of the gap to exact recomputation.</p>
-            </div>
-            <div class="pub-panel bib" id="bib-memshift">
-              <button class="pub-copy" type="button" data-copy-from="bibtex-memshift">Copy</button>
+          <p class="pub-meta"><span class="venue">arXiv</span><span>Nov 2026</span></p>
+          <h3 class="pub-title"><a href="https://arxiv.org/abs/2611.02338" target="_blank" rel="noopener">MemShift: Separating Detection from Repair in LLM-Derived Personal Memory</a></h3>
+          <p class="pub-authors"><b class="me">Zichuan Xu</b>, Haochen Zhang, Yuyang Dong, Makoto Onizuka, Chuan Xiao</p>
+          <div class="pub-links">
+            <button class="pub-btn" type="button" aria-expanded="false" aria-controls="abs-memshift">Abstract</button>
+            <a class="pub-btn" href="https://arxiv.org/pdf/2611.02338" target="_blank" rel="noopener">PDF</a>
+            <a class="pub-btn" href="https://github.com/zichuanxu/memshift" target="_blank" rel="noopener">Code</a>
+            <button class="pub-btn" type="button" aria-expanded="false" aria-controls="bib-memshift">BibTeX</button>
+          </div>
+          <div class="pub-panel" id="abs-memshift">
+            <p>AI assistants store values that a language model derived from a person&rsquo;s records under the person&rsquo;s own definitions, such as their important contacts. Keeping such a value correct takes two steps: detection, noticing that an input changed, and repair, producing the correct new value. Benchmarks that score only the final answer cannot tell which step failed, and they state every change as new text. Seeing this limitation, we present MemShift, a benchmark of five shifts: source revision, deletion, redefinition, writer switch, and export. The first three fork a synthetic world into branches that differ only in the shift. Gold values and dependencies are fixed before any text, and a deterministic scorer replaces an LLM judge. For a memory that reports its invalidations, MemShift shows for each changed item whether the memory noticed the change and whether its repair was right. Moreover, we build a reference memory with known detection and repair to validate the measure. By evaluating four open-weight LLMs, we find that detection helps only as much as repair allows: the LLMs re-derive few values computed by the person&rsquo;s definitions correctly, and programs that the LLM writes over typed records close most of the gap to exact recomputation.</p>
+          </div>
+          <div class="pub-panel bib" id="bib-memshift">
+            <button class="pub-copy" type="button" data-copy-from="bibtex-memshift">Copy</button>
 <pre id="bibtex-memshift">@article{xu2026memshift,
   title   = {MemShift: Separating Detection from Repair in LLM-Derived Personal Memory},
   author  = {Xu, Zichuan and Zhang, Haochen and Dong, Yuyang and Onizuka, Makoto and Xiao, Chuan},
   journal = {arXiv preprint arXiv:2611.02338},
   year    = {2026}
 }</pre>
-            </div>
           </div>
-          <a class="pub-fig" href="/images/pubs/memshift-fig1.webp" target="_blank" rel="noopener"><img src="/images/pubs/memshift-fig1.webp" width="1801" height="599" loading="lazy" alt="Figure 1 of the paper: one memory item under five shifts, and detection versus repair after a redefinition, with and without a key and with re-derivation or exact recomputation."></a>
         </li>
         <li class="pub" id="toolbottleneckbench">
-          <div class="pub-tag"><span class="venue">arXiv</span><span class="when">Oct 2026</span></div>
-          <div class="pub-main">
-            <h3 class="pub-title"><a href="https://arxiv.org/abs/2610.21098" target="_blank" rel="noopener">ToolBottleneckBench: Measuring Tool-Agent Performance under Controlled Pressures and Fixed Harness Budgets</a></h3>
-            <p class="pub-authors"><b class="me">Zichuan Xu</b>, Yuyang Dong, Makoto Onizuka, Chuan Xiao</p>
-            <p class="pub-venue"><i>arXiv preprint arXiv:2610.21098</i>, 2026</p>
-            <div class="pub-links">
-              <button class="pub-btn" type="button" aria-expanded="false" aria-controls="abs-toolbottleneckbench">Abstract</button>
-              <a class="pub-btn" href="https://arxiv.org/abs/2610.21098" target="_blank" rel="noopener">arXiv</a>
-              <a class="pub-btn" href="https://arxiv.org/pdf/2610.21098" target="_blank" rel="noopener">PDF</a>
-              <a class="pub-btn" href="https://github.com/zichuanxu/tool-bottleneck-bench" target="_blank" rel="noopener">Code</a>
-              <button class="pub-btn" type="button" aria-expanded="false" aria-controls="bib-toolbottleneckbench">BibTeX</button>
-            </div>
-            <div class="pub-panel" id="abs-toolbottleneckbench">
-              <p>The success score of a tool agent reflects both its model and the budgets of the harness that runs it. We present ToolBottleneckBench, a benchmark that measures tool-agent performance under controlled pressures and fixed harness budgets. Synthetic enterprise tasks stay fixed while one pressure varies: the registered tool catalog, the visible tool menu, the certified workflow, or the encoding of returned records. An exact grader records the first unmet obligation of each failed episode and the harness limit, if any, that ended it. Across 21 model and harness configurations, the visible menu is the only one of the three pressures that act on the model with a large penalty, and this penalty tracks truncation at the completion cap. Raising the cap sixteenfold removes most of the penalty in the truncation-heavy configurations. Most failures end at a harness limit, and the failure record identifies the assigned pressure no more reliably than a count of tool calls. The repairs that help change which tools reach the model or who issues the calls, and only two repairs, neither improving model behavior, beat every configuration switch. We recommend reporting pressure effects with the harness budgets under which they were measured.</p>
-            </div>
-            <div class="pub-panel bib" id="bib-toolbottleneckbench">
-              <button class="pub-copy" type="button" data-copy-from="bibtex-toolbottleneckbench">Copy</button>
+          <p class="pub-meta"><span class="venue">arXiv</span><span>Oct 2026</span></p>
+          <h3 class="pub-title"><a href="https://arxiv.org/abs/2610.21098" target="_blank" rel="noopener">ToolBottleneckBench: Measuring Tool-Agent Performance under Controlled Pressures and Fixed Harness Budgets</a></h3>
+          <p class="pub-authors"><b class="me">Zichuan Xu</b>, Yuyang Dong, Makoto Onizuka, Chuan Xiao</p>
+          <div class="pub-links">
+            <button class="pub-btn" type="button" aria-expanded="false" aria-controls="abs-toolbottleneckbench">Abstract</button>
+            <a class="pub-btn" href="https://arxiv.org/pdf/2610.21098" target="_blank" rel="noopener">PDF</a>
+            <a class="pub-btn" href="https://github.com/zichuanxu/tool-bottleneck-bench" target="_blank" rel="noopener">Code</a>
+            <button class="pub-btn" type="button" aria-expanded="false" aria-controls="bib-toolbottleneckbench">BibTeX</button>
+          </div>
+          <div class="pub-panel" id="abs-toolbottleneckbench">
+            <p>The success score of a tool agent reflects both its model and the budgets of the harness that runs it. We present ToolBottleneckBench, a benchmark that measures tool-agent performance under controlled pressures and fixed harness budgets. Synthetic enterprise tasks stay fixed while one pressure varies: the registered tool catalog, the visible tool menu, the certified workflow, or the encoding of returned records. An exact grader records the first unmet obligation of each failed episode and the harness limit, if any, that ended it. Across 21 model and harness configurations, the visible menu is the only one of the three pressures that act on the model with a large penalty, and this penalty tracks truncation at the completion cap. Raising the cap sixteenfold removes most of the penalty in the truncation-heavy configurations. Most failures end at a harness limit, and the failure record identifies the assigned pressure no more reliably than a count of tool calls. The repairs that help change which tools reach the model or who issues the calls, and only two repairs, neither improving model behavior, beat every configuration switch. We recommend reporting pressure effects with the harness budgets under which they were measured.</p>
+          </div>
+          <div class="pub-panel bib" id="bib-toolbottleneckbench">
+            <button class="pub-copy" type="button" data-copy-from="bibtex-toolbottleneckbench">Copy</button>
 <pre id="bibtex-toolbottleneckbench">@article{xu2026toolbottleneckbench,
   title   = {ToolBottleneckBench: Measuring Tool-Agent Performance under Controlled Pressures and Fixed Harness Budgets},
   author  = {Xu, Zichuan and Dong, Yuyang and Onizuka, Makoto and Xiao, Chuan},
   journal = {arXiv preprint arXiv:2610.21098},
   year    = {2026}
 }</pre>
-            </div>
           </div>
-          <a class="pub-fig" href="/images/pubs/toolbottleneckbench-fig1.webp" target="_blank" rel="noopener"><img src="/images/pubs/toolbottleneckbench-fig1.webp" width="1800" height="578" loading="lazy" alt="Figure 1 of the paper: a task family, one pressure varied at a time, a frozen harness with fixed budgets, and an exact grader that records the first unmet obligation."></a>
         </li>
       </ol>
+    </div>
+  </section>
+
+  <!-- ============================== experience ============================ -->
+  <section class="sec" id="experience" aria-labelledby="experience-title">
+    <div class="wrap">
+      <h2 class="sec-title" id="experience-title">Experience</h2>
+
+      <article class="item" id="initial-s">
+        <p class="item-when">Apr 2026 → now<small>Tokyo</small></p>
+        <div class="item-body">
+          <h3 class="item-title"><a href="https://initial-s.com/" target="_blank" rel="noopener">Initial. S Co. Ltd.</a><span class="now-flag"><i aria-hidden="true"></i>Now</span></h3>
+          <p class="item-role"><b>AI Agent Development Engineer</b></p>
+          <p class="item-desc">Building <b>agent products for everyday work</b>: a desktop workspace for business workflows and a personal assistant for knowledge, files, and daily tools.</p>
+          <ul class="item-list">
+            <li><b>Desktop workspace:</b> reusable task templates, domain experts, and project spaces around the Codex engine, with native tool execution and permissions in an Electron + React app.</li>
+            <li><b>Personal assistant:</b> a searchable memory with knowledge graphs, plus calendar, reminders, and email, cloud-drive, and GitHub integrations.</li>
+            <li><b>Shared platform:</b> model access, accounts and billing, and versioned cloud storage on AWS, backed by regression and end-to-end tests.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="item" id="rakuten">
+        <p class="item-when">Sep → Oct 2025<small>Tokyo</small></p>
+        <div class="item-body">
+          <h3 class="item-title"><a href="https://global.rakuten.com/corp/" target="_blank" rel="noopener">Rakuten</a></h3>
+          <p class="item-role"><b>Application Engineer</b></p>
+          <p class="item-desc">Turned two manual, ticket-driven internal workflows into real-time self-service platforms.</p>
+          <ul class="item-list">
+            <li>Built two internal web apps in Laravel that replaced ticket-based requests with self-service.</li>
+            <li>Automated Rakuten Card&rsquo;s monthly data validation with Python and Apache Airflow.</li>
+            <li>Kept unit-test coverage above 85% with zero SonarQube code smells.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="item" id="dameng">
+        <p class="item-when">Jul 2023 → Feb 2025<small>Shanghai</small></p>
+        <div class="item-body">
+          <h3 class="item-title"><a href="https://www.dameng.com/" target="_blank" rel="noopener">Wuhan Dameng Data Co. Ltd.</a></h3>
+          <p class="item-role"><b>Development Engineer</b></p>
+          <p class="item-desc">Rendering and tooling for a next-generation database management client.</p>
+          <ul class="item-list">
+            <li>Built a NatTable rendering engine that cut display time for 100,000-row results from 10 minutes to 3 seconds (200&times;).</li>
+            <li>Engineered a cross-platform installer framework for the whole database suite.</li>
+            <li>Led an embedded SQL terminal and formatter, owning core modules end to end.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="item" id="nsfocus">
+        <p class="item-when">Feb → Apr 2023<small>Wuhan</small></p>
+        <div class="item-body">
+          <h3 class="item-title"><a href="https://www.nsfocus.com.cn/" target="_blank" rel="noopener">NSFOCUS</a></h3>
+          <p class="item-role"><b>Research and Development Engineer</b></p>
+          <ul class="item-list">
+            <li>Built a Scrapy crawler for fraudulent-app intelligence and the Django backend of a network probing system.</li>
+            <li>Designed encryption schemes to anonymize customer data for machine-learning training.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="item" id="virginia-tech">
+        <p class="item-when">Apr → Sep 2022<small>Blacksburg, VA</small></p>
+        <div class="item-body">
+          <h3 class="item-title"><a href="https://www.vt.edu/" target="_blank" rel="noopener">Virginia Tech</a></h3>
+          <p class="item-role"><b>Undergraduate Research Assistant</b> · advised by <a href="https://people.cs.vt.edu/penggao/" target="_blank" rel="noopener">Prof. Peng Gao</a></p>
+          <p class="item-desc">A graph learning framework for system provenance-based security analysis.</p>
+          <ul class="item-list">
+            <li>Designed a PyTorch graph representation learning framework over large, sparse system audit logs.</li>
+            <li>Reached 97% accuracy predicting malicious system entities with a low false-positive rate.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============================== education ============================= -->
+  <section class="sec" id="education" aria-labelledby="education-title">
+    <div class="wrap">
+      <h2 class="sec-title" id="education-title">Education</h2>
+
+      <article class="item" id="osaka">
+        <p class="item-when">2025 → 2027<small>Osaka</small></p>
+        <div class="item-body">
+          <h3 class="item-title"><a href="https://www.osaka-u.ac.jp/ja" target="_blank" rel="noopener">The University of Osaka</a></h3>
+          <p class="item-role"><b>Master of Information Science and Technology</b></p>
+          <p class="item-desc">Graduate School of Information Science and Technology. Advised by <a href="https://sites.google.com/site/chuanxiao1983/" target="_blank" rel="noopener">Prof. Chuan Xiao</a>. Researching LLMs, agents, and benchmarking.</p>
+        </div>
+      </article>
+
+      <article class="item" id="worldquant">
+        <p class="item-when">2025 → 2027<small>Online</small></p>
+        <div class="item-body">
+          <h3 class="item-title"><a href="https://www.wqu.edu/" target="_blank" rel="noopener">WorldQuant University</a></h3>
+          <p class="item-role"><b>MSc, Financial Engineering</b></p>
+          <p class="item-desc">Studied in parallel with the Osaka programme: quantitative methods, derivatives, and financial data analysis. Certificate: <a href="https://www.credly.com/badges/82e5200b-56e4-4d95-bd61-cbb9deec85e9" target="_blank" rel="noopener">Foundations of Financial Engineering</a> (2025).</p>
+        </div>
+      </article>
+
+      <article class="item" id="hust">
+        <p class="item-when">2019 → 2023<small>Wuhan</small></p>
+        <div class="item-body">
+          <h3 class="item-title"><a href="https://www.hust.edu.cn/" target="_blank" rel="noopener">Huazhong University of Science and Technology</a></h3>
+          <p class="item-role"><b>BEng, Cyberspace Security</b></p>
+          <p class="item-desc">School of Cyber Science and Engineering. Coursework archived in <a href="https://github.com/zichuanxu/HUST-CSE-Experiments" target="_blank" rel="noopener">HUST-CSE-Experiments</a>.</p>
+        </div>
+      </article>
     </div>
   </section>
 
   <!-- ================================ skills ============================== -->
   <section class="sec" id="skills" aria-labelledby="skills-title">
     <div class="wrap">
-      <div class="sec-head">
-        <h2 class="sec-title" id="skills-title">Skills &amp; Stack</h2>
-      </div>
-      <div class="sheet">
-        {%- comment -%}
-          One row per group; each tool is a logo tile.
-          Format: Group|icon-slug:Label,icon-slug:Label@NextGroup|...
-          Icon slugs resolve to /images/tech/<slug>.svg (brand-coloured, vendored).
-          Group separator is "@" and item separator "," — never ";", which would
-          tear HTML entities such as "&amp;" in half.
-        {%- endcomment -%}
-        {%- assign stacks = "Full-stack development|typescript:TypeScript,react:React,vuedotjs:Vue.js,nodedotjs:Node.js,go:Go,python:Python,openjdk:Java,springboot:Spring Boot,django:Django,laravel:Laravel,postgresql:PostgreSQL,mysql:MySQL,redis:Redis@AI &amp; ML|pytorch:PyTorch,huggingface:Hugging Face,onnx:ONNX,openai:Codex,claude:Claude Code,aws:Amazon Bedrock@Cloud &amp; DevOps|aws:AWS,docker:Docker,terraform:Terraform,linux:Linux,git:Git,github:GitHub,apacheairflow:Apache Airflow" | split: "@" %}
-        {%- for stack in stacks %}
-        {%- assign bits = stack | split: "|" %}
-        <div class="sheet-row reveal">
-          <h3>{{ bits[0] }}</h3>
-          <ul class="tiles">
-            {%- assign tools = bits[1] | split: "," %}
-            {%- for tool in tools %}{% assign t = tool | split: ":" %}
-            <li class="tile" style="--i:{{ forloop.index0 }}"><span class="ico"><img src="/images/tech/{{ t[0] }}.svg" alt="" width="26" height="26" loading="lazy" decoding="async"></span>{{ t[1] }}</li>
-            {%- endfor %}
-          </ul>
-        </div>
-        {%- endfor %}
-        <div class="sheet-row reveal">
-          <h3>Languages</h3>
-          <ul class="tiles langs">
-            <li class="tile">Chinese <small>Native</small></li>
-            <li class="tile">English <small>IELTS 7.5 · C1</small></li>
-            <li class="tile">Japanese <small>JLPT N1 · B2</small></li>
-          </ul>
-        </div>
-      </div>
+      <h2 class="sec-title" id="skills-title">Skills</h2>
+      <dl class="skills">
+        <div><dt>Full-stack</dt><dd>TypeScript, React, Vue.js, Node.js, Go, Python, Java, Spring Boot, Django, Laravel, PostgreSQL, MySQL, Redis</dd></div>
+        <div><dt>AI &amp; ML</dt><dd>PyTorch, Hugging Face, ONNX, Codex, Claude Code, Amazon Bedrock</dd></div>
+        <div><dt>Cloud &amp; DevOps</dt><dd>AWS, Docker, Terraform, Linux, Git, GitHub, Apache Airflow</dd></div>
+        <div><dt>Languages</dt><dd>Chinese (native), English (IELTS 7.5 · C1), Japanese (JLPT N1 · B2)</dd></div>
+      </dl>
     </div>
   </section>
 </main>
 
-<footer class="contact" id="contact" aria-labelledby="contact-title">
+<footer class="foot" id="contact">
   <div class="wrap">
-    <div class="sec-head">
-      <h2 class="sec-title" id="contact-title">Contact</h2>
-    </div>
-    <ul class="channels">
-      <li><a href="mailto:xu.zichuan@ist.osaka-u.ac.jp"><span class="k">Email</span><span class="v">xu.zichuan<wbr><span>@ist.osaka-u.ac.jp</span></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></li>
-      <li><a href="https://www.linkedin.com/in/zichuanxu/" target="_blank" rel="me noopener"><span class="k">LinkedIn</span><span class="v">in/zichuanxu</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></li>
-      <li><a href="https://github.com/zichuanxu" target="_blank" rel="me noopener"><span class="k">GitHub</span><span class="v">github.com/zichuanxu</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></li>
-    </ul>
-    <div class="colophon"><span>&copy; {{ 'now' | date: '%Y' }} Zichuan Xu</span></div>
+    <span>&copy; {{ 'now' | date: '%Y' }} Zichuan Xu</span>
+    <nav aria-label="Contact">
+      <a href="mailto:xu.zichuan@ist.osaka-u.ac.jp">Email</a>
+      <a href="https://github.com/zichuanxu" target="_blank" rel="me noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/zichuanxu/" target="_blank" rel="me noopener">LinkedIn</a>
+    </nav>
   </div>
 </footer>
 
@@ -387,80 +278,14 @@ sitemap: true
   (() => {
     const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    /* "Make AI Great Again.": every letter's width (font-stretch) is animated.
-       The letters open from 62% on load; idle, a slow wave runs through them; near
-       the pointer a letter widens and turns orange. The four lines share one size:
-       on wide screens about a tenth of the viewport width (so the hero stays short),
-       in one column fitted to the content box. Their column is pinned to the fitted
-       width so the right side does not move while the letters breathe. */
-    const hero = document.querySelector('.hero');
-    const grid = hero.querySelector('.hero-grid');
-    const lines = [...hero.querySelectorAll('.kline')];
-    const letters = lines.flatMap((line) => [...line.children]);
-    const width = letters.map(() => (still ? 96 : 62));
-    const heat = letters.map(() => 0);
-    const paint = () => letters.forEach((el, i) => {
-      el.style.fontStretch = `${width[i].toFixed(1)}%`;
-      el.style.setProperty('--h', heat[i].toFixed(3));
-    });
-    const fit = () => {
-      const box = hero.querySelector('.wrap');
-      const cs = getComputedStyle(box);
-      const inner = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
-      if (!(inner > 0)) return; // hidden or zero-size viewport: keep the CSS size, fit again once visible
-      letters.forEach((el) => { el.style.fontStretch = '96%'; });
-      lines.forEach((line) => { line.style.fontSize = '100px'; });
-      const widest = Math.max(...lines.map((line) => line.getBoundingClientRect().width));
-      const cap = window.innerWidth > 900 ? Math.min(165, window.innerWidth * 0.108) : 120;
-      const size = Math.min((100 * inner * 0.96) / widest, cap);
-      lines.forEach((line) => { line.style.fontSize = `${size.toFixed(1)}px`; });
-      grid.style.setProperty('--stack-w', `${Math.ceil(((widest * size) / 100) * 1.08)}px`);
-      paint();
-    };
-    let pointer = null;
-    let frame = 0;
-    let onScreen = true;
-    const tick = (now) => {
-      frame = 0;
-      const size = parseFloat(lines[0].style.fontSize) || 200;
-      letters.forEach((el, i) => {
-        let w = 96 + 10 * Math.sin(now / 900 - i * 0.6);
-        let h = 0;
-        if (pointer) {
-          const r = el.getBoundingClientRect();
-          const dx = (r.left + r.width / 2 - pointer.x) / size;
-          const dy = (r.top + r.height / 2 - pointer.y) / size;
-          const d2 = dx * dx + dy * dy * 1.6;
-          w = 74 + 51 * Math.exp(-d2 / 0.35);
-          h = Math.min(1, 1.8 * Math.exp(-d2 / 0.22));
-        }
-        width[i] += (w - width[i]) * 0.1;
-        heat[i] += (h - heat[i]) * 0.12;
-      });
-      paint();
-      if (onScreen && !document.hidden) frame = requestAnimationFrame(tick);
-    };
-    const run = () => { if (!frame && !still) frame = requestAnimationFrame(tick); };
-    const start = () => { fit(); run(); };
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(start); else start();
-    window.addEventListener('resize', fit, { passive: true });
-    document.addEventListener('visibilitychange', () => { if (!document.hidden) fit(); });
-    if (!still) {
-      hero.addEventListener('pointermove', (e) => { pointer = { x: e.clientX, y: e.clientY }; });
-      hero.addEventListener('pointerleave', () => { pointer = null; });
-      document.addEventListener('visibilitychange', run);
-      if ('IntersectionObserver' in window) {
-        new IntersectionObserver(([entry]) => { onScreen = entry.isIntersecting; run(); }).observe(hero);
-      }
-    }
-
     /* In-page links scroll without writing a #fragment into the address, so it stays
        zichuanxu.me/. A visit that arrives with a fragment (including the ids of the
-       old design) is scrolled to its target and the address cleaned. Without the
+       old designs) is scrolled to its target and the address cleaned. Without the
        script the links are ordinary anchors. */
     const legacy = { 'stop-initial-s': 'initial-s', 'stop-rakuten': 'rakuten', 'stop-dameng': 'dameng', 'stop-nsfocus': 'nsfocus', 'stop-vt': 'virginia-tech', 'edu-osaka': 'osaka', 'edu-wqu': 'worldquant', 'edu-hust': 'hust', 'pub-toolbottleneckbench': 'toolbottleneckbench' };
     const target = (hash) => {
-      const id = decodeURIComponent(hash.replace(/^#/, ''));
+      let id = hash.replace(/^#/, '');
+      try { id = decodeURIComponent(id); } catch (_) { return null; } // e.g. "#%" would abort the whole script
       return id ? document.getElementById(legacy[id] || id) : null;
     };
     const clean = () => { if (location.hash) history.replaceState(history.state, '', location.pathname + location.search); };
@@ -500,26 +325,6 @@ sitemap: true
     window.addEventListener('scroll', spy, { passive: true });
     window.addEventListener('resize', spy, { passive: true });
     spy();
-
-    /* Reveal on scroll: years fill, underlines draw, tiles settle. A background tab
-       never runs observer callbacks, so show everything if none has fired after
-       1.5 s; without the API, show it at once. */
-    const items = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      let fired = false;
-      const io = new IntersectionObserver((entries) => {
-        fired = true;
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-        });
-      }, { rootMargin: '0px 0px -10% 0px' });
-      items.forEach((el) => io.observe(el));
-      setTimeout(() => { if (!fired) items.forEach((el) => el.classList.add('in')); }, 1500);
-    } else {
-      items.forEach((el) => el.classList.add('in'));
-    }
 
     /* Publications: Abstract and BibTeX open in place (both are shown without the
        script); the BibTeX panel can be copied. */
