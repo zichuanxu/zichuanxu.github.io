@@ -275,9 +275,32 @@ body.read { --wrap: calc(760px + 2 * var(--gutter)); }
 .prose figcaption { margin-top: 12px; font-size: 14.5px; line-height: 1.55; color: var(--mute); }
 .prose figcaption b { font-weight: 600; color: var(--ink-2); }
 .prose hr { height: 1px; margin-block: 2.4em; border: 0; background: var(--rule); }
-.prose table { display: block; overflow-x: auto; border-collapse: collapse; font-size: 15px; line-height: 1.5; font-variant-numeric: tabular-nums; }
-.prose th, .prose td { padding: 9px 20px 9px 0; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
-.prose th { border-bottom-color: var(--ink); font: 500 12px/1.4 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--mute); }
+/* tables: booktabs rules (ink top and bottom, hairlines between rows), mono headers,
+   tabular figures. Markdown tables get all of it; a <tr class="best"> row is tinted,
+   <th colspan> makes a group header, table.num right-aligns all but the first column and .g opens a column group with extra space. */
+.prose table { width: 100%; margin-block: 1.6em 0; border-collapse: collapse; border-block: 1.5px solid var(--ink); font-size: 15px; line-height: 1.45; font-variant-numeric: tabular-nums lining-nums; }
+.prose th, .prose td { padding: 10px 14px; text-align: left; vertical-align: baseline; }
+.prose th:first-child, .prose td:first-child { padding-left: 0; }
+.prose th:last-child, .prose td:last-child { padding-right: 0; }
+.prose th:first-child { white-space: normal; }
+.prose th { padding-block: 12px 9px; border-bottom: 1px solid var(--ink); font: 500 11.5px/1.35 var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--mute); white-space: nowrap; }
+.prose thead tr:not(:last-child) th { padding-bottom: 6px; border-bottom: 0; color: var(--ink-2); }
+.prose th[colspan] { background: linear-gradient(var(--rule), var(--rule)) bottom right / calc(100% - 14px) 1px no-repeat; }
+.prose th[colspan]:last-child { background-size: calc(100% - 28px) 1px; background-position: bottom right; }
+.prose .g { padding-left: 32px; }
+.prose .num :is(th, td):not(:first-child) { text-align: right; }
+.prose .num th[colspan] { padding-left: 28px; text-align: center; }
+.prose td { border-top: 1px solid var(--rule); color: var(--ink-2); }
+.prose tbody tr:first-child td { border-top: 0; }
+.prose td:first-child { color: var(--ink); }
+.prose td strong { font-weight: 600; color: var(--ink); }
+.prose td.na { color: var(--mute); }
+.prose tr.best td { background: var(--accent-soft); }
+.prose tr.best td:first-child { box-shadow: inset 3px 0 var(--accent); padding-left: 14px; }
+.prose tbody tr { transition: background-color .15s; }
+.prose tbody tr:hover td { background: color-mix(in oklab, var(--paper-2) 70%, transparent); }
+.prose tbody tr.best:hover td { background: var(--accent-soft); }
+@media (max-width: 560px) { .prose table { display: block; overflow-x: auto; font-size: 14px; } .prose th, .prose td { padding-inline: 10px; } .prose .g { padding-left: 20px; } }
 .prose sup { line-height: 0; }
 .prose .footnote { padding-inline: .15em; font: 600 .75em var(--mono); text-decoration: none; color: var(--accent); }
 .prose .footnotes { margin-top: 3em; padding-top: 20px; border-top: 1px solid var(--rule); font-size: 15px; color: var(--mute); }

@@ -114,12 +114,18 @@ Generating the 512 answers and the teacher-forced pass took about 84 minutes on 
 
 All runs follow the agent paper's evaluation protocol: thinking mode, temperature 0.6, top-*p* 0.95, top-*k* 20, presence penalty 1.5, at most 32,768 new tokens, and answers graded with Math-Verify. Comparisons use a paired bootstrap over problems with 10,000 resamples.
 
-| Method | MATH-500 | truncated | tokens | GSM8K | truncated | tokens |
-|---|---:|---:|---:|---:|---:|---:|
-| Base model | 7.4 | 93.0 | 30.9k | 13.8¹ | | |
-| Astra edit (agent) | 49.7 | 32.1 | 21.8k | 67.4 | 6.9 | 12.0k |
-| CLC (one seed) | 53.0 | 21.8 | 18.1k | 64.6 | 0.5 | 7.6k |
-| **CLC-sel** | **56.3** | **17.7** | 18.3k | **69.0** | **1.0** | 9.1k |
+<table class="num">
+<thead>
+<tr><th></th><th colspan="3">MATH-500</th><th colspan="3" class="g">GSM8K</th></tr>
+<tr><th>Method</th><th>Accuracy</th><th>Truncated</th><th>Tokens</th><th class="g">Accuracy</th><th>Truncated</th><th>Tokens</th></tr>
+</thead>
+<tbody>
+<tr><td>Base model</td><td>7.4</td><td>93.0</td><td>30.9k</td><td class="g">13.8¹</td><td class="na">–</td><td class="na">–</td></tr>
+<tr><td>Astra edit (agent)</td><td>49.7</td><td>32.1</td><td>21.8k</td><td class="g">67.4</td><td>6.9</td><td>12.0k</td></tr>
+<tr><td>CLC (one seed)</td><td>53.0</td><td>21.8</td><td>18.1k</td><td class="g">64.6</td><td>0.5</td><td>7.6k</td></tr>
+<tr class="best"><td><strong>CLC-sel</strong></td><td><strong>56.3</strong></td><td><strong>17.7</strong></td><td>18.3k</td><td class="g"><strong>69.0</strong></td><td><strong>1.0</strong></td><td>9.1k</td></tr>
+</tbody>
+</table>
 
 <p class="table-note">Accuracy and truncation in %, tokens per answer. Astra and CLC-sel average three seeds. ¹ Reported by Takehi et al.</p>
 
