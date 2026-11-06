@@ -1,0 +1,51 @@
+---
+layout: null
+permalink: /blog/
+title: "Blog"
+description: "Posts by Zichuan Xu on LLM agents, benchmarks, and the engineering around them."
+sitemap: true
+---
+<!doctype html>
+<html lang="en">
+
+<head>
+  {% include site-2026/head.html title="Blog · Zichuan Xu" description=page.description %}
+</head>
+
+<body class="read">
+<a class="skip" href="#main">Skip to content</a>
+{% include site-2026/bar.html blog=true %}
+
+<main id="main">
+  <section class="intro" aria-labelledby="blog-title">
+    <div class="wrap">
+      <div>
+        <h1 class="name" id="blog-title">Blog</h1>
+      </div>
+      <ul class="links">
+        <li><a href="/feed.xml"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg><span>RSS feed</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  {%- assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {%- for year in years %}
+  <section class="sec" aria-labelledby="y{{ year.name }}">
+    <div class="wrap">
+      <h2 class="sec-title" id="y{{ year.name }}">{{ year.name }}</h2>
+      <ol class="posts">
+        {%- for post in year.items %}
+        {% include site-2026/post-row.html post=post format="%b %-d" %}
+        {%- endfor %}
+      </ol>
+    </div>
+  </section>
+  {%- else %}
+  <section class="sec"><div class="wrap"><p class="role">Nothing published yet.</p></div></section>
+  {%- endfor %}
+</main>
+
+{% include site-2026/foot.html %}
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<svg class="ch" viewBox="0 0 720 210" role="img" aria-labelledby="windows-t windows-d"><title id="windows-t">The three windows CLC-sel reads</title><desc id="windows-d">Top: a looping answer, with a first-occurrence window F and a later loop window R that repeats it verbatim until the token limit. Bottom: an answer that finishes, with the closure window C, the 64 tokens before &lt;/think&gt;.</desc>
+<text x="0.0" y="22.0" class="lab strong">A looping answer</text>
+<rect class="tok" x="0.0" y="38" width="24" height="22" rx="4"/>
+<rect class="tok" x="28.0" y="38" width="24" height="22" rx="4"/>
+<rect class="tok" x="56.0" y="38" width="24" height="22" rx="4"/>
+<rect class="n" x="84.0" y="38" width="24" height="22" rx="4"/>
+<rect class="n" x="112.0" y="38" width="24" height="22" rx="4"/>
+<rect class="n" x="140.0" y="38" width="24" height="22" rx="4"/>
+<rect class="n" x="168.0" y="38" width="24" height="22" rx="4"/>
+<rect class="tok" x="196.0" y="38" width="24" height="22" rx="4"/>
+<rect class="tok" x="224.0" y="38" width="24" height="22" rx="4"/>
+<rect class="b" x="252.0" y="38" width="24" height="22" rx="4"/>
+<rect class="b" x="280.0" y="38" width="24" height="22" rx="4"/>
+<rect class="b" x="308.0" y="38" width="24" height="22" rx="4"/>
+<rect class="b" x="336.0" y="38" width="24" height="22" rx="4"/>
+<rect class="b soft" x="364.0" y="38" width="24" height="22" rx="4"/>
+<rect class="b soft" x="392.0" y="38" width="24" height="22" rx="4"/>
+<rect class="b soft" x="420.0" y="38" width="24" height="22" rx="4"/>
+<rect class="b soft" x="448.0" y="38" width="24" height="22" rx="4"/>
+<text x="480.0" y="54.0" class="tick">&#8230; until 32,768 tokens</text>
+<path class="brace" d="M84,68v5h108v-5"/>
+<text x="138.0" y="90.0" class="tick" text-anchor="middle">first occurrence F</text>
+<path class="brace" d="M252,68v5h108v-5"/>
+<text x="346.0" y="90.0" class="tick" text-anchor="middle">loop R: the same 64 tokens again</text>
+<text x="0.0" y="132.0" class="lab strong">An answer that finishes</text>
+<rect class="tok" x="0.0" y="148" width="24" height="22" rx="4"/>
+<rect class="tok" x="28.0" y="148" width="24" height="22" rx="4"/>
+<rect class="tok" x="56.0" y="148" width="24" height="22" rx="4"/>
+<rect class="tok" x="84.0" y="148" width="24" height="22" rx="4"/>
+<rect class="tok" x="112.0" y="148" width="24" height="22" rx="4"/>
+<rect class="tok" x="140.0" y="148" width="24" height="22" rx="4"/>
+<rect class="tok" x="168.0" y="148" width="24" height="22" rx="4"/>
+<rect class="tok" x="196.0" y="148" width="24" height="22" rx="4"/>
+<rect class="a" x="224.0" y="148" width="24" height="22" rx="4"/>
+<rect class="a" x="252.0" y="148" width="24" height="22" rx="4"/>
+<rect class="a" x="280.0" y="148" width="24" height="22" rx="4"/>
+<rect class="a" x="308.0" y="148" width="24" height="22" rx="4"/>
+<rect class="tag" x="336.0" y="148" width="78" height="22" rx="4"/>
+<text x="375.0" y="163.5" class="tagtext" text-anchor="middle">&lt;/think&gt;</text>
+<rect class="tok" x="418.0" y="148" width="24" height="22" rx="4"/>
+<rect class="tok" x="446.0" y="148" width="24" height="22" rx="4"/>
+<rect class="tok" x="474.0" y="148" width="24" height="22" rx="4"/>
+<path class="brace" d="M224,178v5h108v-5"/>
+<text x="278.0" y="200.0" class="tick" text-anchor="middle">closure C: the 64 tokens before it</text>
+</svg>

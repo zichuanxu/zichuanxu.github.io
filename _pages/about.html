@@ -36,6 +36,9 @@ sitemap: true
   <link rel="icon" href="/favicon.ico?v={{ site.time | date: '%s' }}" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v={{ site.time | date: '%s' }}" />
   <link rel="apple-touch-icon" href="/images/apple-touch-icon-180x180.png?v={{ site.time | date: '%s' }}" />
+  {%- if site.posts.size > 0 %}
+  <link rel="alternate" type="application/atom+xml" title="Zichuan Xu: Blog" href="/feed.xml" />
+  {%- endif %}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -132,6 +135,7 @@ sitemap: true
       </ol>
     </div>
   </section>
+
 
   <!-- ============================== experience ============================ -->
   <section class="sec" id="experience" aria-labelledby="experience-title">
@@ -241,18 +245,24 @@ sitemap: true
     </div>
   </section>
 
+  {%- if site.posts.size > 0 %}
+  <!-- ================================= blog =============================== -->
+  <section class="sec" id="blog" aria-labelledby="blog-title">
+    <div class="wrap">
+      <h2 class="sec-title" id="blog-title">Blog</h2>
+      <ol class="posts">
+        {%- for post in site.posts limit: 5 %}
+        {% include site-2026/post-row.html post=post format="%b %-d, %Y" %}
+        {%- endfor %}
+      </ol>
+      <p class="more"><a href="/blog/">All posts <span aria-hidden="true">&rarr;</span></a></p>
+    </div>
+  </section>
+  {%- endif %}
+
 </main>
 
-<footer class="foot" id="contact">
-  <div class="wrap">
-    <span>&copy; {{ 'now' | date: '%Y' }} Zichuan Xu</span>
-    <nav aria-label="Contact">
-      <a href="mailto:xu.zichuan@ist.osaka-u.ac.jp">Email</a>
-      <a href="https://github.com/zichuanxu" target="_blank" rel="me noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/zichuanxu/" target="_blank" rel="me noopener">LinkedIn</a>
-    </nav>
-  </div>
-</footer>
+{% include site-2026/foot.html %}
 
 <script>
   (() => {

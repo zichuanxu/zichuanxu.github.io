@@ -2,13 +2,16 @@
   <div class="wrap">
     <a class="brand" href="{% if include.nav %}#top{% else %}/{% endif %}" aria-label="Zichuan Xu, {% if include.nav %}back to top{% else %}home{% endif %}">Zichuan Xu</a>
     <div class="bar-right">
-      {%- if include.nav %}
+      {%- comment %} on the homepage the links scroll (and the scrollspy marks them); elsewhere they lead back to it {% endcomment %}
+      {%- if include.nav %}{% assign p = '#' %}{% else %}{% assign p = '/#' %}{% endif %}
       <nav class="nav" aria-label="Sections">
-        <a href="#publications" data-spy="publications">Publications</a>
-        <a href="#experience" data-spy="experience">Experience</a>
-        <a href="#education" data-spy="education">Education</a>
+        <a href="{{ p }}publications"{% if include.nav %} data-spy="publications"{% endif %}>Publications</a>
+        <a href="{{ p }}experience"{% if include.nav %} data-spy="experience"{% endif %}>Experience</a>
+        <a href="{{ p }}education"{% if include.nav %} data-spy="education"{% endif %}>Education</a>
+        {%- if site.posts.size > 0 %}
+        <a href="{% if include.nav %}#blog{% else %}/blog/{% endif %}"{% if include.nav %} data-spy="blog"{% endif %}{% if include.blog %} aria-current="true"{% endif %}>Blog</a>
+        {%- endif %}
       </nav>
-      {%- endif %}
       <button class="toggle" type="button" aria-label="Switch theme">
         <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" /></svg>
         <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>

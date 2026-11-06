@@ -1,0 +1,9 @@
+<li class="post-row">
+  <time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: include.format }}</time>
+  <div>
+    <h3><a href="{{ include.post.url }}">{{ include.post.title }}</a></h3>
+    {%- if include.post.description %}
+    <p>{{ include.post.description }}</p>
+    {%- endif %}
+  </div>
+</li>

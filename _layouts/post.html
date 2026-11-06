@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="{{ page.lang | default: 'en' }}">
+
+<head>
+  {%- capture title %}{{ page.title }} · Zichuan Xu{% endcapture %}
+  {% include site-2026/head.html title=title description=page.description type="article" %}
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
+  {%- if page.updated %}
+  <meta property="article:modified_time" content="{{ page.updated | date_to_xmlschema }}" />
+  {%- endif %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ page.title | jsonify }},
+    "description": {{ page.description | jsonify }},
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.updated | default: page.date | date_to_xmlschema }}",
+    "url": "{{ site.url }}{{ page.url }}",
+    "inLanguage": "{{ page.lang | default: 'en' }}",
+    "author": { "@type": "Person", "name": "Zichuan Xu", "url": "{{ site.url }}" }
+  }
+  </script>
+</head>
+
+<body class="read">
+<a class="skip" href="#main">Skip to content</a>
+{% include site-2026/bar.html blog=true %}
+
+<main id="main">
+  <article class="article wrap">
+    <header class="article-head">
+      <a class="back" href="/blog/"><span aria-hidden="true">&larr;</span> All posts</a>
+      {%- comment %} ponytail: word count / 220 is right for English only; CJK posts set `minutes:` {% endcomment %}
+      {%- assign minutes = content | strip_html | number_of_words | divided_by: 220 | at_least: 1 %}
+      <p class="article-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+        <span aria-hidden="true">&middot;</span> {{ page.minutes | default: minutes }} min read
+        {%- if page.updated %}
+        <span aria-hidden="true">&middot;</span> Updated <time datetime="{{ page.updated | date_to_xmlschema }}">{{ page.updated | date: '%B %-d, %Y' }}</time>
+        {%- endif %}
+      </p>
+      <h1 class="article-title">{{ page.title }}</h1>
+      {%- if page.description %}
+      <p class="article-dek">{{ page.description }}</p>
+      {%- endif %}
+    </header>
+
+    <div class="prose">
+      {{ content }}
+    </div>
+
+    {%- if page.previous or page.next %}
+    <nav class="article-nav" aria-label="More posts">
+      {%- if page.previous %}
+      <a class="prev" href="{{ page.previous.url }}" rel="prev"><small>&larr; Older</small><span>{{ page.previous.title }}</span></a>
+      {%- endif %}
+      {%- if page.next %}
+      <a class="next" href="{{ page.next.url }}" rel="next"><small>Newer &rarr;</small><span>{{ page.next.title }}</span></a>
+      {%- endif %}
+    </nav>
+    {%- endif %}
+  </article>
+</main>
+
+{% include site-2026/foot.html %}
+</body>
+
+</html>

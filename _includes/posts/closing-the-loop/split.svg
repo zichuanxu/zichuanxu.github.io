@@ -1,0 +1,68 @@
+<svg class="ch" viewBox="0 0 720 354" role="img" aria-labelledby="split-t split-d"><title id="split-t">Where CLC-sel's lead over the Astra edit comes from</title><desc id="split-d">For each run, the paired accuracy difference split by outcome. Most of the lead comes from problems the Astra edit truncates and CLC-sel finishes (+7.2 to +8.8 points on MATH-500); problems CLC-sel truncates cost 1.6 to 3.2 points; problems both finish change little.</desc>
+<rect class="a" x="0" y="4" width="14" height="14" rx="3"/>
+<text x="20.0" y="16.0" class="tick">Astra truncated, CLC-sel finished</text>
+<rect class="b" x="278.9" y="4" width="14" height="14" rx="3"/>
+<text x="298.9" y="16.0" class="tick">CLC-sel truncated, Astra finished</text>
+<rect class="n" x="0" y="26" width="14" height="14" rx="3"/>
+<text x="20.0" y="38.0" class="tick">both finished or both truncated</text>
+<line class="grid" x1="168.0" y1="60" x2="168.0" y2="304"/>
+<text x="168.0" y="322.0" class="tick" text-anchor="middle">-4</text>
+<line class="grid" x1="238.3" y1="60" x2="238.3" y2="304"/>
+<text x="238.3" y="322.0" class="tick" text-anchor="middle">-2</text>
+<line class="grid" x1="308.6" y1="60" x2="308.6" y2="304"/>
+<text x="308.6" y="322.0" class="tick" text-anchor="middle">0</text>
+<line class="grid" x1="378.9" y1="60" x2="378.9" y2="304"/>
+<text x="378.9" y="322.0" class="tick" text-anchor="middle">+2</text>
+<line class="grid" x1="449.1" y1="60" x2="449.1" y2="304"/>
+<text x="449.1" y="322.0" class="tick" text-anchor="middle">+4</text>
+<line class="grid" x1="519.4" y1="60" x2="519.4" y2="304"/>
+<text x="519.4" y="322.0" class="tick" text-anchor="middle">+6</text>
+<line class="grid" x1="589.7" y1="60" x2="589.7" y2="304"/>
+<text x="589.7" y="322.0" class="tick" text-anchor="middle">+8</text>
+<line class="grid" x1="660.0" y1="60" x2="660.0" y2="304"/>
+<text x="660.0" y="322.0" class="tick" text-anchor="middle">+10</text>
+<text x="414.0" y="344.0" class="tick" text-anchor="middle">CLC-sel minus Astra, accuracy points</text>
+<text x="154.0" y="84.0" class="lab" text-anchor="end">MATH-500, seed 0</text>
+<path class="a gap" d="M308.6,71.0h306.3a3,3 0 0 1 3,3v14.0a3,3 0 0 1 -3,3h-306.3z"><title>99 problems Astra truncated and CLC-sel finished: +8.8 points</title></path>
+<path class="n gap" d="M308.6,71.0h-18.1a3,3 0 0 0 -3,3v14.0a3,3 0 0 0 3,3h18.1z"><title>problems both finished or both truncated: -0.6 points</title></path>
+<path class="b gap" d="M287.5,71.0h-53.2a3,3 0 0 0 -3,3v14.0a3,3 0 0 0 3,3h53.2z"><title>24 problems CLC-sel truncated and Astra finished: -1.6 points</title></path>
+<path class="net" d="M540.5,75.0l6,6l-6,6l-6,-6z"><title>net +6.6 points</title></path>
+<text x="627.8" y="84.0" class="val">+6.6</text>
+<text x="154.0" y="118.0" class="lab" text-anchor="end">seed 1</text>
+<path class="a gap" d="M308.6,105.0h292.2a3,3 0 0 1 3,3v14.0a3,3 0 0 1 -3,3h-292.2z"><title>101 problems Astra truncated and CLC-sel finished: +8.4 points</title></path>
+<path class="n gap" d="M603.8,105.0h53.2a3,3 0 0 1 3,3v14.0a3,3 0 0 1 -3,3h-53.2z"><title>problems both finished or both truncated: +1.6 points</title></path>
+<path class="b gap" d="M308.6,105.0h-60.3a3,3 0 0 0 -3,3v14.0a3,3 0 0 0 3,3h60.3z"><title>27 problems CLC-sel truncated and Astra finished: -1.8 points</title></path>
+<path class="net" d="M596.7,109.0l6,6l-6,6l-6,-6z"><title>net +8.2 points</title></path>
+<text x="670.0" y="118.0" class="val">+8.2</text>
+<text x="154.0" y="152.0" class="lab" text-anchor="end">seed 2</text>
+<path class="a gap" d="M308.6,139.0h250.0a3,3 0 0 1 3,3v14.0a3,3 0 0 1 -3,3h-250.0z"><title>92 problems Astra truncated and CLC-sel finished: +7.2 points</title></path>
+<path class="n gap" d="M561.6,139.0h39.2a3,3 0 0 1 3,3v14.0a3,3 0 0 1 -3,3h-39.2z"><title>problems both finished or both truncated: +1.2 points</title></path>
+<path class="b gap" d="M308.6,139.0h-109.5a3,3 0 0 0 -3,3v14.0a3,3 0 0 0 3,3h109.5z"><title>26 problems CLC-sel truncated and Astra finished: -3.2 points</title></path>
+<path class="net" d="M491.3,143.0l6,6l-6,6l-6,-6z"><title>net +5.2 points</title></path>
+<text x="613.8" y="152.0" class="val">+5.2</text>
+<text x="154.0" y="186.0" class="lab" text-anchor="end">both with BF</text>
+<path class="a gap" d="M308.6,173.0h299.2a3,3 0 0 1 3,3v14.0a3,3 0 0 1 -3,3h-299.2z"><title>96 problems Astra truncated and CLC-sel finished: +8.6 points</title></path>
+<path class="n gap" d="M610.8,173.0h18.1a3,3 0 0 1 3,3v14.0a3,3 0 0 1 -3,3h-18.1z"><title>problems both finished or both truncated: +0.6 points</title></path>
+<path class="b gap" d="M308.6,173.0h-81.3a3,3 0 0 0 -3,3v14.0a3,3 0 0 0 3,3h81.3z"><title>24 problems CLC-sel truncated and Astra finished: -2.4 points</title></path>
+<path class="net" d="M547.5,177.0l6,6l-6,6l-6,-6z"><title>net +6.8 points</title></path>
+<text x="641.9" y="186.0" class="val">+6.8</text>
+<text x="154.0" y="220.0" class="lab" text-anchor="end">GSM8K, seed 0</text>
+<path class="a gap" d="M308.6,207.0h79.6a3,3 0 0 1 3,3v14.0a3,3 0 0 1 -3,3h-79.6z"><title>70 problems Astra truncated and CLC-sel finished: +2.4 points</title></path>
+<path class="n gap" d="M308.6,207.0h-50.3a3,3 0 0 0 -3,3v14.0a3,3 0 0 0 3,3h50.3z"><title>problems both finished or both truncated: -1.5 points</title></path>
+<path class="b gap" d="M255.3,207.0h-5.0a3,3 0 0 0 -3,3v14.0a3,3 0 0 0 3,3h5.0z"><title>13 problems CLC-sel truncated and Astra finished: -0.2 points</title></path>
+<path class="net" d="M329.9,211.0l6,6l-6,6l-6,-6z"><title>net +0.6 points</title></path>
+<text x="401.2" y="220.0" class="val">+0.6</text>
+<text x="154.0" y="254.0" class="lab" text-anchor="end">seed 1</text>
+<path class="a gap" d="M308.6,241.0h116.9a3,3 0 0 1 3,3v14.0a3,3 0 0 1 -3,3h-116.9z"><title>105 problems Astra truncated and CLC-sel finished: +3.4 points</title></path>
+<path class="n gap" d="M428.5,241.0h1.3a1.3321780569695654,1.3321780569695654 0 0 1 1.3321780569695654,1.3321780569695654v17.3a1.3321780569695654,1.3321780569695654 0 0 1 -1.3321780569695654,1.3321780569695654h-1.3z"><title>problems both finished or both truncated: +0.1 points</title></path>
+<path class="b gap" d="M308.6,241.0h-10.3a3,3 0 0 0 -3,3v14.0a3,3 0 0 0 3,3h10.3z"><title>10 problems CLC-sel truncated and Astra finished: -0.4 points</title></path>
+<path class="net" d="M417.8,245.0l6,6l-6,6l-6,-6z"><title>net +3.1 points</title></path>
+<text x="441.1" y="254.0" class="val">+3.1</text>
+<text x="154.0" y="288.0" class="lab" text-anchor="end">seed 2</text>
+<path class="a gap" d="M308.6,275.0h90.3a3,3 0 0 1 3,3v14.0a3,3 0 0 1 -3,3h-90.3z"><title>88 problems Astra truncated and CLC-sel finished: +2.7 points</title></path>
+<path class="n gap" d="M308.6,275.0h-42.3a3,3 0 0 0 -3,3v14.0a3,3 0 0 0 3,3h42.3z"><title>problems both finished or both truncated: -1.3 points</title></path>
+<path class="b gap" d="M263.3,275.0h-5.0a3,3 0 0 0 -3,3v14.0a3,3 0 0 0 3,3h5.0z"><title>7 problems CLC-sel truncated and Astra finished: -0.2 points</title></path>
+<path class="net" d="M348.5,279.0l6,6l-6,6l-6,-6z"><title>net +1.1 points</title></path>
+<text x="411.8" y="288.0" class="val">+1.1</text>
+<line class="axis" x1="308.6" y1="60" x2="308.6" y2="304"/>
+</svg>

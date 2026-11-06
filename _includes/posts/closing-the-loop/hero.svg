@@ -1,0 +1,32 @@
+<svg class="ch" viewBox="0 0 720 292" role="img" aria-labelledby="hero-t hero-d"><title id="hero-t">MATH-500 accuracy by method</title><desc id="hero-d">Qwen3.5-0.8B in thinking mode. Base 7.4%, with repetition penalty 22.4%, with budget forcing 35.0%, thinking off 45.8%, Astra edit 49.7%, CLC-sel 56.3%, CLC-sel with budget forcing 59.6%.</desc>
+<line class="grid" x1="236.0" y1="8" x2="236.0" y2="266"/>
+<text x="236.0" y="284.0" class="tick" text-anchor="middle">0%</text>
+<line class="grid" x1="360.0" y1="8" x2="360.0" y2="266"/>
+<text x="360.0" y="284.0" class="tick" text-anchor="middle">20%</text>
+<line class="grid" x1="484.0" y1="8" x2="484.0" y2="266"/>
+<text x="484.0" y="284.0" class="tick" text-anchor="middle">40%</text>
+<line class="grid" x1="608.0" y1="8" x2="608.0" y2="266"/>
+<text x="608.0" y="284.0" class="tick" text-anchor="middle">60%</text>
+<text x="224.0" y="33.0" class="lab" text-anchor="end">Base model, thinking</text>
+<path class="n" d="M236.0,18.0h41.9a4,4 0 0 1 4,4v16.0a4,4 0 0 1 -4,4h-41.9z"><title>Base model, thinking: 7.4% correct, 93.0% truncated (one seed)</title></path>
+<text x="289.9" y="33.0" class="val">7.4</text>
+<text x="224.0" y="69.0" class="lab" text-anchor="end">+ repetition penalty</text>
+<path class="n" d="M236.0,54.0h134.9a4,4 0 0 1 4,4v16.0a4,4 0 0 1 -4,4h-134.9z"><title>+ repetition penalty: 22.4% correct, 75.8% truncated (one seed)</title></path>
+<text x="382.9" y="69.0" class="val">22.4</text>
+<text x="224.0" y="105.0" class="lab" text-anchor="end">+ budget forcing</text>
+<path class="n" d="M236.0,90.0h213.0a4,4 0 0 1 4,4v16.0a4,4 0 0 1 -4,4h-213.0z"><title>+ budget forcing: 35.0% correct, 63.8% truncated (one seed)</title></path>
+<text x="461.0" y="105.0" class="val">35.0</text>
+<text x="224.0" y="141.0" class="lab" text-anchor="end">Base model, thinking off</text>
+<path class="n" d="M236.0,126.0h280.0a4,4 0 0 1 4,4v16.0a4,4 0 0 1 -4,4h-280.0z"><title>Base model, thinking off: 45.8% correct, 31.0% truncated (one seed)</title></path>
+<text x="528.0" y="141.0" class="val">45.8</text>
+<text x="224.0" y="177.0" class="lab" text-anchor="end">Astra edit (agent, 20 h)</text>
+<path class="m" d="M236.0,162.0h304.1a4,4 0 0 1 4,4v16.0a4,4 0 0 1 -4,4h-304.1z"><title>Astra edit (agent, 20 h): 49.7% correct, 32.1% truncated (three seeds)</title></path>
+<text x="552.1" y="177.0" class="val">49.7</text>
+<text x="224.0" y="213.0" class="lab strong" text-anchor="end">CLC-sel (rule, 84 GPU-min)</text>
+<path class="a" d="M236.0,198.0h345.1a4,4 0 0 1 4,4v16.0a4,4 0 0 1 -4,4h-345.1z"><title>CLC-sel (rule, 84 GPU-min): 56.3% correct, 17.7% truncated (three seeds)</title></path>
+<text x="593.1" y="213.0" class="val strong">56.3</text>
+<text x="224.0" y="249.0" class="lab strong" text-anchor="end">CLC-sel + budget forcing</text>
+<path class="a" d="M236.0,234.0h365.5a4,4 0 0 1 4,4v16.0a4,4 0 0 1 -4,4h-365.5z"><title>CLC-sel + budget forcing: 59.6% correct, 14.6% truncated (one seed)</title></path>
+<text x="613.5" y="249.0" class="val strong">59.6</text>
+<line class="axis" x1="236" y1="8" x2="236" y2="266"/>
+</svg>

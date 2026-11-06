@@ -1,0 +1,45 @@
+<svg class="ch" viewBox="0 0 720 390" role="img" aria-labelledby="finish-t finish-d"><title id="finish-t">Accuracy against the share of answers that finish</title><desc id="finish-d">Every thinking-mode run on MATH-500. Accuracy rises with the share of answers that finish; the edits that finish most answers lie near a line of slope 0.71 through the origin. CLC-sel finishes 82% and scores 56.3%; the Astra edit finishes 68% and scores 49.7%; the automatic layer-13 edit finishes 90% but scores 49.6%.</desc>
+<line class="grid" x1="64.0" y1="340.0" x2="694.0" y2="340.0"/>
+<text x="54.0" y="344.0" class="tick" text-anchor="end">0</text>
+<line class="grid" x1="64.0" y1="248.0" x2="694.0" y2="248.0"/>
+<text x="54.0" y="252.0" class="tick" text-anchor="end">20</text>
+<line class="grid" x1="64.0" y1="156.0" x2="694.0" y2="156.0"/>
+<text x="54.0" y="160.0" class="tick" text-anchor="end">40</text>
+<line class="grid" x1="64.0" y1="64.0" x2="694.0" y2="64.0"/>
+<text x="54.0" y="68.0" class="tick" text-anchor="end">60</text>
+<text x="64.0" y="360.0" class="tick" text-anchor="middle">0</text>
+<text x="190.0" y="360.0" class="tick" text-anchor="middle">20</text>
+<text x="316.0" y="360.0" class="tick" text-anchor="middle">40</text>
+<text x="442.0" y="360.0" class="tick" text-anchor="middle">60</text>
+<text x="568.0" y="360.0" class="tick" text-anchor="middle">80</text>
+<text x="694.0" y="360.0" class="tick" text-anchor="middle">100</text>
+<text x="379.0" y="382.0" class="tick" text-anchor="middle">Answers that finish (%)</text>
+<text x="54.0" y="14.0" class="tick">Accuracy (%)</text>
+<line class="axis" x1="64.0" y1="340.0" x2="694.0" y2="340.0"/>
+<line class="fit" x1="64.0" y1="340.0" x2="662.5" y2="29.7"/>
+<text x="360.1" y="220.5" class="tick">0.71 &#215; share finished</text>
+<circle class="n ring" cx="108.1" cy="306.0" r="6.5"><title>Base: 7.4% correct, 7.0% of answers finish</title></circle>
+<text x="120.1" y="310.0" class="lab small">Base</text>
+<circle class="n ring" cx="163.5" cy="264.6" r="6.5"><title>CRD 7/12: 16.4% correct, 15.8% of answers finish</title></circle>
+<text x="151.5" y="268.6" class="lab small" text-anchor="end">CRD 7/12</text>
+<circle class="n ring" cx="207.6" cy="233.3" r="6.5"><title>CRD 15/19: 23.2% correct, 22.8% of answers finish</title></circle>
+<text x="195.6" y="237.3" class="lab small" text-anchor="end">CRD 15/19</text>
+<circle class="n ring hollow" cx="292.1" cy="179.0" r="6.5"><title>Base + BF: 35.0% correct, 36.2% of answers finish</title></circle>
+<text x="280.1" y="183.0" class="lab small" text-anchor="end">Base + BF</text>
+<circle class="m ring" cx="491.8" cy="111.4" r="6.5"><title>Astra: 49.7% correct, 67.9% of answers finish</title></circle>
+<text x="479.8" y="116.4" class="lab small" text-anchor="end">Astra</text>
+<circle class="m ring hollow" cx="511.3" cy="97.1" r="6.5"><title>Astra + BF: 52.8% correct, 71.0% of answers finish</title></circle>
+<text x="501.3" y="88.1" class="lab small" text-anchor="end">Astra + BF</text>
+<circle class="n ring" cx="556.7" cy="96.2" r="6.5"><title>CLC: 53.0% correct, 78.2% of answers finish</title></circle>
+<text x="556.7" y="120.2" class="lab small" text-anchor="middle">CLC</text>
+<circle class="a ring" cx="582.5" cy="81.0" r="6.5"><title>CLC-sel: 56.3% correct, 82.3% of answers finish</title></circle>
+<text x="594.5" y="87.0" class="lab small strong">CLC-sel</text>
+<circle class="a ring hollow" cx="602.0" cy="65.8" r="6.5"><title>CLC-sel + BF: 59.6% correct, 85.4% of answers finish</title></circle>
+<text x="592.0" y="56.8" class="lab small strong" text-anchor="end">CLC-sel + BF</text>
+<circle class="n ring" cx="629.7" cy="111.8" r="6.5"><title>Auto, layer 13: 49.6% correct, 89.8% of answers finish</title></circle>
+<text x="629.7" y="135.8" class="lab small" text-anchor="middle">Auto, layer 13</text>
+<circle class="n ring" cx="89.2" cy="36.4" r="5"/>
+<text x="101.2" y="40.4" class="tick">no forcing</text>
+<circle class="n ring hollow" cx="190.0" cy="36.4" r="5"/>
+<text x="202.0" y="40.4" class="tick">with budget forcing (BF)</text>
+</svg>
