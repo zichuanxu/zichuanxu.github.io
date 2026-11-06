@@ -6,7 +6,7 @@ minutes: 13 # prose only; the word count would include chart labels and code
 
 Small reasoning models have an awkward way of failing. They start thinking, write a paragraph, write it again, and keep writing it until the token budget runs out. Qwen3.5-0.8B in thinking mode does this on 93% of MATH-500 problems, and it solves 7.4% of them.
 
-Earlier this year, [Takehi et al.](https://rikiyat.github.io/blog/weight-space-programming/) let an LLM agent read this model's weights for about 20 hours. The agent wrote a small edit to two layers that stops many of the loops and lifts MATH-500 accuracy to about 48%. It is one of the most striking results in their post.
+Earlier this year, [Takehi et al.](https://rikiyat.github.io/blog/weight-space-programming/) let an LLM agent, GPT-6 Astra, read this model's weights for about 20 hours. Astra wrote a small edit to two layers, the Astra edit, that stops many of the loops and lifts MATH-500 accuracy to about 48%. It is one of the most striking results in their post.
 
 I took the agent's edit apart. It turned out to be one direction and 64 neurons in each of two layers. A fixed rule can write an edit of the same shape and size from the model's own answers to practice problems, with no agent, no gradients and no correctness labels. That rule, **CLC-sel**, writes a better edit than the agent did.
 
@@ -31,7 +31,7 @@ The model does know a fair amount of math. With thinking turned off, it scores 4
 
 ## What the agent did
 
-Takehi et al. asked whether an LLM agent can fix a failure like this by editing weights directly. Their agent, GPT-6 Astra, read the weights of Qwen3.5-0.8B and ran 50 forward passes on practice problems, over 20.3 hours of wall time. It then wrote an edit that changes 64 output columns of the MLP in each of two layers. In their evaluation, MATH-500 accuracy in thinking mode rose from 7.9% to 48.1%. Runs of the same agent with 10 and 25 forward passes reached only 12.3% and 14.1%.
+Takehi et al. asked whether an LLM agent can fix a failure like this by editing weights directly. Astra read the weights of Qwen3.5-0.8B and ran 50 forward passes on practice problems, over 20.3 hours of wall time. It then wrote an edit that changes 64 output columns of the MLP in each of two layers. In their evaluation, MATH-500 accuracy in thinking mode rose from 7.9% to 48.1%. Runs of Astra with 10 and 25 forward passes reached only 12.3% and 14.1%.
 
 Their [logs](https://github.com/RikiyaT/lm_understand-logs) and the edited weights are public, which is what made this work possible. They raise a practical question: how much of what the agent did can a fixed rule do?
 
