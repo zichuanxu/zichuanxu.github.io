@@ -10,8 +10,12 @@
 <meta property="og:title" content="{{ include.title | escape }}" />
 <meta property="og:description" content="{{ desc }}" />
 <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-<meta property="og:image" content="{{ site.url }}{{ page.image | default: '/images/profile.jpg' }}" />
-<meta name="twitter:card" content="{% if page.image %}summary_large_image{% else %}summary{% endif %}" />
+{%- comment %} share cards are 1200×630 PNGs in /images/og/; a post names its own with `image:` {% endcomment %}
+<meta property="og:image" content="{{ site.url }}{{ page.image | default: '/images/og/site.png' }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="{{ include.title | escape }}" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="stylesheet" href="/assets/css/site-2026.css?v={{ site.time | date: '%s' }}" />
 <link rel="icon" href="/favicon.ico?v={{ site.time | date: '%s' }}" sizes="any" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg?v={{ site.time | date: '%s' }}" />

@@ -43,7 +43,7 @@ whitelist:
 
 # Posts: _posts/YYYY-MM-DD-slug.md → /blog/slug/, laid out by _layouts/post.html.
 # Front matter: title, description (one line, shown in lists and previews);
-# optional: updated, lang (e.g. ja), minutes (reading time override), image.
+# optional: updated, lang (e.g. ja), minutes (reading time override), image (a 1200×630 share card, e.g. /images/og/slug.png).
 defaults:
   - scope:
       path: ""

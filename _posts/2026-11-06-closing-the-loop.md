@@ -1,6 +1,8 @@
 ---
 title: "Closing the loop: a simple rule beats an agent-written weight edit"
 description: "An LLM agent spent 20 hours writing a weight edit that stops Qwen3.5-0.8B from looping. A fixed rule, run on the model's own answers for 84 GPU-minutes, writes a better one."
+math: true
+image: /images/og/closing-the-loop.png
 minutes: 13 # prose only; the word count would include chart labels and code
 ---
 
@@ -37,19 +39,23 @@ Their [logs](https://github.com/RikiyaT/lm_understand-logs) and the edited weigh
 
 ## Taking the agent's edit apart
 
-Some background on the model first. Qwen3.5-0.8B has 24 layers and a hidden size of 1,024. Each layer has an MLP with 3,584 neurons, and its last matrix, the down projection *W*, writes their activations into the residual stream. Column *c* of *W* is what neuron *c* writes per unit of activation.
+Some background on the model first. Qwen3.5-0.8B has 24 layers and a hidden size of 1,024. Each layer has an MLP with 3,584 neurons, and its last matrix, the down projection $$W$$, writes their activations into the residual stream. Column $$c$$ of $$W$$ is what neuron $$c$$ writes per unit of activation.
 
-The agent changed *W* in layers 15 and 19. In each layer, the change is rank one up to bf16 rounding: the second singular value is about 6 × 10⁻⁴ of the first. It can be written as
+The agent changed $$W$$ in layers 15 and 19. In each layer, the change is rank one up to bf16 rounding: the second singular value is about $$6 \times 10^{-4}$$ of the first. It can be written as
 
-<p class="eq"><i>W</i>′ = <i>W</i> − <i>α</i> <b>u</b> (<b>m</b> ⊙ <b>s</b>)<sup>⊤</sup>,&ensp; <b>s</b> = <i>W</i><sup>⊤</sup><b>u</b></p>
+$$
+W' = W - \alpha\,\mathbf{u}\,\big(\mathbf{m} \odot \mathbf{s}\big)^{\top}, \qquad \mathbf{s} = W^{\top}\mathbf{u}
+$$
 
-where **u** is a unit direction in the residual stream (1,024 numbers), **m** is a mask that selects 64 neurons, and *α* = 6. With the direction and mask recovered from the released weights, this formula rebuilds 99.8% of the edited bf16 entries exactly.
+where $$\mathbf{u}$$ is a unit direction in the residual stream (1,024 numbers), $$\mathbf{m}$$ is a mask that selects 64 neurons, and $$\alpha = 6$$. With the direction and mask recovered from the released weights, this formula rebuilds 99.8% of the edited bf16 entries exactly.
 
-The form is easy to read. Write *s<sub>c</sub>* for the amount neuron *c* writes along **u**. After the edit, the layer's write along **u** is
+The form is easy to read. Write $$s_c$$ for the amount neuron $$c$$ writes along $$\mathbf{u}$$. After the edit, the layer's write along $$\mathbf{u}$$ is
 
-<p class="eq"><b>u</b><sup>⊤</sup><i>W</i>′<b>a</b> = Σ<sub><i>c</i></sub> <i>s<sub>c</sub> a<sub>c</sub></i> − <i>α</i> Σ<sub><i>c</i> ∈ <b>m</b></sub> <i>s<sub>c</sub> a<sub>c</sub></i></p>
+$$
+\mathbf{u}^{\top} W' \mathbf{a} = \sum_{c} s_c\,a_c \;-\; \alpha \sum_{c \in \mathbf{m}} s_c\,a_c
+$$
 
-and every other direction is unchanged. With *α* = 6, the 64 selected neurons now write five times their original amount *against* **u**. So the whole edit is three choices per layer: a direction, a set of neurons and a strength. A rule that makes those three choices writes the same kind of edit.
+and every other direction is unchanged. With $$\alpha = 6$$, the 64 selected neurons now write five times their original amount *against* $$\mathbf{u}$$. So the whole edit is three choices per layer: a direction, a set of neurons and a strength. A rule that makes those three choices writes the same kind of edit.
 
 ## First attempt: erase "I am repeating"
 
@@ -72,21 +78,25 @@ That observation gives the method, loop-selective closure contrast. It needs thr
 
 **Practice answers.** The base model answers 512 practice problems in thinking mode, half from the MATH training set and half from GSM8K's, with the evaluation's sampling settings and up to 16,384 tokens. In each answer I find the first block of 64 tokens that appears again later, verbatim. That gives a first-occurrence window F and a loop window R, found in 256 answers. In the 43 answers that close their thinking, the 64 tokens before `</think>` form a closure window C.
 
-**Window statistics.** One teacher-forced pass over these answers gives, for each layer, the mean residual state and the mean neuron activations in each kind of window.
+**Window statistics.** One teacher-forced pass over these answers gives, for each layer, the mean residual state and the mean neuron activations in each kind of window. Write $$\bar{\mathbf{h}}^{R}$$ for the mean state over loop windows and $$\bar a^{R}_c$$ for the mean activation of neuron $$c$$ there, and likewise with F and C.
 
 **Direction.** The edit direction points from the closure state to the loop state:
 
-<p class="eq"><b>u</b> = normalize(<i>h</i><sub>loop</sub> − <i>h</i><sub>close</sub>)</p>
+$$
+\mathbf{u} = \frac{\bar{\mathbf{h}}^{R} - \bar{\mathbf{h}}^{C}}{\lVert \bar{\mathbf{h}}^{R} - \bar{\mathbf{h}}^{C} \rVert}
+$$
 
-Since the edit subtracts along **u**, it pushes a looping state toward the state in which the model ends its thinking.
+Since the edit subtracts along $$\mathbf{u}$$, it pushes a looping state toward the state in which the model ends its thinking.
 
-**Neurons.** The plain choice is the 64 neurons with the largest write along **u** inside loops. I call that edit CLC. It pushes toward closure in every context, including normal reasoning, and on GSM8K it ends good answers too early. CLC-sel instead ranks neurons by how much their write along **u** *rises* when the same text is repeated:
+**Neurons.** The plain choice is the 64 neurons with the largest write along $$\mathbf{u}$$ inside loops. I call that edit CLC. It pushes toward closure in every context, including normal reasoning, and on GSM8K it ends good answers too early. CLC-sel instead ranks neurons by how much their write along $$\mathbf{u}$$ *rises* when the same text is repeated:
 
-<p class="eq"><i>r<sub>c</sub></i> = (<i>a</i><sub>repeat, <i>c</i></sub> − <i>a</i><sub>first, <i>c</i></sub>) · <i>s<sub>c</sub></i></p>
+$$
+r_c = \big(\bar a^{R}_c - \bar a^{F}_c\big)\, s_c
+$$
 
 These neurons are more active on the second pass over the same text than on the first, so the edit acts mainly inside loops. The two rules pick different neurons: only 27 of 64 are shared at layer 19, and 45 at layer 15. At layer 19, the chosen 64 of 3,584 neurons carry 71% of the positive score.
 
-**Layers and strength.** For the main comparison, CLC-sel uses the agent's layers (15 and 19) and strength (*α* = 6), so the comparison isolates the direction and the neurons. A later section replaces both with rules.
+**Layers and strength.** For the main comparison, CLC-sel uses the agent's layers (15 and 19) and strength ($$\alpha = 6$$), so the comparison isolates the direction and the neurons. A later section replaces both with rules.
 
 The edit itself is a few lines of NumPy in the [repository](https://github.com/zichuanxu/closing-the-loop/blob/main/src/clc_sel/edit.py):
 
@@ -160,11 +170,11 @@ So the edit does not make the model reason better. It makes the model finish pro
 | Astra direction, top-write neurons | 59.4 | 21.1 |
 | CRD direction, Astra neurons | 50.8 | 44.5 |
 
-<p class="table-note">Thinking mode, one seed, layers 15 and 19, α = 6, 64 neurons.</p>
+<p class="table-note">Thinking mode, one seed, layers 15 and 19, \(\alpha = 6\), 64 neurons.</p>
 
 **The direction must point toward closure.** At the same layers, CRD reached 23.2% on MATH-500 and the closure direction 53.0%.
 
-**Neuron choice matters as much as direction.** The agent's own direction with neurons ranked by their write reaches 59.4%; CRD with the agent's neurons reaches 50.8%. Editing every neuron, with the projection (*I* − *α***uu**<sup>⊤</sup>)*W*, reached only 14.8 to 25.0%.
+**Neuron choice matters as much as direction.** The agent's own direction with neurons ranked by their write reaches 59.4%; CRD with the agent's neurons reaches 50.8%. Editing every neuron, with the projection $$(I - \alpha\,\mathbf{u}\mathbf{u}^{\top})\,W$$, reached only 14.8 to 25.0%.
 
 **A weaker push does not help.** Lowering CLC's strength to 4 kept selection-set accuracy at 60.9%; lowering it to 3 dropped it to 57.8%. Only the loop-selective neurons improved on CLC, to 66.4%.
 
@@ -174,20 +184,22 @@ So the edit does not make the model reason better. It makes the model finish pro
 
 CLC-sel so far borrows two settings from the agent: the layers and the strength. Both can be chosen by rules that use only the practice answers.
 
-**Strength in closed form.** The edit lowers the write along **u** by *α* Σ *s<sub>c</sub> a<sub>c</sub>* over the selected neurons. Choose *α* so that, to first order, this closes the gap between the loop state and the closure state:
+**Strength in closed form.** The edit lowers the write along $$\mathbf{u}$$ by $$\alpha \sum_{c \in \mathbf{m}} s_c\,a_c$$, a sum over the selected neurons. Choose $$\alpha$$ so that, to first order, this closes the gap between the loop state and the closure state:
 
-<p class="eq"><i>α</i>* = ‖<i>h</i><sub>loop</sub> − <i>h</i><sub>close</sub>‖ / Σ<sub><i>c</i> ∈ <b>m</b></sub> <i>s<sub>c</sub></i> (<i>a</i><sub>loop, <i>c</i></sub> − <i>a</i><sub>close, <i>c</i></sub>)<small>clipped to [0.5, 16]</small></p>
+$$
+\alpha^{*} = \frac{\lVert \bar{\mathbf{h}}^{R} - \bar{\mathbf{h}}^{C} \rVert}{\sum_{c \in \mathbf{m}} s_c \big(\bar a^{R}_c - \bar a^{C}_c\big)}
+$$
 
-This needs no generation. At the agent's layers it gives 8.1 and 11.6. Split over two layers, that is 4.0 and 5.8 per layer, close to the agent's 6, although the rule never saw the agent's edit.
+clipped to $$[0.5, 16]$$. This needs no generation. At the agent's layers it gives 8.1 and 11.6. Split over two layers, that is 4.0 and 5.8 per layer, close to the agent's 6, although the rule never saw the agent's edit.
 
-**Layers by a screen.** I built a single-layer CLC-sel edit at every odd layer, each with its own *α*\*, and ran each on 128 screening problems.
+**Layers by a screen.** I built a single-layer CLC-sel edit at every odd layer, each with its own $$\alpha^{*}$$, and ran each on 128 screening problems.
 
 <figure>
 <div class="fig-scroll">{% include posts/closing-the-loop/layers.svg %}</div>
 <figcaption><b>Single-layer edits on the screening set.</b> Bars show accuracy and the line shows the share of truncated answers. Early layers and the last two fail; every layer from 9 to 19 reaches 52 to 64%, against 14% for the base model.</figcaption>
 </figure>
 
-The two best layers are 13 and 19. Together they reach 61.7%, below layer 13 alone, so the rule keeps layer 13 with *α*\* = 11.8.
+The two best layers are 13 and 19. Together they reach 61.7%, below layer 13 alone, so the rule keeps layer 13 with $$\alpha^{*} = 11.8$$.
 
 On the test sets, this fully automatic edit **matches** the agent's edit. On MATH-500 it reaches 49.6%, 0.4 points above (CI −3.4 to 4.2); on GSM8K it reaches 67.4%, 1.0 point below (CI −3.3 to 1.4). It ends more loops than any other edit, truncating only 10.2% of MATH-500 answers. But its finished answers are less often correct, 55.0% against 72.3%. One layer at strength 11.8 ends the thinking too early on some problems the model could have solved. The closed-form strength closes the gap between the two states but does not weigh that cost.
 
@@ -197,7 +209,7 @@ On the test sets, this fully automatic edit **matches** the agent's edit. On MAT
 - **The agent found the idea.** The closure direction came from reading the agent's edit, and CLC-sel's lead depends on the agent's layers and strength. The automatic version matches the agent but does not beat it.
 - **The search had a cost.** The final rule runs in 84 GPU-minutes, but finding it took about 40 more runs on practice problems. Each test set was used to confirm two successive methods, which may favor the second.
 - **Finishing, not reasoning.** The edit fixes loops. With thinking off, the base model reaches 45.8% on MATH-500 with a fifth of the tokens, so the edit matters most when thinking mode is needed.
-- **Untested.** General tasks such as instruction following, CLC-sel in non-thinking mode, and an activation-steering baseline that adds **u** at every token. The closure state is a mean over only 43 answers, and each run draws one sample per problem.
+- **Untested.** General tasks such as instruction following, CLC-sel in non-thinking mode, and an activation-steering baseline that adds $$\mathbf{u}$$ at every token. The closure state is a mean over only 43 answers, and each run draws one sample per problem.
 
 ## How the study was run
 

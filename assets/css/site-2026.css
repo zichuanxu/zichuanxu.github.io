@@ -290,9 +290,10 @@ body.read { --wrap: calc(760px + 2 * var(--gutter)); }
 .highlight .nf, .highlight .fm, .highlight .nc, .highlight .nd { color: var(--ink); font-weight: 600; }
 
 /* display equations (no math library: Unicode, serif italics, sans vectors) */
-.prose .eq { margin-block: 1.5em; overflow-x: auto; text-align: center; white-space: nowrap; font: 400 23px/1.4 var(--serif); color: var(--ink); }
-.prose .eq b { font: 600 .78em var(--font); }
-.prose .eq small { margin-left: 1.2em; font: 400 .7em var(--serif); color: var(--mute); }
+.prose .katex { font-size: 1.08em; }
+.prose .katex-display { margin: 1.5em 0; overflow-x: auto; overflow-y: hidden; padding-block: 2px; color: var(--ink); }
+.prose .katex-display > .katex { font-size: 1.3em; }
+@media (max-width: 560px) { .prose .katex-display > .katex { font-size: 1.1em; } }
 /* three headline numbers under a post's opening paragraph */
 .prose .table-note { margin-top: .6em; font: 500 12.5px/1.5 var(--mono); color: var(--mute); }
 .prose .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 24px; margin-block: 1.8em; padding-block: 18px; border-block: 1px solid var(--rule); }
