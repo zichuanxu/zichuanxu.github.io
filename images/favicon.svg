@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- The loop: an open ring with one step waiting in its gap (observe, act, repeat). -->
+  <!-- X: a thick stroke passing over a hairline (high-contrast, like the serif headings). -->
   <rect width="64" height="64" rx="15" fill="#2E46E6"/>
-  <path d="M32 16.5A15.5 15.5 0 1 1 16.5 32" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
-  <circle cx="21.1" cy="21.1" r="5" fill="#FFFFFF"/>
+  <path d="M42.5 15h5L21.5 49h-5z" fill="#FFFFFF"/>
+  <path d="M16 15h12l20 34H36z" fill="#FFFFFF" stroke="#2E46E6" stroke-width="5" stroke-linejoin="miter" paint-order="stroke"/>
 </svg>

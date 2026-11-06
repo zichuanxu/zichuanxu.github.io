@@ -1,6 +1,6 @@
 /* zichuanxu.me — "Editorial Cobalt" (2026-11-05).
    Instrument Serif for display, Inter for text, JetBrains Mono for metadata.
-   Paper, ink and one cobalt accent; the mark is an open loop with one dot.
+   Paper, ink and one cobalt accent; the tab mark is a high-contrast X.
    Tokens are declared three times: light, explicit dark, and system dark.
    Motion is scoped to .has-js (set by theme-init.html) and only runs under
    prefers-reduced-motion: no-preference. */
@@ -109,7 +109,7 @@ button { font: inherit; color: inherit; }
 
 /* =========================================================================
    Homepage: one reading column (2026-11-05). Bio first, then papers,
-   experience, education and skills as compact lists. The page narrows
+   experience and education as compact lists. The page narrows
    --wrap so the top bar lines up with the column.
    ========================================================================= */
 body.home { --wrap: calc(720px + 2 * var(--gutter)); }
@@ -181,14 +181,6 @@ body.home { --wrap: calc(720px + 2 * var(--gutter)); }
   .item-when small { display: inline; }
   .item-when small::before { content: " · "; }
 }
-
-/* ---- skills: one line per group --------------------------------------- */
-.skills { margin-top: 8px; }
-.skills > div { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 4px 24px; padding-block: 14px; border-bottom: 1px solid var(--rule); }
-.skills > div:last-child { border-bottom: 0; }
-.skills dt { padding-top: 3px; font: 500 12.5px/1.5 var(--mono); color: var(--mute); }
-.skills dd { margin: 0; line-height: 1.6; color: var(--ink-2); }
-@media (max-width: 560px) { .skills > div { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---- footer ------------------------------------------------------------ */
 .foot { margin-top: clamp(64px, 8vw, 96px); border-top: 1px solid var(--rule); }
