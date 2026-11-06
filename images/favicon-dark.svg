@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- X in the homepage's own tokens: paper tile, ink stroke (the serif headings),
+       one cobalt hairline (the accent). Dark copy, swapped in by bar.html when the page is dark. -->
+  <style>.tile{fill:#0E1014;stroke:#272B34}.ink{fill:#ECEDF0}.acc{fill:#8C9BFF}</style>
+  <mask id="cut"><rect width="64" height="64" fill="#fff"/><path d="M16 15h12l20 34H36z" fill="#000" stroke="#000" stroke-width="5"/></mask>
+  <rect class="tile" x="1" y="1" width="62" height="62" rx="14" stroke-width="2"/>
+  <path class="acc" d="M42.5 15h5L21.5 49h-5z" mask="url(#cut)"/>
+  <path class="ink" d="M16 15h12l20 34H36z"/>
+</svg>
