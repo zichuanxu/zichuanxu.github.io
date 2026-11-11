@@ -8,6 +8,7 @@
         <a href="{{ p }}publications"{% if include.nav %} data-spy="publications"{% endif %}>Publications</a>
         <a href="{{ p }}experience"{% if include.nav %} data-spy="experience"{% endif %}>Experience</a>
         <a href="{{ p }}education"{% if include.nav %} data-spy="education"{% endif %}>Education</a>
+        <a href="{{ p }}honors"{% if include.nav %} data-spy="honors"{% endif %}>Honors</a>
         {%- if site.posts.size > 0 %}
         <a href="{% if include.nav %}#blog{% else %}/blog/{% endif %}"{% if include.nav %} data-spy="blog"{% endif %}{% if include.blog %} aria-current="true"{% endif %}>Blog</a>
         {%- endif %}

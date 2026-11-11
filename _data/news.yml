@@ -1,0 +1,12 @@
+# Newest first. The homepage shows the first three; /news/ lists them all.
+# date: YYYY-MM. text: HTML; link homepage sections as /#id so it works from /news/ too.
+- date: 2026-11
+  text: 'New blog post: <a href="/blog/closing-the-loop/">Closing the loop</a>, on how a simple rule beats an agent-written weight edit.'
+- date: 2026-11
+  text: '<a href="/#memshift">MemShift</a>, on separating detection from repair in LLM-derived personal memory, is on arXiv.'
+- date: 2026-10
+  text: '<a href="/#toolbottleneckbench">ToolBottleneckBench</a>, a benchmark for tool agents under controlled pressures, is on arXiv.'
+- date: 2026-04
+  text: 'Joined <a href="https://initial-s.com/" target="_blank" rel="noopener">Initial. S</a> in Tokyo as an AI Agent Development Engineer.'
+- date: 2025-04
+  text: 'Started my Master&rsquo;s at The University of Osaka, advised by Prof. Chuan Xiao.'

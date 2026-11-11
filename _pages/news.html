@@ -1,0 +1,42 @@
+---
+layout: null
+permalink: /news/
+title: "News"
+description: "News from Zichuan Xu: papers, posts, and new roles."
+sitemap: true
+---
+<!doctype html>
+<html lang="en">
+
+<head>
+  {% include site-2026/head.html title="News · Zichuan Xu" description=page.description %}
+</head>
+
+<body class="read">
+<a class="skip" href="#main">Skip to content</a>
+{% include site-2026/bar.html %}
+
+<main id="main">
+  <section class="intro" aria-labelledby="news-title">
+    <div class="wrap">
+      <div>
+        <h1 class="name" id="news-title">News</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-label="All news">
+    <div class="wrap">
+      <ul class="news">
+        {%- for item in site.data.news %}
+        {% include site-2026/news-row.html item=item %}
+        {%- endfor %}
+      </ul>
+    </div>
+  </section>
+</main>
+
+{% include site-2026/foot.html %}
+</body>
+
+</html>

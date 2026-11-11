@@ -1,0 +1,2 @@
+{%- assign d = include.item.date | append: '-01' %}
+<li><time datetime="{{ include.item.date }}">{{ d | date: '%b %Y' }}</time><p>{{ include.item.text }}</p></li>
