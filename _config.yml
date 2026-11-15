@@ -44,9 +44,6 @@ whitelist:
 # Posts: _posts/YYYY-MM-DD-slug.md → /blog/slug/, laid out by _layouts/post.html.
 # Front matter: title, description (one line, shown in lists and previews);
 # optional: updated, lang (e.g. ja), minutes (reading time override), image (a 1200×630 share card, e.g. /images/og/slug.png).
-# Visitor map on the homepage (shown only when set). Paste the script's src from
-# mapmyvisitors.com or clustrmaps.com, e.g. "//mapmyvisitors.com/map.js?d=…&cl=ffffff&w=a".
-visitor_map: "//mapmyvisitors.com/map.js?d=C5eB6W-Glyuv_L_VYwWxu3QNNJ-5_mZO2H4wHXYguQk&cl=ffffff&w=a&t=tt&co=0a0af0&ct=ffffff&cmo=f2a777&cmn=ff5353"
 
 defaults:
   - scope:

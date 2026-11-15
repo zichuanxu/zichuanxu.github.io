@@ -251,7 +251,7 @@ body.home { --wrap: calc(760px + 2 * var(--gutter)); }
 /* ---- honors: awards, patent, certificates; group label in the 160px column */
 .hon-group { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 8px 24px; padding-block: 24px; border-bottom: 1px solid var(--rule); }
 .hon-group:last-child { border-bottom: 0; padding-bottom: 0; }
-.hon-head, .visitors-label { padding-top: 4px; font: 500 11.5px/1.6 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--mute); }
+.hon-head { padding-top: 4px; font: 500 11.5px/1.6 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--mute); }
 .hon { list-style: none; display: grid; gap: 14px; }
 .hon li { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
 .hon p { display: grid; gap: 2px; }
@@ -259,14 +259,8 @@ body.home { --wrap: calc(760px + 2 * var(--gutter)); }
 .hon span { font-size: 14.5px; line-height: 1.45; color: var(--mute); }
 .hon time { flex: none; padding-top: 0; }
 
-/* ---- visitor map (only when _config.yml sets visitor_map) ------------- */
-.visitors { padding-top: clamp(48px, 6vw, 64px); }
-.visitors .wrap { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 8px 24px; }
-.visitors-map { max-width: 320px; }
-.visitors-map > * { max-width: 100%; }
-
 @media (max-width: 560px) {
-  .news li, .hon-group, .visitors .wrap { grid-template-columns: minmax(0, 1fr); }
+  .news li, .hon-group { grid-template-columns: minmax(0, 1fr); }
   .news time { padding-top: 0; }
 }
 
@@ -432,7 +426,7 @@ body.read { --wrap: calc(760px + 2 * var(--gutter)); }
    Print
    ========================================================================= */
 @media print {
-  .bar, .skip, .cta, .toggle, .pub-links, .back, .article-nav, .more, .visitors { display: none !important; }
+  .bar, .skip, .cta, .toggle, .pub-links, .back, .article-nav, .more { display: none !important; }
   html, body { background: #fff !important; }
   body, body * { color: #000 !important; }
   .pub, .item { break-inside: avoid; }

@@ -321,18 +321,6 @@ sitemap: true
   </section>
   {%- endif %}
 
-  {%- if site.visitor_map %}
-  <!-- =============================== visitors ============================= -->
-  <section class="visitors" aria-label="Visitor map">
-    <div class="wrap">
-      <p class="visitors-label">Visitors</p>
-      <div class="visitors-map">
-        <script id="{% if site.visitor_map contains 'clustrmaps' %}clustrmaps{% else %}mapmyvisitors{% endif %}" src="{{ site.visitor_map }}"></script>
-      </div>
-    </div>
-  </section>
-  {%- endif %}
-
 </main>
 
 {% include site-2026/foot.html %}
