@@ -1,18 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- X in the homepage's own tokens: paper tile, ink stroke (the serif headings),
-       one cobalt hairline (the accent). Follows the system theme like the page. -->
+  <!-- The site's own vocabulary ("Between", 2026-11-16): two square brackets in ink around
+       one Klein-blue dot, on a bone-paper tile. Follows the system theme like the page. -->
   <style>
-    .tile { fill: #FBFBF9; stroke: #E2E2DC; }
-    .ink  { fill: #111318; }
-    .acc  { fill: #2E46E6; }
+    .tile { fill: #F2F2EF; stroke: #CFD0CC; }
+    .ink  { stroke: #1F201E; }
+    .acc  { fill: #1834D4; }
     @media (prefers-color-scheme: dark) {
-      .tile { fill: #0E1014; stroke: #272B34; }
-      .ink  { fill: #ECEDF0; }
-      .acc  { fill: #8C9BFF; }
+      .tile { fill: #111214; stroke: #2E3033; }
+      .ink  { stroke: #ECECE7; }
+      .acc  { fill: #93A3FF; }
     }
   </style>
-  <mask id="cut"><rect width="64" height="64" fill="#fff"/><path d="M16 15h12l20 34H36z" fill="#000" stroke="#000" stroke-width="5"/></mask>
   <rect class="tile" x="1" y="1" width="62" height="62" rx="14" stroke-width="2"/>
-  <path class="acc" d="M42.5 15h5L21.5 49h-5z" mask="url(#cut)"/>
-  <path class="ink" d="M16 15h12l20 34H36z"/>
+  <path class="ink" fill="none" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter" d="M24.5 16.5H17.5V47.5H24.5M39.5 16.5H46.5V47.5H39.5"/>
+  <circle class="acc" cx="32" cy="32" r="5.5"/>
 </svg>

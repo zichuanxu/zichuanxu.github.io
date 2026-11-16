@@ -3,7 +3,6 @@
    The homepage loads GSAP before this file; everything here also works without it. */
 (() => {
   const root = document.documentElement;
-  window.__site = true; // theme-init.html drops .has-js if this never arrives
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches || !root.classList.contains('has-js');
 
   /* ------------------------------------------------------------------
@@ -41,7 +40,7 @@
     let i = 0;
     const slice = () => {
       const t0 = performance.now();
-      for (; i < N && (still || performance.now() - t0 < 7); i++) {
+      for (; i < N && performance.now() - t0 < 7; i++) {
         let y = 1 - 2 * (i + .5) / N, q = Math.sqrt(1 - y * y), t = i * 2.399963, x = Math.cos(t) * q, z = Math.sin(t) * q;
         x += (r() - .5) * .02; y += (r() - .5) * .02; z += (r() - .5) * .02; const n = Math.hypot(x, y, z); x /= n; y /= n; z /= n;
         const gx = (height(x + e, y, z) - height(x - e, y, z)) / (2 * e), gy = (height(x, y + e, z) - height(x, y - e, z)) / (2 * e), gz = (height(x, y, z + e) - height(x, y, z - e)) / (2 * e);
@@ -167,4 +166,7 @@
   /* Reveal on scroll. */
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.rv').forEach((el) => io.observe(el));
+
+  /* Set last: theme-init.html drops .has-js if this never arrives, so an error above cannot leave the page hidden. */
+  window.__site = true;
 })();

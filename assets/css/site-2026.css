@@ -30,7 +30,7 @@
   --focus: #1834D4;
   --on-blue: #FFFFFF;
   --ochre: #B19B67;
-  --code-str: #1E7A4C;
+  --code-str: #17683F; /* 5.6:1 on paper-2 */
   --code-num: #A8461C;
   --chart-a: #2E46E6; /* chart pair validated for CVD (dataviz validator) */
   --chart-b: #A8461C;
@@ -465,9 +465,9 @@ body.read { --wrap: calc(760px + 2 * var(--gutter)); }
   .has-js .h-name.in .dashmark { transform: none; }
   .has-js .flow .draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.2s var(--ease) .15s forwards; }
   .has-js .flow .fade { opacity: 0; animation: fade 1s ease 1.3s forwards; }
-  .plate .o1 { animation: spin 46s linear infinite; }
-  .plate .o3 { animation: spin 120s linear infinite reverse; }
-  .plate .halo { animation: halo 3.4s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+  .has-js .plate .o1 { animation: spin 46s linear infinite; }
+  .has-js .plate .o3 { animation: spin 120s linear infinite reverse; }
+  .has-js .plate .halo { animation: halo 3.4s ease-out infinite; transform-box: fill-box; transform-origin: center; }
 }
 @keyframes spin { from { transform: rotate(var(--a, 0deg)); } to { transform: rotate(calc(var(--a, 0deg) + 360deg)); } }
 @keyframes halo { from { transform: scale(.55); opacity: 1; } to { transform: scale(1.7); opacity: 0; } }
@@ -480,7 +480,7 @@ body.read { --wrap: calc(760px + 2 * var(--gutter)); }
 @media (max-width: 860px) {
   body { font-size: 17px; }
   .bar .wrap { gap: 14px; }
-  .nav { overflow-x: auto; scrollbar-width: none; padding-right: 18px; -webkit-mask-image: linear-gradient(90deg, #000 86%, transparent); mask-image: linear-gradient(90deg, #000 86%, transparent); }
+  .nav { overflow-x: auto; scrollbar-width: none; padding: 8px 18px 8px 6px; /* room for focus rings, which a scroller would clip */ -webkit-mask-image: linear-gradient(90deg, #000 86%, transparent); mask-image: linear-gradient(90deg, #000 86%, transparent); }
   .nav::-webkit-scrollbar { display: none; }
   .nav .caps { letter-spacing: .1em; }
   .nav i { padding-inline: 8px; }
