@@ -1,10 +1,17 @@
 <footer class="foot" id="contact">
   <div class="wrap">
-    <span>&copy; {{ 'now' | date: '%Y' }} Zichuan Xu</span>
-    <nav aria-label="Contact">
-      <a href="mailto:zichuanxu28@gmail.com">Email</a>
-      <a href="https://github.com/zichuanxu" target="_blank" rel="me noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/zichuanxu/" target="_blank" rel="me noopener">LinkedIn</a>
-    </nav>
+    <div class="in">
+      <div>
+        <p class="links"><a href="mailto:zichuanxu28@gmail.com">Email</a><i aria-hidden="true">/</i><a href="https://github.com/zichuanxu" target="_blank" rel="me noopener">GitHub</a><i aria-hidden="true">/</i><a href="https://www.linkedin.com/in/zichuanxu/" target="_blank" rel="me noopener">LinkedIn</a></p>
+        <p class="copy caps">&copy; {{ 'now' | date: '%Y' }} Zichuan Xu</p>
+      </div>
+      <figure class="foot-fig" aria-hidden="true">
+        {%- if include.n %}
+        <span class="idx">[ {{ include.n }}<sup>*</sup> ]</span>
+        {%- endif %}
+        {% include site-2026/crescent.html %}
+      </figure>
+    </div>
   </div>
 </footer>
+{% include site-2026/scripts.html gsap=include.gsap %}

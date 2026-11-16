@@ -1,7 +1,7 @@
-<li class="post-row">
-  <time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: include.format }}</time>
-  <div>
-    <h3><a href="{{ include.post.url }}">{{ include.post.title }}</a></h3>
+<li class="row post g12 rv">
+  <time class="lead caps" datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: include.format }}{% if include.post.minutes %}<small>{{ include.post.minutes }} min read</small>{% endif %}</time>
+  <div class="col">
+    <h3><a class="grow" href="{{ include.post.url }}">{{ include.post.title }}</a><span class="ar" aria-hidden="true">↗</span></h3>
     {%- if include.post.description %}
     <p>{{ include.post.description }}</p>
     {%- endif %}

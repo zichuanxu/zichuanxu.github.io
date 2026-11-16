@@ -24,16 +24,22 @@ sitemap: false
 
 <main id="main" class="lost">
   <div class="wrap">
-    <p class="eyebrow">404</p>
-    <h1>Not in service.</h1>
-    <p class="lost-text">Sorry, the page you were trying to view does not exist.</p>
-    <div class="cta"><a class="btn primary" href="/">Back to home</a></div>
+    <div>
+      <p class="idx">[ 404<sup>*</sup> ]</p>
+      <h1>Not in service.</h1>
+      <p class="lost-text">Sorry, the page you were trying to view does not exist.</p>
+      <a class="pill on" href="/">Back to home</a>
+    </div>
+    <figure class="lost-fig" aria-hidden="true">
+      {% include site-2026/crescent.html %}
+    </figure>
   </div>
 </main>
 
 <footer class="lost-foot">
-  <div class="wrap colophon"><span>&copy; {{ 'now' | date: '%Y' }} Zichuan Xu</span><span>Tokyo · Osaka</span></div>
+  <div class="wrap"><p class="copy caps">&copy; {{ 'now' | date: '%Y' }} Zichuan Xu</p></div>
 </footer>
+{% include site-2026/scripts.html %}
 </body>
 
 </html>

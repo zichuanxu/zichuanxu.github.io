@@ -37,10 +37,10 @@
 <main id="main">
   <article class="article wrap">
     <header class="article-head">
-      <a class="back" href="/blog/"><span aria-hidden="true">&larr;</span> All posts</a>
+      <a class="back caps" href="/blog/"><span aria-hidden="true">&larr;</span> All posts</a>
       {%- comment %} ponytail: word count / 220 is right for English only; CJK posts set `minutes:` {% endcomment %}
       {%- assign minutes = content | strip_html | number_of_words | divided_by: 220 | at_least: 1 %}
-      <p class="article-meta">
+      <p class="article-meta caps">
         <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
         <span aria-hidden="true">&middot;</span> {{ page.minutes | default: minutes }} min read
         {%- if page.updated %}
@@ -60,10 +60,10 @@
     {%- if page.previous or page.next %}
     <nav class="article-nav" aria-label="More posts">
       {%- if page.previous %}
-      <a class="prev" href="{{ page.previous.url }}" rel="prev"><small>&larr; Older</small><span>{{ page.previous.title }}</span></a>
+      <a class="prev" href="{{ page.previous.url }}" rel="prev"><small class="caps">&larr; Older</small><span>{{ page.previous.title }}</span></a>
       {%- endif %}
       {%- if page.next %}
-      <a class="next" href="{{ page.next.url }}" rel="next"><small>Newer &rarr;</small><span>{{ page.next.title }}</span></a>
+      <a class="next" href="{{ page.next.url }}" rel="next"><small class="caps">Newer &rarr;</small><span>{{ page.next.title }}</span></a>
       {%- endif %}
     </nav>
     {%- endif %}

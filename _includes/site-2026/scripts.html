@@ -1,0 +1,5 @@
+{%- comment %} GSAP runs the homepage opening only; it is the "no charge" build, kept in the repo. {% endcomment %}
+{%- if include.gsap %}
+<script src="/assets/js/vendor/gsap.min.js?v=3.13.0"></script>
+{%- endif %}
+<script src="/assets/js/site-2026.js?v={{ site.time | date: '%s' }}"></script>

@@ -12,19 +12,19 @@ sitemap: true
   {% include site-2026/head.html title="Blog · Zichuan Xu" description=page.description %}
 </head>
 
-<body class="read">
+<body class="list">
 <a class="skip" href="#main">Skip to content</a>
 {% include site-2026/bar.html blog=true %}
 
 <main id="main">
-  <section class="intro" aria-labelledby="blog-title">
+  <section class="page-head" aria-labelledby="blog-title">
     <div class="wrap">
-      <div>
-        <h1 class="name" id="blog-title">Blog</h1>
-      </div>
-      <ul class="links">
-        <li><a href="/feed.xml"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg><span>RSS feed</span></a></li>
-      </ul>
+      <header class="sec-head rv">
+        <span class="idx" aria-hidden="true">[ 06<sup>*</sup> ]</span>
+        <h1 id="blog-title">Blog</h1>
+        <span class="rule"></span><span class="count caps">{{ site.posts.size | prepend: '0' | slice: -2, 2 }} {% if site.posts.size == 1 %}post{% else %}posts{% endif %}</span>
+      </header>
+      <p class="tools rv"><a class="pill sm" href="/feed.xml">RSS feed</a></p>
     </div>
   </section>
 
@@ -32,16 +32,16 @@ sitemap: true
   {%- for year in years %}
   <section class="sec" aria-labelledby="y{{ year.name }}">
     <div class="wrap">
-      <h2 class="sec-title" id="y{{ year.name }}">{{ year.name }}</h2>
-      <ol class="posts">
+      <h2 class="sr-only" id="y{{ year.name }}">{{ year.name }}</h2>
+      <ol class="rows">
         {%- for post in year.items %}
-        {% include site-2026/post-row.html post=post format="%b %-d" %}
+        {% include site-2026/post-row.html post=post format="%b %-d, %Y" %}
         {%- endfor %}
       </ol>
     </div>
   </section>
   {%- else %}
-  <section class="sec"><div class="wrap"><p class="role">Nothing published yet.</p></div></section>
+  <section class="sec"><div class="wrap"><p class="caps">Nothing published yet.</p></div></section>
   {%- endfor %}
 </main>
 

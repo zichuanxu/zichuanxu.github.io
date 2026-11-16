@@ -12,22 +12,24 @@ sitemap: true
   {% include site-2026/head.html title="News · Zichuan Xu" description=page.description %}
 </head>
 
-<body class="read">
+<body class="list">
 <a class="skip" href="#main">Skip to content</a>
 {% include site-2026/bar.html %}
 
 <main id="main">
-  <section class="intro" aria-labelledby="news-title">
+  <section class="page-head" aria-labelledby="news-title">
     <div class="wrap">
-      <div>
-        <h1 class="name" id="news-title">News</h1>
-      </div>
+      <header class="sec-head rv">
+        <span class="idx" aria-hidden="true">[ 01<sup>*</sup> ]</span>
+        <h1 id="news-title">News</h1>
+        <span class="rule"></span><span class="count caps">{{ site.data.news.size | prepend: '0' | slice: -2, 2 }} items</span>
+      </header>
     </div>
   </section>
 
   <section class="sec" aria-label="All news">
     <div class="wrap">
-      <ul class="news">
+      <ul class="rows txt">
         {%- for item in site.data.news %}
         {% include site-2026/news-row.html item=item %}
         {%- endfor %}
